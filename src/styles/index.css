@@ -145,3 +145,31 @@ pre code {
   color: rgb(248 113 113);
   border-color: rgb(63 63 70);
 }
+
+html {
+scroll-behavior: smooth;
+}
+
+::selection {
+background: #2563eb;
+color: white;
+}
+
+.card-hover {
+transition: all .4s ease;
+}
+
+.card-hover:hover {
+transform: translateY(-6px);
+}
+
+.glass-card {
+background: rgba(255,255,255,.7);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255,255,255,.6);
+}
+
+.section-spacing {
+padding-top: 7rem;
+padding-bottom: 7rem;
+}

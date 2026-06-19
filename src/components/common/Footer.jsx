@@ -30,31 +30,25 @@ function Footer() {
           {/* Brand */}
 
           <div>
-            <h3 className="text-xl font-bold mb-3">
-              {siteConfig.name}
-            </h3>
+            <h3 className="text-xl font-bold mb-3">{siteConfig.name}</h3>
 
             <p
               className="
-                text-zinc-600
-                dark:text-zinc-300
-                leading-relaxed
-              "
+    text-zinc-600
+    dark:text-zinc-300
+    leading-relaxed
+  "
             >
-              Backend-Focused Java Developer
-              building scalable systems with
-              Spring Boot, PostgreSQL, Redis,
-              Kafka, and modern cloud-native
-              technologies.
+              Thinking in Systems.
+              <br />
+              Building Reliable Software.
             </p>
           </div>
 
           {/* Quick Links */}
 
           <div>
-            <h4 className="font-semibold mb-4">
-              Quick Links
-            </h4>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
 
             <ul className="space-y-2">
               <li>
@@ -78,24 +72,14 @@ function Footer() {
           {/* Socials */}
 
           <div>
-            <h4 className="font-semibold mb-4">
-              Connect
-            </h4>
+            <h4 className="font-semibold mb-4">Connect</h4>
 
             <div className="flex gap-4 mb-4">
-              <a
-                href={siteConfig.github}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={siteConfig.github} target="_blank" rel="noreferrer">
                 <FaGithub size={22} />
               </a>
 
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
                 <FaLinkedin size={22} />
               </a>
             </div>
@@ -113,17 +97,17 @@ function Footer() {
 
         <div
           className="
-            border-t
-            border-zinc-200
-            dark:border-slate-700
-            mt-10
-            pt-6
-            text-sm
-            text-zinc-500
-          "
+    border-t
+    border-zinc-200
+    dark:border-slate-700
+    mt-10
+    pt-6
+    text-sm
+    text-zinc-500
+  "
         >
-          © {new Date().getFullYear()} Smit.
-          Built with React, Vite and Tailwind CSS.
+          Designed & Built using React & Tailwind.
+          <br />© {new Date().getFullYear()} Smit Roy.
         </div>
       </div>
     </footer>
