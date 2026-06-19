@@ -3,37 +3,44 @@ import ProjectCard from "../components/cards/ProjectCard";
 
 import projects from "../data/projects";
 
+import SEO from "../components/common/SEO";
+
 function Projects() {
   return (
-    <PageWrapper>
+    <>
+      <SEO
+        title="Projects"
+        description="Backend systems, open-source libraries, and production-oriented Java Spring Boot projects built by Smit Roy."
+      />
 
-      <div className="mb-16">
-        <p className="text-blue-600 font-medium mb-2">
-          Projects
-        </p>
+      <PageWrapper>
+        <div className="mb-16">
+          <p className="text-blue-600 font-medium mb-2">
+            Projects
+          </p>
 
-        <h1 className="text-5xl font-bold mb-6">
-          Backend Systems & Open Source Work
-        </h1>
+          <h1 className="text-5xl font-bold mb-6">
+            Backend Systems & Open Source Work
+          </h1>
 
-        <p className="max-w-3xl text-zinc-600">
-          A collection of backend systems, open-source
-          libraries, and production-oriented projects
-          focused on scalability, security, distributed
-          systems, and modern software architecture.
-        </p>
-      </div>
+          <p className="max-w-3xl text-zinc-600">
+            A collection of backend systems, open-source
+            libraries, and production-oriented projects
+            focused on scalability, security, distributed
+            systems, and modern software architecture.
+          </p>
+        </div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-          />
-        ))}
-      </div>
-
-    </PageWrapper>
+        <div className="grid lg:grid-cols-2 gap-8">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+            />
+          ))}
+        </div>
+      </PageWrapper>
+    </>
   );
 }
 

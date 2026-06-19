@@ -5,17 +5,26 @@ import SkillsSection from "../components/about/SkillsSection";
 import TimelineSection from "../components/about/TimelineSection";
 // import FutureGoals from "../components/about/FutureGoals";
 
+import SEO from "../components/common/SEO";
+
 function About() {
   return (
-    <PageWrapper>
-      <AboutHero />
+    <>
+      <SEO
+        title="About"
+        description="Learn about Smit Roy's journey into software engineering, backend development, Java, Spring Boot, Microservices, System Design, and distributed systems."
+      />
 
-      <SkillsSection />
+      <PageWrapper>
+        <AboutHero />
 
-      <TimelineSection />
+        <SkillsSection />
 
-      {/* <FutureGoals /> */}
-    </PageWrapper>
+        <TimelineSection />
+
+        {/* <FutureGoals /> */}
+      </PageWrapper>
+    </>
   );
 }
 
