@@ -13,10 +13,11 @@ function CTA() {
       </p>
 
       <a
-        href={`mailto:${siteConfig.email}`}
+        href="https://calendly.com/smitroy/30min"
+        target="_blank"
         className="inline-flex px-6 py-3 rounded-lg bg-zinc-900 text-white"
       >
-        Contact Me
+        Schedule a Meeting
       </a>
     </section>
   );
