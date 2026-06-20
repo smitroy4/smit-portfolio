@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Copy, Check } from "lucide-react";
 
-function CodeBlock({ children }) {
+import Prism from "prismjs";
+
+import "prismjs/components/prism-java";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-yaml";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-markdown";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-scss";
+import "prismjs/components/prism-properties";
+
+function CodeBlock({
+  children,
+  language = "text",
+}) {
   const [copied, setCopied] = useState(false);
 
   const code = String(children).replace(/\n$/, "");
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [code]);
 
   const copyToClipboard = async () => {
     try {
@@ -40,6 +63,7 @@ function CodeBlock({ children }) {
           text-white
           hover:bg-zinc-700
           transition
+          z-10
         "
       >
         {copied ? (
@@ -55,8 +79,17 @@ function CodeBlock({ children }) {
         )}
       </button>
 
-      <pre>
-        <code>{code}</code>
+      <pre
+        className="
+          overflow-x-auto
+          rounded-3xl
+        "
+      >
+        <code
+          className={`language-${language}`}
+        >
+          {code}
+        </code>
       </pre>
     </div>
   );

@@ -318,3 +318,21 @@ box-shadow:
 0 12px 30px
 rgba(0, 0, 0, 0.08);
 }
+
+.react-pdf__Page {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 40px rgba(
+      0,
+      0,
+      0,
+      0.08
+    );
+}
+
+.react-pdf__Page canvas {
+  max-width: 100%;
+  height: auto !important;
+}

@@ -1,6 +1,53 @@
 const blogMetadata = [
   
   {
+  slug: "complete-sql-handbook-zero-to-expert",
+
+  title:
+    "The Complete SQL Handbook — From Absolute Zero to SQL Expert",
+
+  description:
+    "A full A-Z SQL handbook for Software Developers, Data Scientists & AI/ML Engineers — covering querying, joins, window functions, database design, normalization, indexing, transactions, performance tuning, and SQL for analytics and machine learning.",
+
+  date: "25 June 2026",
+
+  readTime: "240 min read",
+
+  coverImage:
+    "/images/blogs/covers/The-Complete-SQL-Handbook.png",
+
+  tags: [
+    "SQL",
+    "Database",
+    "Data Analysis",
+    "DBMS",
+    "AI/ML"
+  ],
+  youtubeTutorials: [
+  {
+    title: "SQL Tutorial for Beginners",
+    channel: "freeCodeCamp",
+    duration: "4h 20m",
+    videoId: "HXV3zeQKqGY"
+  },
+
+  {
+    title: "PostgreSQL Full Course",
+    channel: "Amigoscode",
+    duration: "3h 15m",
+    videoId: "SpfIwlAYaKk"
+  },
+
+  {
+    title: "Database Design Course",
+    channel: "freeCodeCamp",
+    duration: "8h",
+    videoId: "ztHopE5Wnpc"
+  }
+]
+},
+  
+  {
   slug: "java-multithreading-complete-guide",
 
   title:
@@ -9,9 +56,9 @@ const blogMetadata = [
   description:
     "The complete guide to Java multithreading — threads, the Java Memory Model, synchronization, classic concurrency bugs, java.util.concurrent, thread pools, CompletableFuture, concurrent collections, and virtual threads (Project Loom).",
 
-  date: "June 2026",
+  date: "21 June 2026",
 
-  readTime: "22 min read",
+  readTime: "120 min read",
 
   coverImage:
     "/images/blogs/covers/Your-Multithreading-Knowledge-Is-Probably-Just-new-Thread.png",
@@ -36,7 +83,7 @@ const blogMetadata = [
 
   date: "20 June 2026",
 
-  readTime: "14 min read",
+  readTime: "60 min read",
 
   coverImage:
     "/images/blogs/covers/You-Dont-Know-the-Collections-Framework.png",
@@ -61,7 +108,7 @@ const blogMetadata = [
 
     date: "06 June 2026",
 
-    readTime: "12 min read",
+    readTime: "60 min read",
 
     coverImage:
       "/images/blogs/covers/Stop-Letting-Exceptions-Embarrass-You-in-Production.png",

@@ -9,7 +9,12 @@ import CTA from "../components/home/CTA";
 
 function Resources() {
   const totalResources = resources.reduce(
-    (total, section) => total + section.items.length,
+    (total, collection) =>
+      total +
+      collection.sections.reduce(
+        (sum, section) => sum + section.items.length,
+        0
+      ),
     0
   );
 
@@ -21,10 +26,8 @@ function Resources() {
       />
 
       <PageWrapper>
-
         {/* Hero */}
         <section className="relative mb-24 overflow-hidden">
-
           {/* Grid Background */}
           <div
             className="
@@ -38,7 +41,6 @@ function Resources() {
           />
 
           <div className="relative">
-
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -229,40 +231,61 @@ function Resources() {
                 </p>
               </div>
             </motion.div>
-
           </div>
         </section>
 
-        {/* Resource Categories */}
-        <div className="space-y-20">
-          {resources.map((section, index) => (
+        {/* Resource Collections */}
+        <div className="space-y-24">
+          {resources.map((collection, collectionIndex) => (
             <motion.section
-              key={section.category}
+              key={collection.category}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                delay: index * 0.1,
+                delay: collectionIndex * 0.1,
               }}
+              className="space-y-14"
             >
-              <div className="mb-8">
-
+              {/* Collection Header */}
+              <div>
                 <h2
                   className="
-                    text-3xl
-                    md:text-4xl
-                    font-bold
+                    text-4xl
+                    md:text-5xl
+                    font-black
                     tracking-tight
-                    mb-2
+                    mb-4
                   "
                 >
-                  {section.category}
+                  {collection.category}
                 </h2>
+
+                {collection.subtitle && (
+                  <div
+                    className="
+                      inline-flex
+                      items-center
+                      rounded-full
+                      border
+                      border-blue-100
+                      bg-blue-50
+                      px-4
+                      py-2
+                      text-sm
+                      font-medium
+                      text-blue-700
+                      mb-6
+                    "
+                  >
+                    {collection.subtitle}
+                  </div>
+                )}
 
                 <div
                   className="
                     h-1
-                    w-20
+                    w-28
                     rounded-full
                     bg-gradient-to-r
                     from-blue-600
@@ -271,26 +294,43 @@ function Resources() {
                 />
               </div>
 
-              <div
-                className="
-                  grid
-                  md:grid-cols-2
-                  lg:grid-cols-3
-                  gap-6
-                "
-              >
-                {section.items.map((item) => (
-                  <ResourceCard
-                    key={item.title}
-                    item={item}
-                  />
-                ))}
-              </div>
+              {/* Sections */}
+              {collection.sections.map((section) => (
+                <div key={section.title}>
+                  <h3
+                    className="
+                      text-2xl
+                      md:text-3xl
+                      font-bold
+                      tracking-tight
+                      mb-6
+                    "
+                  >
+                    {section.title}
+                  </h3>
+
+                  <div
+                    className="
+                      grid
+                      md:grid-cols-2
+                      lg:grid-cols-3
+                      gap-6
+                    "
+                  >
+                    {section.items.map((item) => (
+                      <ResourceCard
+                        key={item.slug}
+                        item={item}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </motion.section>
           ))}
         </div>
-        <CTA />
 
+        <CTA />
       </PageWrapper>
     </>
   );

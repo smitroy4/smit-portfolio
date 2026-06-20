@@ -43,7 +43,7 @@ fetchPayments();   // 250ms
 But concurrency introduces a problem that single-threaded code never has: **multiple threads can read and write the same memory at the same time**, and the order of operations becomes unpredictable. This single fact is the root cause of almost every concurrency bug you'll ever debug.
 
 <details>
-<summary><strong>📌 Concurrency vs Parallelism — the distinction interviewers actually check for</strong></summary>
+<summary><strong>Concurrency vs Parallelism — the distinction interviewers actually check for</strong></summary>
 
 - **Concurrency** = dealing with multiple tasks *in progress* at once (can be on a single core, via context switching)
 - **Parallelism** = multiple tasks *executing simultaneously* (requires multiple cores)
@@ -105,7 +105,7 @@ t.interrupt();   // Requests cancellation — doesn't force-stop, just sets a fl
 ```
 
 <details>
-<summary><strong>📌 Why <code>Thread.stop()</code> is deprecated and what to use instead</strong></summary>
+<summary><strong>Why <code>Thread.stop()</code> is deprecated and what to use instead</strong></summary>
 
 `Thread.stop()` forcibly terminates a thread mid-operation — which can leave shared objects in a **corrupted, half-updated state** (e.g., a `Thread` stopped mid-way through updating a linked list leaves dangling references). It's deprecated for this exact reason.
 
@@ -181,7 +181,7 @@ void increment() {
 > ⚠️ **Why `count++` isn't atomic:** it's actually three operations — read `count`, add 1, write back. If two threads interleave between the read and write, one increment can be lost entirely. `volatile` only guarantees each thread sees the latest value *at the moment it reads* — it does nothing to protect the read-modify-write sequence as a whole.
 
 <details>
-<summary><strong>📌 "Happens-Before" — the formal rule behind all of this</strong></summary>
+<summary><strong>"Happens-Before" — the formal rule behind all of this</strong></summary>
 
 The Java Memory Model (JMM) defines **happens-before** as a partial ordering guarantee. If action A happens-before action B, then A's effects (including memory writes) are guaranteed visible to B.
 
@@ -396,7 +396,7 @@ AtomicInteger, AtomicLong, AtomicBoolean, AtomicReference<T>
 ```
 
 <details>
-<summary><strong>📌 How atomics achieve thread safety WITHOUT locks</strong></summary>
+<summary><strong>How atomics achieve thread safety WITHOUT locks</strong></summary>
 
 Atomic classes use **Compare-And-Swap (CAS)**, a hardware-level CPU instruction. The logic is:
 
@@ -482,7 +482,7 @@ executor.shutdown(); // Stops accepting new tasks, finishes existing ones
 ```
 
 <details>
-<summary><strong>📌 The Executors factory methods — and why most are now discouraged</strong></summary>
+<summary><strong>The Executors factory methods — and why most are now discouraged</strong></summary>
 
 ```java
 Executors.newFixedThreadPool(n)      // Fixed-size pool — unbounded queue (memory risk under load)
@@ -581,7 +581,7 @@ Queue<Task> lockFreeQueue = new ConcurrentLinkedQueue<>();
 ```
 
 <details>
-<summary><strong>📌 Why ConcurrentHashMap beats Collections.synchronizedMap()</strong></summary>
+<summary><strong>Why ConcurrentHashMap beats Collections.synchronizedMap()</strong></summary>
 
 `Collections.synchronizedMap(new HashMap<>())` wraps every method call in a `synchronized` block on a **single shared lock** — meaning only one thread can touch the map at all, for any operation, at any time. It works, but throughput collapses under contention.
 
@@ -628,7 +628,7 @@ try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
 Virtual threads are managed entirely by the JVM, not the OS. Thousands — even millions — can exist simultaneously, because they're **mounted onto a small pool of platform threads (carrier threads) only while actively running CPU work**. The moment a virtual thread blocks on I/O (a DB call, an HTTP request), the JVM **unmounts** it from its carrier thread and frees that carrier thread to run a different virtual thread. When the I/O completes, the virtual thread resumes wherever a carrier thread is free.
 
 <details>
-<summary><strong>📌 What changes — and what genuinely doesn't</strong></summary>
+<summary><strong>What changes — and what genuinely doesn't</strong></summary>
 
 **What changes:**
 - You generally **stop pooling threads** for I/O-bound work — create a new virtual thread per task instead, since they're cheap

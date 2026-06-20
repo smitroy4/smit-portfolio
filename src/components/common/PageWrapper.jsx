@@ -17,8 +17,8 @@ function PageWrapper({ children }) {
       className="
         max-w-7xl
         mx-auto
-        px-4
-        py-8
+        px-3
+        py-4
       "
     >
       {children}

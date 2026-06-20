@@ -2,30 +2,50 @@ import { Link } from "react-router-dom";
 
 function BlogCard({ post }) {
   return (
-    <article
+    <Link
+      to={`/blogs/${post.slug}`}
       className="
-        overflow-hidden
+        group
+        block
+        bg-white
         border
+        border-zinc-200
         rounded-2xl
+        overflow-hidden
+        shadow-sm
+        hover:-translate-y-1
         hover:shadow-lg
-        transition
-        duration-300
+        transition-all
       "
     >
       {post.coverImage && (
-        <img
-          src={post.coverImage}
-          alt={post.title}
-          className="
-            w-full
-            aspect-video
-            object-cover
-          "
-        />
+        <div className="overflow-hidden">
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="
+              w-full
+              aspect-video
+              object-cover
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+          />
+        </div>
       )}
 
       <div className="p-6">
-        <div className="flex items-center gap-3 text-sm text-zinc-500 mb-3">
+        <div
+          className="
+            flex
+            items-center
+            gap-3
+            text-sm
+            text-zinc-500
+            mb-4
+          "
+        >
           <span>{post.date}</span>
 
           {post.readTime && (
@@ -36,11 +56,25 @@ function BlogCard({ post }) {
           )}
         </div>
 
-        <h3 className="text-2xl font-bold mb-3">
+        <h3
+          className="
+            text-xl
+            font-semibold
+            mb-3
+            group-hover:text-blue-600
+            transition-colors
+          "
+        >
           {post.title}
         </h3>
 
-        <p className="text-zinc-600 mb-5 leading-relaxed">
+        <p
+          className="
+            text-zinc-600
+            mb-5
+            leading-relaxed
+          "
+        >
           {post.description}
         </p>
 
@@ -49,12 +83,13 @@ function BlogCard({ post }) {
             <span
               key={tag}
               className="
-                text-xs
-                px-2.5
+                px-3
                 py-1
-                rounded-md
-                border
-                bg-zinc-50
+                rounded-full
+                bg-zinc-100
+                text-zinc-700
+                text-xs
+                font-medium
               "
             >
               {tag}
@@ -62,20 +97,17 @@ function BlogCard({ post }) {
           ))}
         </div>
 
-        <Link
-          to={`/blogs/${post.slug}`}
+        <div
           className="
-            inline-flex
-            items-center
-            font-medium
             text-blue-600
-            hover:text-blue-700
+            text-sm
+            font-medium
           "
         >
           Read Article →
-        </Link>
+        </div>
       </div>
-    </article>
+    </Link>
   );
 }
 

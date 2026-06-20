@@ -19,7 +19,10 @@ function Blogs() {
   const categories = [
     "All",
     "Java",
+    "DBMS",
     "Spring Boot",
+    "DevOps & Deloyment",
+    "Web Development",
     "System Design",
     "RAG & Gen AI"
   ];

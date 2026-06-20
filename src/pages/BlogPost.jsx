@@ -2,12 +2,21 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import ReactMarkdown from "react-markdown";
+
 import remarkGfm from "remark-gfm";
 
+import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
 import PageWrapper from "../components/common/PageWrapper";
+
 import CodeBlock from "../components/blog/CodeBlock";
+import TableOfContents from "../components/blog/TableOfContents";
+import RecommendedTutorials from "../components/blog/RecommendedTutorials";
 import ReadingProgress from "../components/blog/ReadingProgress";
 import RelatedBlogs from "../components/blog/RelatedBlogs";
+import BlogSkeleton from "../components/blog/BlogSkeleton";
 
 import SEO from "../components/common/SEO";
 
@@ -16,202 +25,301 @@ import { loadBlog } from "../utils/loadBlog";
 import blogMetadata from "../data/blogMetadata";
 
 function BlogPost() {
-const { slug } = useParams();
+  const { slug } = useParams();
 
-const [content, setContent] = useState("");
-const [loading, setLoading] = useState(true);
+  const [content, setContent] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [rendered, setRendered] = useState(false);
 
-const blog = blogMetadata.find(
-(item) => item.slug === slug
-);
+  const blog = blogMetadata.find((item) => item.slug === slug);
 
-useEffect(() => {
-async function fetchBlog() {
-const markdown = await loadBlog(slug);
+  useEffect(() => {
+    async function fetchBlog() {
+      setLoading(true);
+      setRendered(false);
 
-  setContent(markdown || "# Not Found");
+      const start = Date.now();
 
-  setLoading(false);
+      const markdown = await loadBlog(slug);
 
-  window.scrollTo({
-    top: 0,
-    behavior: "instant",
-  });
-}
+      setContent(markdown || "# Not Found");
 
-fetchBlog();
+      const elapsed = Date.now() - start;
 
+      const minimumSkeletonTime = 1200;
 
-}, [slug]);
+      const remaining = Math.max(0, minimumSkeletonTime - elapsed);
 
-if (loading) {
-return ( <PageWrapper> <p>Loading article...</p> </PageWrapper>
-);
-}
+      setTimeout(() => {
+        setLoading(false);
+      }, remaining);
 
-return (
-<>
-<SEO
-title={blog?.title || "Technical Blog"}
-description={
-blog?.description ||
-"Technical article by Smit Roy covering backend development, Java, Spring Boot, and software engineering."
-}
-/>
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+    }
 
+    fetchBlog();
+  }, [slug]);
 
-  <ReadingProgress />
+  useEffect(() => {
+    if (!content || loading) return;
 
-  <PageWrapper>
-    <article className="max-w-4xl mx-auto">
+    const timer = setTimeout(() => {
+      setRendered(true);
+    }, 300);
 
-      {blog && (
-        <header className="mb-16">
+    return () => clearTimeout(timer);
+  }, [content, loading]);
 
-          <img
-            src={blog.coverImage}
-            alt={blog.title}
+  if (loading || !rendered) {
+    return (
+      <PageWrapper>
+        <BlogSkeleton />
+      </PageWrapper>
+    );
+  }
+
+  return (
+    <>
+      <SEO
+        title={blog?.title || "Technical Blog"}
+        description={
+          blog?.description ||
+          "Technical article by Smit Roy covering backend development, Java, Spring Boot, and software engineering."
+        }
+      />
+
+      <ReadingProgress />
+
+      <PageWrapper>
+        <div
+          className="
+            max-w-[1600px]
+            mx-auto
+            flex
+            gap-12
+            items-start
+          "
+        >
+          <article
             className="
-              w-full
-              rounded-3xl
-              mb-8
-              object-cover
-              max-h-[500px]
-              border
-              border-zinc-200
+              flex-1
+              min-w-0
             "
-          />
+          >
+            {blog && (
+              <header className="mb-16">
+                <img
+                  src={blog.coverImage}
+                  alt={blog.title}
+                  className="
+                    w-full
+                    rounded-3xl
+                    mb-8
+                    object-cover
+                    max-h-[500px]
+                    border
+                    border-zinc-200
+                  "
+                />
 
-          <div className="flex flex-wrap gap-3 mb-6">
-            {blog.tags?.map((tag) => (
-              <span
-                key={tag}
-                className="
-                  px-3
-                  py-1
-                  rounded-full
-                  bg-blue-50
-                  text-blue-700
-                  text-sm
-                  font-medium
-                "
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {blog.tags?.map((tag) => (
+                    <span
+                      key={tag}
+                      className="
+                        px-3
+                        py-1
+                        rounded-full
+                        bg-blue-50
+                        text-blue-700
+                        text-sm
+                        font-medium
+                      "
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <h1
+                  className="
+                    text-4xl
+                    md:text-5xl
+                    font-black
+                    tracking-tight
+                    leading-tight
+                    mb-6
+                  "
+                >
+                  {blog.title}
+                </h1>
+
+                <p
+                  className="
+                    text-lg
+                    text-zinc-600
+                    mb-8
+                    leading-relaxed
+                  "
+                >
+                  {blog.description}
+                </p>
+
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-6
+                    text-sm
+                    text-zinc-500
+                    border-t
+                    border-b
+                    border-zinc-200
+                    py-4
+                  "
+                >
+                  <span>{blog.date}</span>
+
+                  <span>{blog.readTime}</span>
+                </div>
+              </header>
+            )}
+
+            <div
+              className="
+                blog-content
+                prose
+                prose-zinc
+                lg:prose-lg
+                max-w-none
+              "
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw, rehypeSlug, rehypeAutolinkHeadings]}
+                components={{
+                  pre({ children }) {
+                    const codeElement = children?.props;
+
+                    const className = codeElement?.className || "";
+
+                    const language =
+                      className.replace("language-", "") || "text";
+
+                    return (
+                      <CodeBlock language={language}>
+                        {codeElement?.children}
+                      </CodeBlock>
+                    );
+                  },
+
+                  table({ children }) {
+                    return (
+                      <div className="overflow-x-auto my-8">
+                        <table className="w-full border-collapse">
+                          {children}
+                        </table>
+                      </div>
+                    );
+                  },
+
+                  thead({ children }) {
+                    return <thead className="bg-zinc-100">{children}</thead>;
+                  },
+
+                  th({ children }) {
+                    return (
+                      <th
+                        className="
+                          border
+                          px-4
+                          py-3
+                          text-left
+                          font-semibold
+                        "
+                      >
+                        {children}
+                      </th>
+                    );
+                  },
+
+                  td({ children }) {
+                    return (
+                      <td
+                        className="
+                          border
+                          px-4
+                          py-3
+                        "
+                      >
+                        {children}
+                      </td>
+                    );
+                  },
+
+                  a({ href, children }) {
+                    if (href && href.startsWith("#")) {
+                      return (
+                        <a
+                          href={href}
+                          className="
+                            text-blue-600
+                            hover:text-blue-700
+                            font-medium
+                            no-underline
+                          "
+                        >
+                          {children}
+                        </a>
+                      );
+                    }
+
+                    return (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          text-blue-600
+                          hover:text-blue-700
+                          font-medium
+                          no-underline
+                        "
+                      >
+                        {children}
+                      </a>
+                    );
+                  },
+                }}
               >
-                {tag}
-              </span>
-            ))}
-          </div>
+                {content}
+              </ReactMarkdown>
+            </div>
 
-          <h1
-            className="
-              text-4xl
-              md:text-5xl
-              font-black
-              tracking-tight
-              leading-tight
-              mb-6
-            "
-          >
-            {blog.title}
-          </h1>
-
-          <p
-            className="
-              text-lg
-              text-zinc-600
-              mb-8
-              leading-relaxed
-            "
-          >
-            {blog.description}
-          </p>
+            <RelatedBlogs currentSlug={slug} />
+          </article>
 
           <div
-            className="
-              flex
-              flex-wrap
-              gap-6
-              text-sm
-              text-zinc-500
-              border-t
-              border-b
-              border-zinc-200
-              py-4
-            "
-          >
-            <span>{blog.date}</span>
+  className="
+    hidden
+    xl:block
+    w-80
+    shrink-0
+  "
+>
+  <TableOfContents />
 
-            <span>{blog.readTime}</span>
-          </div>
-
-        </header>
-      )}
-
-      <div
-        className="
-          prose
-          prose-zinc
-          lg:prose-lg
-          max-w-none
-        "
-      >
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            pre({ children }) {
-              return (
-                <CodeBlock>
-                  {children.props.children}
-                </CodeBlock>
-              );
-            },
-
-            table({ children }) {
-              return (
-                <div className="overflow-x-auto my-8">
-                  <table className="w-full border-collapse">
-                    {children}
-                  </table>
-                </div>
-              );
-            },
-
-            thead({ children }) {
-              return (
-                <thead className="bg-zinc-100">
-                  {children}
-                </thead>
-              );
-            },
-
-            th({ children }) {
-              return (
-                <th className="border px-4 py-3 text-left font-semibold">
-                  {children}
-                </th>
-              );
-            },
-
-            td({ children }) {
-              return (
-                <td className="border px-4 py-3">
-                  {children}
-                </td>
-              );
-            },
-          }}
-        >
-          {content}
-        </ReactMarkdown>
-      </div>
-
-      <RelatedBlogs currentSlug={slug} />
-
-    </article>
-  </PageWrapper>
-</>
-
-
-);
+  <RecommendedTutorials
+    tutorials={blog?.youtubeTutorials}
+  />
+</div>
+        </div>
+      </PageWrapper>
+    </>
+  );
 }
 
 export default BlogPost;

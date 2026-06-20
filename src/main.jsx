@@ -9,6 +9,8 @@ import "./styles/index.css";
 
 import { ThemeProvider } from "./components/common/ThemeWrapper";
 
+import "prismjs/themes/prism-okaidia.css";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
