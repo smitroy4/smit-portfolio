@@ -12,7 +12,6 @@ const floatingBadges = [
 function AboutHero() {
   return (
     <section className="relative mb-24 overflow-hidden">
-
       {/* Grid Background */}
       <div
         className="
@@ -26,10 +25,8 @@ function AboutHero() {
       />
 
       <div className="relative grid lg:grid-cols-2 gap-20 items-center">
-
         {/* Left Content */}
         <div>
-
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -151,7 +148,6 @@ function AboutHero() {
               production-ready applications.
             </p>
           </motion.div>
-
         </div>
 
         {/* Right Side */}
@@ -159,10 +155,15 @@ function AboutHero() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="hidden lg:flex justify-end"
+          className="
+            flex
+            justify-center
+            lg:justify-end
+            mt-10
+            lg:mt-0
+          "
         >
           <div className="relative">
-
             {/* Profile Image */}
             <motion.img
               src="/images/profile/smit-roy.webp"
@@ -174,49 +175,53 @@ function AboutHero() {
                 duration: 0.4,
               }}
               className="
-                w-96
-                h-96
+                w-72
+                h-72
+                sm:w-80
+                sm:h-80
+                lg:w-96
+                lg:h-96
                 object-contain
                 rounded-[32px]
                 shadow-2xl
               "
             />
 
-            {/* Floating Badges */}
-            {floatingBadges.map((badge, index) => (
-              <motion.div
-                key={badge}
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3 + index,
-                  repeat: Infinity,
-                }}
-                className="
-                  absolute
-                  rounded-2xl
-                  border
-                  border-zinc-200
-                  bg-white
-                  px-4
-                  py-2
-                  shadow-lg
-                  text-sm
-                  font-medium
-                "
-                style={{
-                  top: `${10 + index * 75}px`,
-                  left: `${-240 + (index % 2) * 60}px`,
-                }}
-              >
-                {badge}
-              </motion.div>
-            ))}
-
+            {/* Floating Badges - Desktop Only */}
+            <div className="hidden lg:block">
+              {floatingBadges.map((badge, index) => (
+                <motion.div
+                  key={badge}
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 3 + index,
+                    repeat: Infinity,
+                  }}
+                  className="
+                    absolute
+                    rounded-2xl
+                    border
+                    border-zinc-200
+                    bg-white
+                    px-4
+                    py-2
+                    shadow-lg
+                    text-sm
+                    font-medium
+                  "
+                  style={{
+                    top: `${10 + index * 75}px`,
+                    left: `${-240 + (index % 2) * 60}px`,
+                  }}
+                >
+                  {badge}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
