@@ -293,7 +293,7 @@ function PDFReader({
                 text-zinc-500
               "
             >
-              Loading PDF...
+              Content PDF...
             </div>
           }
         >
