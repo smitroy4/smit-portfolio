@@ -1,7 +1,4 @@
-# You Don't Know the Collections Framework — You Know `ArrayList` and `HashMap`
 ## A Developer's Guide to Actually Mastering Java Collections
-
-![Exception Handling in Spring Boot](/images/blogs/covers/You-Dont-Know-the-Collections-Framework.png)
 
 > *You've used `ArrayList` a thousand times. You reach for `HashMap` without thinking. But ask yourself: why does `HashMap` need `equals()` AND `hashCode()`? Why is `ConcurrentModificationException` thrown sometimes but not always? Why does a `TreeMap` insertion sometimes throw `ClassCastException` out of nowhere?*
 

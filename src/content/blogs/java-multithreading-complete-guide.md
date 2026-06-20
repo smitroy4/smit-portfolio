@@ -1,7 +1,4 @@
-# Your "Multithreading Knowledge" Is Probably Just `new Thread()` and a Prayer
 ## The Complete Guide to Multithreading in Java — From Threads to Virtual Threads
-
-![The Complete Guide to Multithreading in Java](/images/blogs/covers/Your-Multithreading-Knowledge-Is-Probably-Just-new-Thread.png)
 
 > *You've written `new Thread(() -> doWork()).start()`. Maybe you've even used `synchronized` when something broke. But ask yourself: what's the actual difference between a race condition and a deadlock? Why does `volatile` not make `count++` thread-safe? What does "happens-before" actually mean? And what changed with virtual threads that made half of this advice partially outdated?*
 

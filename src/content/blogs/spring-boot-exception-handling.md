@@ -1,7 +1,4 @@
-# Stop Letting Exceptions Embarrass You in Production
 ## A Developer's Guide to Exception Handling in Spring Boot
-
-![You Don't Know the Collections Framework](/images/blogs/covers/Stop-Letting-Exceptions-Embarrass-You-in-Production.png)
 
 > *You spent weeks building a beautiful REST API. Clean endpoints, solid business logic, JWT secured. Then a user hits a missing resource — and they get a stack trace dumped straight into the response body. Game over.*
 
