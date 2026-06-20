@@ -6,6 +6,7 @@ import FeaturedProjects from "../components/home/FeaturedProjects";
 import CTA from "../components/home/CTA";
 
 import SEO from "../components/common/SEO";
+import AIAskBar from "../components/common/AIAskBar";
 
 function Home() {
   return (
@@ -19,6 +20,8 @@ function Home() {
         <Hero />
 
         <TechStack />
+
+        <AIAskBar />
 
         <FeaturedProjects />
 

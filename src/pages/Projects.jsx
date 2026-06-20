@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-
 import {
   motion,
   AnimatePresence,
@@ -8,69 +7,83 @@ import {
 import {
   Search,
   Filter,
-  BookOpen,
-  GraduationCap,
-  Database,
   Sparkles,
   X,
+  FolderGit2,
+  Code2,
+  Boxes,
 } from "lucide-react";
 
 import PageWrapper from "../components/common/PageWrapper";
-import ResourceCard from "../components/resources/ResourceCard";
+import ProjectCard from "../components/cards/ProjectCard";
 import SEO from "../components/common/SEO";
 import CTA from "../components/home/CTA";
 
-import resources from "../data/resources";
+import projects from "../data/projects";
+import AIAskBar from "../components/common/AIAskBar";
 
-function Resources() {
-  const [search, setSearch] =
-    useState("");
+function Projects() {
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] =
+    useState("All");
 
-  const [
-    selectedCategory,
-    setSelectedCategory,
-  ] = useState("All");
+  const [selectedTech, setSelectedTech] =
+    useState("All");
 
-  const allResources =
-    resources.flatMap((collection) =>
-      collection.sections.flatMap(
-        (section) =>
-          section.items.map((item) => ({
-            ...item,
-            collection:
-              collection.category,
-            section:
-              section.title,
-          }))
-      )
-    );
+  const [sortBy, setSortBy] =
+    useState("latest");
 
   const categories = [
     "All",
+    "Open Source",
+    "Backend System",
+  ];
+
+  const sortOptions = [
+    {
+      value: "latest",
+      label: "Latest",
+    },
+    {
+      value: "title",
+      label: "A-Z",
+    },
+
+    {
+      value: "completed",
+      label: "Completed",
+    },
+  ];
+
+  const technologies = [
+    "All",
     ...new Set(
-      allResources.map(
-        (item) => item.category
+      projects.flatMap(
+        (project) =>
+          project.technologies
       )
     ),
   ];
 
-  const filteredResources =
+  const filteredProjects =
     useMemo(() => {
-      let result = [
-        ...allResources,
-      ];
+      let result = [...projects];
 
       if (search) {
         result = result.filter(
-          (item) =>
+          (project) =>
             (
-              item.title +
+              project.title +
               " " +
-              item.description +
+              project.description +
               " " +
-              item.category +
+              project.technologies.join(
+                " "
+              ) +
               " " +
-              item.section
+              project.highlights.join(
+                " "
+              )
             )
               .toLowerCase()
               .includes(
@@ -83,27 +96,81 @@ function Resources() {
         selectedCategory !== "All"
       ) {
         result = result.filter(
-          (item) =>
-            item.category ===
+          (project) =>
+            project.category ===
             selectedCategory
         );
+      }
+
+      if (selectedTech !== "All") {
+        result = result.filter(
+          (project) =>
+            project.technologies.includes(
+              selectedTech
+            )
+        );
+      }
+
+      switch (sortBy) {
+        case "title":
+          result.sort((a, b) =>
+            a.title.localeCompare(
+              b.title
+            )
+          );
+          break;
+
+        case "opensource":
+          result.sort(
+            (a, b) =>
+              (b.category ===
+              "Open Source"
+                ? 1
+                : 0) -
+              (a.category ===
+              "Open Source"
+                ? 1
+                : 0)
+          );
+          break;
+
+        case "completed":
+          result.sort(
+            (a, b) =>
+              (b.status ===
+              "Completed"
+                ? 1
+                : 0) -
+              (a.status ===
+              "Completed"
+                ? 1
+                : 0)
+          );
+          break;
+
+        default:
+          break;
       }
 
       return result;
     }, [
       search,
       selectedCategory,
-      allResources,
+      selectedTech,
+      sortBy,
     ]);
 
-  const totalResources =
-    allResources.length;
+  const featuredProject =
+    projects.find(
+      (project) =>
+        project.featured
+    ) || projects[0];
 
   return (
     <>
       <SEO
-        title="Resources"
-        description="Learning resources covering Java, Spring Boot, PostgreSQL, Redis, Kafka, Docker, System Design, and backend engineering."
+        title="Projects"
+        description="Backend systems, open-source libraries, and production-oriented Java Spring Boot projects built by Smit Roy."
       />
 
       <PageWrapper>
@@ -133,9 +200,6 @@ function Resources() {
               animate={{
                 opacity: 1,
                 y: 0,
-              }}
-              transition={{
-                duration: 0.5,
               }}
               className="
                 inline-flex
@@ -178,7 +242,7 @@ function Resources() {
               </span>
 
               <span className="text-sm font-medium text-emerald-700">
-                Curated Learning Resources
+                Engineering Through Projects
               </span>
 
             </motion.div>
@@ -192,9 +256,6 @@ function Resources() {
                 opacity: 1,
                 y: 0,
               }}
-              transition={{
-                duration: 0.6,
-              }}
               className="
                 text-4xl
                 md:text-5xl
@@ -205,11 +266,12 @@ function Resources() {
                 mb-8
               "
             >
-              Learning
+              Backend Systems &
+
+              <br />
 
               <span
                 className="
-                  block
                   bg-gradient-to-r
                   from-blue-600
                   to-cyan-500
@@ -217,8 +279,12 @@ function Resources() {
                   text-transparent
                 "
               >
-                Resources
+                Open Source
               </span>
+
+              <br />
+
+              Work
             </motion.h1>
 
             <motion.p
@@ -242,30 +308,16 @@ function Resources() {
                 mb-12
               "
             >
-              A curated collection of
-              books, notes, PDFs,
-              documentation, videos,
-              and learning material that
-              helped me understand
-              backend engineering,
-              distributed systems,
-              cloud-native architecture,
-              DevOps, and modern Java
-              development.
+              A collection of backend systems,
+              open-source libraries, and
+              production-oriented projects
+              focused on scalability,
+              security, distributed systems,
+              and modern software
+              architecture.
             </motion.p>
 
-            {/* Stats */}
-
             <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                delay: 0.3,
-              }}
               className="
                 grid
                 grid-cols-2
@@ -278,39 +330,45 @@ function Resources() {
               {[
                 {
                   value:
-                    totalResources,
+                    projects.length,
                   label:
-                    "Resources",
+                    "Projects",
                   icon:
-                    BookOpen,
+                    FolderGit2,
                 },
                 {
                   value:
-                    "Java",
+                    technologies.length -
+                    1,
+                  label:
+                    "Technologies",
+                  icon:
+                    Code2,
+                },
+                {
+                  value:
+                    projects.filter(
+                      (p) =>
+                        p.category ===
+                        "Open Source"
+                    ).length,
+                  label:
+                    "OSS Projects",
+                  icon:
+                    Boxes,
+                },
+                {
+                  value:
+                    "100%",
                   label:
                     "Backend Focus",
                   icon:
-                    GraduationCap,
-                },
-                {
-                  value:
-                    "Spring",
-                  label:
-                    "Ecosystem",
-                  icon:
-                    Database,
-                },
-                {
-                  value:
-                    categories.length -
-                    1,
-                  label:
-                    "Topics",
-                  icon:
-                    Sparkles,
+                    Code2,
                 },
               ].map(
-                (item) => {
+                (
+                  item
+                ) => {
                   const Icon =
                     item.icon;
 
@@ -332,7 +390,9 @@ function Resources() {
                       "
                     >
                       <Icon
-                        size={18}
+                        size={
+                          18
+                        }
                         className="
                           mb-3
                           text-blue-600
@@ -355,6 +415,64 @@ function Resources() {
                 }
               )}
             </motion.div>
+
+            {/* Featured Project */}
+
+            <motion.div
+              whileHover={{
+                y: -4,
+              }}
+              className="
+                rounded-3xl
+                border
+                border-zinc-200
+                bg-gradient-to-br
+                from-blue-50
+                via-white
+                to-cyan-50
+                p-8
+                shadow-sm
+                mb-12
+              "
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkles
+                  size={16}
+                  className="text-blue-600"
+                />
+
+                <span
+                  className="
+                    text-blue-600
+                    font-semibold
+                  "
+                >
+                  Featured Project
+                </span>
+              </div>
+
+              <h2
+                className="
+                  text-3xl
+                  md:text-4xl
+                  font-bold
+                  mb-4
+                "
+              >
+                {
+                  featuredProject.title
+                }
+              </h2>
+
+              <p className="text-zinc-600 max-w-3xl">
+                {
+                  featuredProject.description
+                }
+              </p>
+            </motion.div>
+
+                <AIAskBar />
+
                         {/* Sticky Toolbar */}
 
             <div
@@ -393,7 +511,7 @@ function Resources() {
                       e.target.value
                     )
                   }
-                  placeholder="Search Spring Boot, Security, Kafka, Docker..."
+                  placeholder="Search projects, Spring Boot, JWT, Kafka, Redis..."
                   className="
                     w-full
                     h-16
@@ -403,8 +521,6 @@ function Resources() {
                     bg-white
                     pl-14
                     pr-14
-                    text-base
-                    font-medium
                     outline-none
                     focus:border-blue-500
                     focus:ring-4
@@ -422,13 +538,13 @@ function Resources() {
                       right-4
                       top-1/2
                       -translate-y-1/2
-                      flex
-                      items-center
-                      justify-center
                       w-8
                       h-8
                       rounded-full
                       bg-zinc-100
+                      flex
+                      items-center
+                      justify-center
                     "
                   >
                     <X size={14} />
@@ -439,11 +555,24 @@ function Resources() {
               {/* Categories */}
 
               <div className="mb-6">
+                <h3
+                  className="
+                    text-sm
+                    font-semibold
+                    text-zinc-500
+                    mb-3
+                  "
+                >
+                  Categories
+                </h3>
+
                 <div className="flex flex-wrap gap-2">
                   {categories.map(
                     (category) => (
                       <button
-                        key={category}
+                        key={
+                          category
+                        }
                         onClick={() =>
                           setSelectedCategory(
                             category
@@ -472,7 +601,54 @@ function Resources() {
                 </div>
               </div>
 
-              {/* Result Count */}
+              {/* Technology Explorer */}
+
+              {/* <div className="mb-6">
+                <h3
+                  className="
+                    text-sm
+                    font-semibold
+                    text-zinc-500
+                    mb-3
+                  "
+                >
+                  Technologies
+                </h3>
+
+                <div className="flex flex-wrap gap-2">
+                  {technologies.map(
+                    (tech) => (
+                      <button
+                        key={tech}
+                        onClick={() =>
+                          setSelectedTech(
+                            tech
+                          )
+                        }
+                        className={`
+                          px-3
+                          py-1.5
+                          rounded-full
+                          text-xs
+                          font-medium
+                          transition-all
+
+                          ${
+                            selectedTech ===
+                            tech
+                              ? "bg-black text-white"
+                              : "bg-zinc-100 hover:bg-zinc-200"
+                          }
+                        `}
+                      >
+                        {tech}
+                      </button>
+                    )
+                  )}
+                </div>
+              </div> */}
+
+              {/* Sort Row */}
 
               <div
                 className="
@@ -480,7 +656,7 @@ function Resources() {
                   flex-wrap
                   justify-between
                   items-center
-                  gap-4
+                  gap-5
                 "
               >
                 <div
@@ -495,20 +671,56 @@ function Resources() {
 
                   <span className="font-semibold">
                     {
-                      filteredResources.length
+                      filteredProjects.length
                     }
                   </span>
 
                   <span>
-                    Resources Found
+                    Projects Found
                   </span>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {sortOptions.map(
+                    (option) => (
+                      <button
+                        key={
+                          option.value
+                        }
+                        onClick={() =>
+                          setSortBy(
+                            option.value
+                          )
+                        }
+                        className={`
+                          px-4
+                          py-2
+                          rounded-xl
+                          text-sm
+                          font-medium
+                          transition-all
+
+                          ${
+                            sortBy ===
+                            option.value
+                              ? "bg-black text-white shadow-lg"
+                              : "bg-white border border-zinc-200 hover:border-zinc-400"
+                          }
+                        `}
+                      >
+                        {
+                          option.label
+                        }
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
 
-              {/* Active Filters */}
-
               {(search ||
                 selectedCategory !==
+                  "All" ||
+                selectedTech !==
                   "All") && (
                 <div
                   className="
@@ -555,11 +767,34 @@ function Resources() {
                     </span>
                   )}
 
+                  {selectedTech !==
+                    "All" && (
+                    <span
+                      className="
+                        px-4
+                        py-2
+                        rounded-full
+                        bg-purple-50
+                        text-purple-700
+                        text-sm
+                        font-medium
+                      "
+                    >
+                      {selectedTech}
+                    </span>
+                  )}
+
                   <button
                     onClick={() => {
                       setSearch("");
                       setSelectedCategory(
                         "All"
+                      );
+                      setSelectedTech(
+                        "All"
+                      );
+                      setSortBy(
+                        "latest"
                       );
                     }}
                     className="
@@ -585,7 +820,7 @@ function Resources() {
           </div>
         </section>
 
-        {/* Resources Grid */}
+        {/* Projects Grid */}
 
         <motion.div
           layout
@@ -597,10 +832,10 @@ function Resources() {
           "
         >
           <AnimatePresence mode="popLayout">
-            {filteredResources.map(
-              (item) => (
+            {filteredProjects.map(
+              (project) => (
                 <motion.div
-                  key={item.slug}
+                  key={project.id}
                   layout
                   initial={{
                     opacity: 0,
@@ -618,8 +853,10 @@ function Resources() {
                     duration: 0.25,
                   }}
                 >
-                  <ResourceCard
-                    item={item}
+                  <ProjectCard
+                    project={
+                      project
+                    }
                   />
                 </motion.div>
               )
@@ -627,9 +864,7 @@ function Resources() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Empty State */}
-
-        {filteredResources.length ===
+        {filteredProjects.length ===
           0 && (
           <motion.div
             initial={{
@@ -659,14 +894,13 @@ function Resources() {
                 mb-3
               "
             >
-              No Resources Found
+              No Projects Found
             </h3>
 
             <p className="text-zinc-500">
               Try searching with
               different keywords or
-              clear the active
-              filters.
+              reset the filters.
             </p>
           </motion.div>
         )}
@@ -678,4 +912,4 @@ function Resources() {
   );
 }
 
-export default Resources;
+export default Projects;

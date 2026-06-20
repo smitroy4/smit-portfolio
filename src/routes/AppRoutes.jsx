@@ -13,6 +13,8 @@ import Meeting from "../pages/Meeting";
 import ResourceViewer from "../pages/ResourceViewer";
 import NotFound from "../pages/NotFound";
 
+// import AIChat from "../components/AIChat";
+
 function AppRoutes() {
   return (
     <MainLayout>
@@ -29,7 +31,10 @@ function AppRoutes() {
 
         <Route path="/resources" element={<Resources />} />
 
-        <Route path="/resources/:slug" element={<ResourceViewer />} />
+        <Route
+          path="/resources/:slug"
+          element={<ResourceViewer />}
+        />
 
         <Route path="/contact" element={<Contact />} />
 
@@ -37,6 +42,8 @@ function AppRoutes() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      {/* <AIChat /> */}
     </MainLayout>
   );
 }
