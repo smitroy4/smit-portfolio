@@ -4,6 +4,7 @@ import AboutHero from "../components/about/AboutHero";
 import SkillsSection from "../components/about/SkillsSection";
 import TimelineSection from "../components/about/TimelineSection";
 // import FutureGoals from "../components/about/FutureGoals";
+import CTA from "../components/home/CTA";
 
 import SEO from "../components/common/SEO";
 
@@ -23,6 +24,7 @@ function About() {
         <TimelineSection />
 
         {/* <FutureGoals /> */}
+        <CTA />
       </PageWrapper>
     </>
   );

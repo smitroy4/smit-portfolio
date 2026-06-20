@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import {
   Menu,
   X,
-  CalendarDays,
 } from "lucide-react";
 
 import Container from "./Container";
@@ -15,6 +14,7 @@ function Navbar() {
   const { theme } = useTheme();
 
   const links = [
+    { name: "Lobby", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
     { name: "Blogs", path: "/blogs" },
@@ -84,7 +84,7 @@ function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
 
             <nav className="flex items-center gap-1">
@@ -99,10 +99,9 @@ function Navbar() {
               ))}
             </nav>
 
-            <a
-              href="https://calendly.com/smitroy/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Meeting Button */}
+            <Link
+              to="/meeting"
               className="
                 inline-flex
                 items-center
@@ -122,18 +121,15 @@ function Navbar() {
               "
             >
               Schedule a Meeting
-              {/* <CalendarDays size={16} /> */}
-            </a>
+            </Link>
 
           </div>
 
-          {/* Mobile */}
+          {/* Mobile Controls */}
           <div className="md:hidden flex items-center gap-2">
 
-            <a
-              href="https://calendly.com/smitroy/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/meeting"
               className="
                 rounded-lg
                 bg-zinc-900
@@ -145,7 +141,7 @@ function Navbar() {
               "
             >
               Meet
-            </a>
+            </Link>
 
             <button
               onClick={() => setOpen(!open)}
@@ -169,6 +165,7 @@ function Navbar() {
         {open && (
           <div className="md:hidden pb-5">
             <div className="flex flex-col gap-2 pt-2">
+
               {links.map((link) => (
                 <NavLink
                   key={link.path}
@@ -179,6 +176,24 @@ function Navbar() {
                   {link.name}
                 </NavLink>
               ))}
+
+              <Link
+                to="/meeting"
+                onClick={() => setOpen(false)}
+                className="
+                  mt-2
+                  px-4
+                  py-3
+                  rounded-xl
+                  bg-zinc-900
+                  text-white
+                  text-center
+                  font-medium
+                "
+              >
+                Schedule a Meeting
+              </Link>
+
             </div>
           </div>
         )}

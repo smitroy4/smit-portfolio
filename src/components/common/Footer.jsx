@@ -1,114 +1,193 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 import siteConfig from "../../data/siteConfig";
 
 function Footer() {
   return (
-    <footer
-      className="
-        mt-24
-        border-t
-        border-zinc-200
-        dark:border-slate-700
-      "
-    >
-      <div
-        className="
-          max-w-7xl
-          mx-auto
-          px-6
-          py-12
-        "
-      >
-        <div
-          className="
-            grid
-            md:grid-cols-3
-            gap-10
-          "
-        >
+    <footer className="mt-32 border-t border-zinc-200 bg-zinc-50">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+
+        <div className="grid lg:grid-cols-3 gap-14">
+
           {/* Brand */}
-
           <div>
-            <h3 className="text-xl font-bold mb-3">{siteConfig.name}</h3>
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/smit-roy-porfolio-favicon.png"
+                alt="Smit Roy"
+                className="h-14 w-14"
+              />
 
-            <p
-              className="
-    text-zinc-600
-    dark:text-zinc-300
-    leading-relaxed
-  "
-            >
-              Thinking in Systems.
-              <br />
-              Building Reliable Software.
+              <div>
+                <h3 className="text-2xl font-bold">
+                  {siteConfig.name}
+                </h3>
+
+                <p className="text-zinc-500 text-sm">
+                  Thinking in Systems
+                </p>
+              </div>
+            </div>
+
+            <p className="text-zinc-600 leading-relaxed max-w-sm">
+              Backend Developer focused on Java,
+              Spring Boot, Microservices, System Design,
+              and building scalable cloud-native applications.
             </p>
           </div>
 
           {/* Quick Links */}
-
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-lg mb-5">
+              Quick Links
+            </h4>
 
-            <ul className="space-y-2">
-              <li>
-                <a href="/">Home</a>
-              </li>
-
-              <li>
-                <a href="/about">About</a>
-              </li>
-
-              <li>
-                <a href="/projects">Projects</a>
-              </li>
-
-              <li>
-                <a href="/blogs">Blogs</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Socials */}
-
-          <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
-
-            <div className="flex gap-4 mb-4">
-              <a href={siteConfig.github} target="_blank" rel="noreferrer">
-                <FaGithub size={22} />
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href="/"
+                className="text-zinc-600 hover:text-zinc-900"
+              >
+                Home
               </a>
 
-              <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
-                <FaLinkedin size={22} />
+              <a
+                href="/about"
+                className="text-zinc-600 hover:text-zinc-900"
+              >
+                About
+              </a>
+
+              <a
+                href="/projects"
+                className="text-zinc-600 hover:text-zinc-900"
+              >
+                Projects
+              </a>
+
+              <a
+                href="/blogs"
+                className="text-zinc-600 hover:text-zinc-900"
+              >
+                Blogs
+              </a>
+
+              <a
+                href="/resources"
+                className="text-zinc-600 hover:text-zinc-900"
+              >
+                Resources
+              </a>
+
+              <a
+                href="/contact"
+                className="text-zinc-600 hover:text-zinc-900"
+              >
+                Contact
               </a>
             </div>
-
-            <p
-              className="
-                text-zinc-600
-                dark:text-zinc-300
-              "
-            >
-              {siteConfig.email}
-            </p>
           </div>
+
+          {/* Connect */}
+          <div>
+            <h4 className="font-semibold text-lg mb-5">
+              Let's Build Something Together
+            </h4>
+
+            <p className="text-zinc-600 mb-6">
+              Open to collaborations, freelance work,
+              backend engineering discussions, and
+              interesting opportunities.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+
+              
+              <a
+                href={siteConfig.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2.5
+                  rounded-xl
+                  border
+                  border-zinc-300
+                  bg-white
+                  hover:border-zinc-900
+                  transition
+                "
+              >
+                <FaLinkedin />
+                LinkedIn
+              </a>
+
+              <a
+                href={siteConfig.github}
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2.5
+                  rounded-xl
+                  border
+                  border-zinc-300
+                  bg-white
+                  hover:border-zinc-900
+                  transition
+                "
+              >
+                <FaGithub />
+                GitHub
+              </a>
+
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2.5
+                  rounded-xl
+                  border
+                  border-zinc-300
+                  bg-white
+                  hover:border-zinc-900
+                  transition
+                "
+              >
+                <FaEnvelope />
+                Email
+              </a>
+
+            </div>
+          </div>
+
         </div>
 
-        <div
-          className="
-    border-t
-    border-zinc-200
-    dark:border-slate-700
-    mt-10
-    pt-6
-    text-sm
-    text-zinc-500
-  "
-        >
-          Designed & Built using React & Tailwind.
-          <br />© {new Date().getFullYear()} Smit Roy.
+        <div className="mt-16 pt-8 border-t border-zinc-200">
+
+          <div className="flex flex-col md:flex-row justify-between gap-4">
+
+            <p className="text-sm text-zinc-500">
+              © {new Date().getFullYear()} Smit Roy.
+              All rights reserved.
+            </p>
+
+            <p className="text-sm text-zinc-500">
+              Built with React, Tailwind CSS & Vite.
+            </p>
+
+          </div>
+
         </div>
+
       </div>
     </footer>
   );

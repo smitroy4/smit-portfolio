@@ -36,9 +36,11 @@ return ( <article
         className={`text-xs px-3 py-1 rounded-full ${
           project.status === "Completed"
             ? "bg-green-100 text-green-700"
-            : project.status === "Released v1.0.2"
+            : project.status === "Released"
             ? "bg-blue-100 text-blue-700"
             : "bg-yellow-100 text-yellow-700"
+            
+            
         }`}
       >
         {project.status}

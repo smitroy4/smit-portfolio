@@ -1,6 +1,13 @@
-import PageWrapper from "../components/common/PageWrapper";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  GraduationCap,
+  Coffee,
+  Rocket,
+  Download,
+} from "lucide-react";
 
-// import ContactCard from "../components/contact/ContactCard";
+import PageWrapper from "../components/common/PageWrapper";
 import ContactForm from "../components/contact/ContactForm";
 
 import siteConfig from "../data/siteConfig";
@@ -16,30 +23,254 @@ function Contact() {
       />
 
       <PageWrapper>
-        <div className="mb-16">
-          <p className="text-blue-600 font-medium mb-2">
-            Contact
-          </p>
 
-          <h1 className="text-5xl font-bold mb-6">
-            Let's Connect
-          </h1>
+        {/* Hero */}
+        <section className="relative mb-24 overflow-hidden">
 
-          <p className="max-w-3xl text-zinc-600">
-            I'm always interested in discussing
-            backend development, software
-            engineering, open-source projects,
-            and career opportunities.
-          </p>
-        </div>
+          {/* Grid Background */}
+          <div
+            className="
+              absolute
+              inset-0
+              opacity-[0.03]
+              pointer-events-none
+              bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)]
+              bg-[size:60px_60px]
+            "
+          />
 
+          <div className="relative">
+
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="
+                inline-flex
+                items-center
+                gap-3
+                rounded-full
+                border
+                border-emerald-200
+                bg-emerald-50
+                px-4
+                py-2
+                mb-8
+              "
+            >
+              <span className="relative flex h-3 w-3">
+                <span
+                  className="
+                    animate-ping
+                    absolute
+                    inline-flex
+                    h-full
+                    w-full
+                    rounded-full
+                    bg-emerald-500
+                    opacity-75
+                  "
+                />
+
+                <span
+                  className="
+                    relative
+                    inline-flex
+                    rounded-full
+                    h-3
+                    w-3
+                    bg-emerald-500
+                  "
+                />
+              </span>
+
+              <span className="text-sm font-medium text-emerald-700">
+                Open for Opportunities
+              </span>
+            </motion.div>
+
+            {/* Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="
+                text-4xl
+                md:text-5xl
+                lg:text-6xl
+                font-black
+                tracking-tight
+                leading-[0.95]
+                mb-8
+              "
+            >
+              Let's
+
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-blue-600
+                  to-cyan-500
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Connect
+              </span>
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="
+                text-lg
+                md:text-xl
+                text-zinc-600
+                leading-relaxed
+                max-w-3xl
+                mb-12
+              "
+            >
+              I'm always interested in discussing backend
+              development, software engineering, distributed
+              systems, open-source projects, and exciting
+              career opportunities.
+            </motion.p>
+
+            {/* Status Cards */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="
+                grid
+                grid-cols-2
+                md:grid-cols-4
+                gap-5
+                max-w-5xl
+              "
+            >
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-zinc-200
+                  bg-white
+                  p-5
+                  shadow-sm
+                "
+              >
+                <MapPin size={22} className="mb-3" />
+
+                <h3 className="font-semibold">
+                  Kolkata
+                </h3>
+
+                <p className="text-sm text-zinc-500 mt-1">
+                  India
+                </p>
+              </div>
+
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-zinc-200
+                  bg-white
+                  p-5
+                  shadow-sm
+                "
+              >
+                <GraduationCap size={22} className="mb-3" />
+
+                <h3 className="font-semibold">
+                  MCA
+                </h3>
+
+                <p className="text-sm text-zinc-500 mt-1">
+                  2025 - 2027
+                </p>
+              </div>
+
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-zinc-200
+                  bg-white
+                  p-5
+                  shadow-sm
+                "
+              >
+                <Coffee size={22} className="mb-3" />
+
+                <h3 className="font-semibold">
+                  Java
+                </h3>
+
+                <p className="text-sm text-zinc-500 mt-1">
+                  Backend Focus
+                </p>
+              </div>
+
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-zinc-200
+                  bg-white
+                  p-5
+                  shadow-sm
+                "
+              >
+                <Rocket size={22} className="mb-3" />
+
+                <h3 className="font-semibold">
+                  Open To Work
+                </h3>
+
+                <p className="text-sm text-zinc-500 mt-1">
+                  Entry-Level Roles
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+        </section>
+
+        {/* Contact Section */}
         <div className="grid lg:grid-cols-2 gap-8">
-          <div className="border rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-6">
+
+          {/* Left Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="
+              rounded-3xl
+              border
+              border-zinc-200
+              bg-white
+              p-8
+              shadow-sm
+            "
+          >
+            <h2 className="text-3xl font-bold mb-4">
               Current Status
             </h2>
 
-            <div className="space-y-4">
+            <p className="text-zinc-600 leading-relaxed mb-8">
+              Currently focused on Java Backend
+              Development, Microservices, System Design,
+              and building production-ready applications
+              while pursuing my MCA.
+            </p>
+
+            <div className="space-y-4 text-zinc-700">
               <p>📍 Kolkata, India</p>
 
               <p>🎓 MCA Student</p>
@@ -52,21 +283,33 @@ function Contact() {
             <a
               href={siteConfig.resume}
               className="
-                inline-block
+                inline-flex
+                items-center
+                gap-2
                 mt-8
+                rounded-2xl
+                bg-zinc-900
                 px-5
                 py-3
-                rounded-xl
-                bg-blue-600
                 text-white
+                font-medium
+                transition-all
+                duration-300
+                hover:bg-zinc-800
+                hover:-translate-y-1
+                hover:shadow-lg
               "
             >
+              <Download size={18} />
               Download Resume
             </a>
-          </div>
+          </motion.div>
 
+          {/* Contact Form */}
           <ContactForm />
+
         </div>
+
       </PageWrapper>
     </>
   );

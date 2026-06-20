@@ -9,6 +9,7 @@ import Blogs from "../pages/Blogs";
 import BlogPost from "../pages/BlogPost";
 import Resources from "../pages/Resources";
 import Contact from "../pages/Contact";
+import Meeting from "../pages/Meeting";
 import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
@@ -23,13 +24,30 @@ function AppRoutes() {
 
         <Route path="/blogs" element={<Blogs />} />
 
-        <Route path="/blogs/:slug" element={<BlogPost />} />
+        <Route
+          path="/blogs/:slug"
+          element={<BlogPost />}
+        />
 
-        <Route path="/resources" element={<Resources />} />
+        <Route
+          path="/resources"
+          element={<Resources />}
+        />
 
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
 
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/meeting"
+          element={<Meeting />}
+        />
+
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
     </MainLayout>
   );

@@ -1,5 +1,48 @@
 const projects = [
   {
+    id: "circuit-mart",
+
+    title: "CircuitMart",
+
+    category: "Open Source",
+
+    featured: true,
+
+    status: "In Progress",
+
+    banner: "/images/projects/circuit-mart-cover.png",
+
+    description:
+      "CircuitMart is a cloud-native e-commerce backend built with Spring Boot Microservices, demonstrating service discovery, API gateway routing, centralized configuration, fault tolerance, distributed tracing, and centralized logging.",
+
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Microservices",
+      "Spring Cloud Gateway",
+      "Eureka Service",
+      "PostgreSQL",
+      "Resilience4J",
+      "Zipkin",
+      "ELK Stack",
+    ],
+
+    github:
+      "https://github.com/smitroy4/CircuitMart",
+
+    demo: null,
+
+    highlights: [
+      "Five-service microservices architecture with Eureka discovery",
+      "Centralized configuration via Spring Cloud Config Server",
+      "Resilient inter-service calls using OpenFeign + Resilience4J",
+      "JWT-secured API Gateway with custom filters",
+      "Distributed tracing and centralized logging via Zipkin and ELK"
+    ]
+  },
+
+
+  {
     id: "jwt-spring-boot-starter",
 
     title: "JWT Spring Boot Starter",
@@ -8,7 +51,7 @@ const projects = [
 
     featured: true,
 
-    status: "Released v1.0.2",
+    status: "Released",
 
     banner: "/images/projects/jwt-spring-boot-starter.png",
 
@@ -31,8 +74,11 @@ const projects = [
 
     highlights: [
       "Auto-configured JwtService and security components",
-      "Plug-and-play architecture",
-      "Published package",
+      "Access and refresh token generation with type-safe claims",
+      "Automatic JWT authentication filter registration",
+      "Plug-and-play architecture with zero manual bean config",
+      "Fully extensible via @ConditionalOnMissingBean overrides",
+      "Published to GitHub Packages",
       "CI/CD via GitHub Actions"
     ]
   },
@@ -59,7 +105,6 @@ const projects = [
       "Spring Security",
       "PostgreSQL",
       "Redis",
-      "Stripe",
       "Docker"
     ],
 
@@ -69,12 +114,12 @@ const projects = [
     demo: null,
 
     highlights: [
-      "Role-based access control",
-      "Booking conflict prevention",
-      "Redis caching",
-      "Dynamic pricing engine",
-      "Stripe payments",
-      "Pessimistic locking"
+      "JWT auth with refresh tokens in HttpOnly cookies",
+      "Pessimistic locking to prevent overbooking on concurrent requests",
+      "Stripe Checkout with webhook-driven payment confirmation",
+      "Strategy Pattern dynamic pricing across 5 composable layers",
+      "Scheduled hourly job for automated price optimization",
+      "Full booking lifecycle with auto-expiry on unpaid reservations"
     ]
   },
 
@@ -109,11 +154,12 @@ const projects = [
     demo: null,
 
     highlights: [
-      "OAuth2 Google Login",
-      "Role + Permission Model",
-      "Method-level Security",
-      "Advanced JPA Mappings",
-      "Centralized Exception Handling"
+      "JWT authentication with OAuth2 social login (Google, GitHub)",
+      "Hybrid role-based and permission-based access control",
+      "Method-level security via @PreAuthorize and @Secured",
+      "Centralized exception handling with @RestControllerAdvice",
+      "Custom JPQL queries for aggregation and bulk operations",
+      "Strict 1:1 entity mapping with @MapsId for Doctor and Patient"
     ]
   },
 
@@ -148,10 +194,12 @@ const projects = [
       "https://lms-portal-backend-lug7.onrender.com/",
 
     highlights: [
-      "Enrollment Management",
-      "Relational Database Design",
-      "Dockerized Deployment",
-      "Global Exception Handling"
+      "Layered architecture with clean Controller-Service-Repository separation",
+      "Relational data model with JPA mappings across 4 entities",
+      "Enrollment system with duplicate-enrollment prevention",
+      "Input validation via Jakarta annotations",
+      "Preloaded sample data for instant local testing",
+      "Containerized with Docker and deployed on Render with PostgreSQL"
     ]
   }
 ];
