@@ -1,31 +1,65 @@
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
-import { Filter, ArrowUpDown } from "lucide-react";
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
+import {
+  Filter,
+  Search,
+  Sparkles,
+  X,
+  Clock3,
+} from "lucide-react";
 
 import PageWrapper from "../components/common/PageWrapper";
-
 import BlogCard from "../components/blog/BlogCard";
 import BlogSearch from "../components/blog/BlogSearch";
-
 import blogMetadata from "../data/blogMetadata";
-
 import SEO from "../components/common/SEO";
 
 function Blogs() {
   const [search, setSearch] = useState("");
-  const [selectedTag, setSelectedTag] = useState("All");
-  const [sortBy, setSortBy] = useState("latest");
+  const [selectedTag, setSelectedTag] =
+    useState("All");
+
+  const [sortBy, setSortBy] =
+    useState("latest");
 
   const categories = [
     "All",
-    "Java",
-    "DBMS",
-    "Spring Boot",
-    "DevOps & Deloyment",
-    "Web Development",
-    "System Design",
-    "RAG & Gen AI"
+    "Handbook",
+    "Article",
+    "Cheatsheet",
+    "Roadmap",
   ];
+
+  const sortOptions = [
+    {
+      value: "latest",
+      label: "Latest",
+    },
+    {
+      value: "oldest",
+      label: "Oldest",
+    },
+    {
+      value: "title",
+      label: "A-Z",
+    },
+    {
+      value: "readTime",
+      label: "Read Time",
+    },
+  ];
+
+  const totalReadingTime =
+    blogMetadata.reduce(
+      (sum, post) =>
+        sum +
+        parseInt(post.readTime || "0"),
+      0
+    );
 
   const filteredPosts = useMemo(() => {
     let posts = [...blogMetadata];
@@ -60,17 +94,25 @@ function Blogs() {
       case "readTime":
         posts.sort(
           (a, b) =>
-            parseInt(b.readTime) -
-            parseInt(a.readTime)
+            parseInt(b.readTime || 0) -
+            parseInt(a.readTime || 0)
         );
         break;
 
+      case "oldest":
+        posts.reverse();
+        break;
+
+      case "latest":
       default:
         break;
     }
 
     return posts;
   }, [search, selectedTag, sortBy]);
+
+  const featuredPost =
+    filteredPosts[0] || blogMetadata[0];
 
   return (
     <>
@@ -80,7 +122,8 @@ function Blogs() {
       />
 
       <PageWrapper>
-        <section className="relative mb-24 overflow-hidden">
+        <section className="relative mb-20 overflow-hidden">
+
           <div
             className="
               absolute
@@ -93,10 +136,16 @@ function Blogs() {
           />
 
           <div className="relative">
+
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
               className="
                 inline-flex
                 items-center
@@ -111,6 +160,7 @@ function Blogs() {
               "
             >
               <span className="relative flex h-3 w-3">
+
                 <span
                   className="
                     animate-ping
@@ -139,12 +189,18 @@ function Blogs() {
               <span className="text-sm font-medium text-emerald-700">
                 Sharing What I Learn
               </span>
+
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{
+                opacity: 0,
+                y: 25,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
               className="
                 text-4xl
                 md:text-5xl
@@ -173,12 +229,21 @@ function Blogs() {
                   Learnings
                 </span>
               </span>
+
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.2,
+              }}
               className="
                 text-lg
                 md:text-xl
@@ -190,12 +255,11 @@ function Blogs() {
             >
               Notes, deep dives, and practical
               learnings on Java, Spring Boot,
-              Microservices, Security, Databases,
-              System Design, and modern backend
-              engineering.
+              Microservices, Security,
+              Databases, System Design,
+              and modern backend engineering.
             </motion.p>
-
-            <motion.div
+                        <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -204,7 +268,7 @@ function Blogs() {
                 grid-cols-2
                 md:grid-cols-4
                 gap-5
-                max-w-4xl
+                max-w-5xl
                 mb-12
               "
             >
@@ -214,16 +278,16 @@ function Blogs() {
                   label: "Articles",
                 },
                 {
+                  value: `${totalReadingTime}m`,
+                  label: "Reading Time",
+                },
+                {
                   value: "Java",
                   label: "Core Focus",
                 },
                 {
                   value: "Spring",
                   label: "Ecosystem",
-                },
-                {
-                  value: "OSS",
-                  label: "Learning Notes",
                 },
               ].map((item) => (
                 <motion.div
@@ -252,24 +316,96 @@ function Blogs() {
               ))}
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="max-w-2xl"
-            >
-              <BlogSearch
-                value={search}
-                onChange={setSearch}
-              />
-            </motion.div>
+            {/* Featured Article */}
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-8"
+            {/* {featuredPost && (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                whileHover={{
+                  y: -4,
+                }}
+                className="
+                  mb-12
+                  rounded-3xl
+                  border
+                  border-zinc-200
+                  bg-gradient-to-br
+                  from-blue-50
+                  via-white
+                  to-cyan-50
+                  p-8
+                  shadow-sm
+                "
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles
+                    size={16}
+                    className="text-blue-600"
+                  />
+
+                  <span
+                    className="
+                      text-blue-600
+                      font-semibold
+                    "
+                  >
+                    Featured Article
+                  </span>
+                </div>
+
+                <h2
+                  className="
+                    text-3xl
+                    md:text-4xl
+                    font-bold
+                    mb-4
+                  "
+                >
+                  {featuredPost.title}
+                </h2>
+
+                <p
+                  className="
+                    text-zinc-600
+                    max-w-3xl
+                  "
+                >
+                  {featuredPost.description}
+                </p>
+              </motion.div>
+            )} */}
+
+            {/* Sticky Toolbar */}
+
+            <div
+              className="
+                sticky
+                top-4
+                z-30
+                rounded-3xl
+                border
+                border-zinc-200
+                bg-white/80
+                backdrop-blur-xl
+                p-6
+                shadow-sm
+                mb-12
+              "
             >
+              <div className="max-w-2xl mb-6">
+                <BlogSearch
+                  value={search}
+                  onChange={setSearch}
+                />
+              </div>
+
               <div className="flex flex-wrap gap-3 mb-6">
                 {categories.map((tag) => (
                   <button
@@ -284,10 +420,11 @@ function Blogs() {
                       text-sm
                       font-medium
                       transition-all
+
                       ${
                         selectedTag === tag
                           ? "bg-blue-600 text-white shadow-lg"
-                          : "bg-white border border-zinc-200 hover:border-blue-300"
+                          : "bg-white border border-zinc-200 hover:border-blue-400"
                       }
                     `}
                   >
@@ -296,63 +433,77 @@ function Blogs() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap justify-between items-center gap-4">
-                <div className="flex items-center gap-2 text-zinc-500">
+              <div
+                className="
+                  flex
+                  flex-wrap
+                  justify-between
+                  items-center
+                  gap-5
+                "
+              >
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    text-zinc-500
+                  "
+                >
                   <Filter size={16} />
+
+                  <span className="font-semibold">
+                    {filteredPosts.length}
+                  </span>
+
                   <span>
-                    {filteredPosts.length} Articles
+                    Articles Found
                   </span>
                 </div>
 
-                <div className="relative">
-                  <ArrowUpDown
-                    size={16}
-                    className="
-                      absolute
-                      left-3
-                      top-1/2
-                      -translate-y-1/2
-                      text-zinc-400
-                    "
-                  />
+                <div className="flex flex-wrap gap-2">
+                  {sortOptions.map(
+                    (option) => (
+                      <button
+                        key={option.value}
+                        onClick={() =>
+                          setSortBy(
+                            option.value
+                          )
+                        }
+                        className={`
+                          px-4
+                          py-2
+                          rounded-xl
+                          text-sm
+                          font-medium
+                          transition-all
 
-                  <select
-                    value={sortBy}
-                    onChange={(e) =>
-                      setSortBy(
-                        e.target.value
-                      )
-                    }
-                    className="
-                      pl-10
-                      pr-4
-                      py-3
-                      rounded-xl
-                      border
-                      border-zinc-200
-                      bg-white
-                      outline-none
-                      focus:border-blue-500
-                    "
-                  >
-                    <option value="latest">
-                      Latest
-                    </option>
-
-                    <option value="title">
-                      A → Z
-                    </option>
-
-                    <option value="readTime">
-                      Longest Read
-                    </option>
-                  </select>
+                          ${
+                            sortBy ===
+                            option.value
+                              ? "bg-black text-white shadow-lg"
+                              : "bg-white border border-zinc-200 hover:border-zinc-400"
+                          }
+                        `}
+                      >
+                        {option.label}
+                      </button>
+                    )
+                  )}
                 </div>
               </div>
 
               {(search ||
                 selectedTag !== "All") && (
-                <div className="flex flex-wrap gap-3 mt-6">
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-3
+                    mt-6
+                  "
+                >
                   {search && (
                     <span
                       className="
@@ -369,7 +520,8 @@ function Blogs() {
                     </span>
                   )}
 
-                  {selectedTag !== "All" && (
+                  {selectedTag !==
+                    "All" && (
                     <span
                       className="
                         px-4
@@ -388,46 +540,114 @@ function Blogs() {
                   <button
                     onClick={() => {
                       setSearch("");
-                      setSelectedTag("All");
+                      setSelectedTag(
+                        "All"
+                      );
+                      setSortBy(
+                        "latest"
+                      );
                     }}
                     className="
+                      inline-flex
+                      items-center
+                      gap-2
                       px-4
                       py-2
                       rounded-full
-                      bg-zinc-100
-                      hover:bg-zinc-200
+                      bg-black
+                      text-white
                       text-sm
                       font-medium
                     "
                   >
-                    Clear Filters
+                    <X size={14} />
+                    Reset Filters
                   </button>
                 </div>
               )}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {filteredPosts.map((post) => (
-            <BlogCard
-              key={post.slug}
-              post={post}
-            />
-          ))}
-        </div>
+        <motion.div
+          layout
+          className="
+            grid
+            md:grid-cols-2
+            xl:grid-cols-3
+            gap-8
+          "
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredPosts.map(
+              (post) => (
+                <motion.div
+                  key={post.slug}
+                  layout
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: -20,
+                  }}
+                  transition={{
+                    duration: 0.25,
+                  }}
+                >
+                  <BlogCard
+                    post={post}
+                  />
+                </motion.div>
+              )
+            )}
+          </AnimatePresence>
+        </motion.div>
 
-        {filteredPosts.length === 0 && (
-          <div className="text-center py-20">
-            <h3 className="text-2xl font-bold mb-3">
+        {filteredPosts.length ===
+          0 && (
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            className="
+              text-center
+              py-24
+            "
+          >
+            <Search
+              size={48}
+              className="
+                mx-auto
+                text-zinc-300
+                mb-4
+              "
+            />
+
+            <h3
+              className="
+                text-2xl
+                font-bold
+                mb-3
+              "
+            >
               No Articles Found
             </h3>
 
             <p className="text-zinc-500">
-              Try searching with different
-              keywords.
+              Try searching with
+              different keywords or
+              reset your filters.
             </p>
-          </div>
+          </motion.div>
         )}
       </PageWrapper>
     </>

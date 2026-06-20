@@ -4,7 +4,7 @@ const projects = [
 
     title: "CircuitMart",
 
-    category: "Open Source",
+    category: "Backend System",
 
     featured: true,
 

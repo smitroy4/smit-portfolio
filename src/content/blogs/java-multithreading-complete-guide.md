@@ -8,19 +8,6 @@ Let's build the real mental model — from the ground up.
 
 ---
 
-## Table of Contents
-
-- [Part 1 — Why Concurrency Exists & The Core Problem](#part-1)
-- [Part 2 — Creating and Managing Threads](#part-2)
-- [Part 3 — The Java Memory Model & `volatile`](#part-3)
-- [Part 4 — Synchronization: `synchronized`, Locks & Monitors](#part-4)
-- [Part 5 — The Classic Concurrency Bugs](#part-5)
-- [Part 6 — `java.util.concurrent`: Building Blocks](#part-6)
-- [Part 7 — Thread Pools & `ExecutorService`](#part-7)
-- [Part 8 — `CompletableFuture` & Async Programming](#part-8)
-- [Part 9 — Concurrent Collections](#part-9)
-- [Part 10 — Virtual Threads (Project Loom, Java 21+)](#part-10)
-- [Quick Reference & Key Takeaways](#reference)
 
 ---
 

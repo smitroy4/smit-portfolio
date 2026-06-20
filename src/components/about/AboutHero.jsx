@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const floatingBadges = [
   "Java",
+  "PostgreSQL",
   "Spring Boot",
   "Microservices",
+  "Docker & K8s",
   "System Design",
-  "Cloud Native",
-  "Backend",
 ];
 
 function AboutHero() {

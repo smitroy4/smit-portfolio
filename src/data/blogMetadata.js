@@ -1,6 +1,68 @@
 const blogMetadata = [
   
   {
+  slug: "complete-java-handbook-zero-to-expert",
+
+  title:
+    "The Complete Java Handbook — From Absolute Zero to Java Expert",
+
+  description:
+    "A full A-Z Java handbook covering core fundamentals, OOP, exceptions, generics, the Collections framework, modern Java (lambdas, streams, records, sealed classes, pattern matching), multithreading, JVM internals, garbage collection, and reflection.",
+
+  date: "25 June 2026",
+
+  readTime: "360 min read",
+
+  coverImage:
+    "/images/blogs/covers/The-Complete-Java-Handbook.png",
+
+  tags: [
+    "Java",
+    "OOP",
+    "JVM",
+    "Core Java",
+    "Backend",
+    "Handbook"
+  ],
+  youtubeTutorials: [
+  {
+    title: "Java Full Course for Beginners",
+    channel: "Bro Code",
+    duration: "12h",
+    videoId: "xk4_1vDrzzo"
+  },
+
+  {
+    title: "Java Tutorial for Beginners",
+    channel: "Programming with Mosh",
+    duration: "2h 30m",
+    videoId: "eIrMbAQSU34"
+  },
+
+  {
+    title: "Java Complete Course",
+    channel: "freeCodeCamp",
+    duration: "16h",
+    videoId: "A74TOX803D0"
+  },
+
+  {
+    title: "Java Collections Framework Explained",
+    channel: "Anuj Kumar Sharma",
+    duration: "1h 15m",
+    videoId: "rzA7UJ-hQn4"
+  },
+
+  {
+    title: "Java Multithreading Complete Guide",
+    channel: "Coding with John",
+    duration: "1h 45m",
+    videoId: "r_MbozD32eo"
+  }
+]
+},
+  
+  {
   slug: "complete-sql-handbook-zero-to-expert",
 
   title:
@@ -21,7 +83,8 @@ const blogMetadata = [
     "Database",
     "Data Analysis",
     "DBMS",
-    "AI/ML"
+    "AI/ML",
+    "Handbook"
   ],
   youtubeTutorials: [
   {
@@ -46,6 +109,27 @@ const blogMetadata = [
   }
 ]
 },
+
+{
+  slug: "java-fullstack-backend-heavy-developer-roadmap",
+
+  title:
+    "The Complete Roadmap to Becoming a Java Full Stack, Backend-Heavy Developer",
+
+  description:
+    "A stage-by-stage 2026 roadmap from absolute zero to job-ready — Core Java, OOP, SQL, Spring Boot 4, React frontend fluency, testing, microservices, system design, and portfolio strategy for a backend-heavy full stack profile.",
+
+  date: "21 June 2026",
+
+  readTime: "30 min read",
+
+  coverImage:
+    "/images/blogs/covers/Java-Fullstack-Backend-Heavy-Developer-Roadmap.png",
+
+  tags: [
+    "Roadmap"
+  ]
+},
   
   {
   slug: "java-multithreading-complete-guide",
@@ -67,8 +151,7 @@ const blogMetadata = [
     "Java",
     "Multithreading",
     "Concurrency",
-    "JVM",
-    "Backend"
+    "Article"
   ]
 },
   
@@ -93,7 +176,8 @@ const blogMetadata = [
     "Collections Framework",
     "ArrayList",
     "HashMap",
-    "Data Structures"
+    "DSA",
+    "Article"
   ]
 },
 
@@ -114,9 +198,8 @@ const blogMetadata = [
       "/images/blogs/covers/Stop-Letting-Exceptions-Embarrass-You-in-Production.png",
 
     tags: [
-      "Spring Boot",
       "Java",
-      "Backend",
+      "Spring Boot",
       "Spring Security"
     ]
   },

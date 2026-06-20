@@ -7,11 +7,11 @@ import Button from "../common/Button";
 
 const floatingTech = [
   "Java",
+  "PostgreSQL",
   "Spring Boot",
   "Microservices",
   "Docker & K8s",
   "RAG & Gen AI",
-  "Redis",
 ];
 
 function Hero() {
@@ -191,21 +191,21 @@ function Hero() {
             "
           >
             <div>
-              <h3 className="text-4xl font-bold">4+</h3>
+              <h3 className="text-4xl font-bold">5+</h3>
 
               <p className="text-zinc-500 text-sm mt-1">Projects</p>
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold">10+</h3>
+              <h3 className="text-4xl font-bold">60+</h3>
 
               <p className="text-zinc-500 text-sm mt-1">Technologies</p>
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold">2027</h3>
+              <h3 className="text-4xl font-bold">MCA</h3>
 
-              <p className="text-zinc-500 text-sm mt-1">MCA Journey</p>
+              <p className="text-zinc-500 text-sm mt-1">Cloud Computing</p>
             </div>
           </motion.div>
         </div>
