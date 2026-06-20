@@ -418,7 +418,7 @@ function Projects() {
 
             {/* Featured Project */}
 
-            <motion.div
+            {/* <motion.div
               whileHover={{
                 y: -4,
               }}
@@ -469,7 +469,7 @@ function Projects() {
                   featuredProject.description
                 }
               </p>
-            </motion.div>
+            </motion.div> */}
 
                 <AIAskBar />
 
