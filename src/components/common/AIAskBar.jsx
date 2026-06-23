@@ -1,16 +1,14 @@
 import { useState } from "react";
-
 import {
   Sparkles,
   ArrowRight,
   Loader2,
 } from "lucide-react";
-
 import ReactMarkdown from "react-markdown";
-
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 import aiKnowledge from "../../data/aiKnowledge";
+import generalKnowledge from "../../data/generalKnowledge";
 
 const genAI = new GoogleGenerativeAI(
   import.meta.env.VITE_GEMINI_API_KEY
@@ -26,12 +24,12 @@ function AIAskBar() {
   const [loading, setLoading] =
     useState(false);
 
-  function getRelevantContext(
-    question
-  ) {
-    const q =
-      question.toLowerCase();
+  function getRelevantContext(question) {
+    const q = question.toLowerCase();
 
+    const matches = [];
+
+    // Search portfolio/project knowledge
     for (const [key, value] of Object.entries(
       aiKnowledge
     )) {
@@ -40,13 +38,47 @@ function AIAskBar() {
           key.toLowerCase()
         )
       ) {
-        return value;
+        matches.push(value);
       }
     }
 
-    return Object.values(
-      aiKnowledge
-    ).join("\n\n");
+    // Search technical knowledge
+    for (const [key, value] of Object.entries(
+      generalKnowledge
+    )) {
+      const normalizedKey = key
+        .replace(/_/g, " ")
+        .toLowerCase();
+
+      if (
+        q.includes(normalizedKey) ||
+        normalizedKey
+          .split(" ")
+          .some((word) =>
+            q.includes(word)
+          )
+      ) {
+        matches.push(value);
+      }
+    }
+
+    if (matches.length > 0) {
+      return matches.join("\n\n");
+    }
+
+    return `
+=== PORTFOLIO KNOWLEDGE ===
+
+${Object.values(aiKnowledge).join(
+  "\n\n"
+)}
+
+=== TECHNICAL KNOWLEDGE ===
+
+${Object.values(
+  generalKnowledge
+).join("\n\n")}
+`;
   }
 
   async function handleAsk() {
@@ -58,8 +90,7 @@ function AIAskBar() {
 
       const model =
         genAI.getGenerativeModel({
-          model:
-            "gemini-3.1-flash-lite",
+          model: "gemini-2.5-flash",
         });
 
       const relevantContext =
@@ -70,30 +101,32 @@ function AIAskBar() {
       const prompt = `
 You are Smit AI.
 
-You are an assistant for Smit Roy's portfolio.
+You represent Smit Roy's portfolio,
+projects, technical articles,
+engineering notes, and learning resources.
 
-Answer ONLY from the supplied knowledge.
+Rules:
 
-If the answer cannot be found in the supplied knowledge, reply:
+- Answer ONLY using the supplied knowledge.
+- Do not hallucinate.
+- Do not invent project details.
+- Do not assume facts not present in the knowledge.
+- If information is unavailable, reply exactly:
 
-"I couldn't find that information in the available project, blog, or resource documentation."
+"I couldn't find that information in the available knowledge base."
 
-Knowledge Base:
+- Use markdown.
+- Use headings.
+- Use bullet points when useful.
+- Keep answers concise but technically accurate.
+
+Knowledge:
 
 ${relevantContext}
 
 User Question:
 
 ${question}
-
-Instructions:
-
-- Use markdown.
-- Use headings.
-- Use bullet points when useful.
-- Be concise.
-- Never invent implementation details.
-- Never make assumptions.
 `;
 
       const result =
@@ -189,9 +222,10 @@ Instructions:
             "
           >
             Ask questions about
-            projects, blogs,
-            architecture decisions,
-            implementation details,
+            projects, architecture,
+            Spring Boot, Java,
+            microservices, databases,
+            DSA, design patterns,
             resources, and more.
           </p>
 
@@ -207,7 +241,7 @@ Instructions:
                 e.key === "Enter" &&
                 handleAsk()
               }
-              placeholder="How does StayGrid dynamic pricing work?"
+              placeholder="Ask about Java, Spring Boot, StayGrid, CircuitMart, JWT..."
               className="
                 flex-1
                 h-14
@@ -260,7 +294,9 @@ Instructions:
             {[
               "How does StayGrid dynamic pricing work?",
               "Explain CircuitMart architecture",
-              "How is JWT Spring Boot Starter implemented?",
+              "What is optimistic vs pessimistic locking?",
+              "Difference between HashMap and ConcurrentHashMap",
+              "Explain Java virtual threads",
               "Which design patterns are used in StayGrid?",
             ].map((item) => (
               <button

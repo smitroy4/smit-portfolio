@@ -1,4 +1,5 @@
 const aiKnowledge = {
+
   staygrid: `
 Project: StayGrid
 
@@ -64,7 +65,7 @@ Tech Stack:
 - PostgreSQL (Neon Serverless), Hibernate/JPA
 - Stripe Java SDK
 - Swagger / OpenAPI (springdoc)
-- ModelMapper for entity-DTO mapping
+- ModelMapper
 
 Key Classes:
 Controllers: AuthController, HotelController, HotelBrowseController, RoomAdminController, HotelBookingController, WebhookController
@@ -74,7 +75,7 @@ Pricing: PricingStrategy, BasePricingStrategy, SurgePricingStrategy, OccupancyPr
 Entities: Hotel, Room, Inventory, Booking, Guest, User, HotelMinPrice
 `,
 
-clinixhub: `
+  clinixhub: `
 Project: ClinicXHub
 
 Overview:
@@ -158,7 +159,7 @@ Entities: User, Patient, Doctor, Appointment, Insurance, Department
 Repositories: PatientRepository, UserRepository, DoctorRepository, AppointmentRepository, InsuranceRepository, DepartmentRepository
 `,
 
-jwtStarter: `
+  jwtStarter: `
 Project: jwt-spring-boot-starter
 
 Overview:
@@ -226,7 +227,7 @@ Tech Stack:
 - Maven, GitHub Packages, GitHub Actions
 `,
 
-lmsPortal: `
+  lmsPortal: `
 Project: LMS Portal
 
 Overview:
