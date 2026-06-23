@@ -1,4 +1,44 @@
 const projects = [
+    {
+    id: "staygrid",
+
+    title: "StayGrid",
+
+    category: "Backend System",
+
+    featured: true,
+
+    status: "In Progress",
+
+    banner: "/images/projects/staygrid-cover.png",
+
+    description:
+      "Scalable hotel booking backend with JWT authentication, Redis caching, Stripe integration, dynamic pricing, and concurrency control.",
+
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "PostgreSQL",
+      "Redis",
+      "Docker"
+    ],
+
+    github:
+      "https://github.com/smitroy4/StayGrid",
+
+    demo: "https://stay-grid.up.railway.app/api/v1/",
+
+    highlights: [
+      "JWT auth with refresh tokens in HttpOnly cookies",
+      "Pessimistic locking to prevent overbooking on concurrent requests",
+      "Stripe Checkout with webhook-driven payment confirmation",
+      "Strategy Pattern dynamic pricing across 5 composable layers",
+      "Scheduled hourly job for automated price optimization",
+      "Full booking lifecycle with auto-expiry on unpaid reservations"
+    ]
+  },
+  
   {
     id: "circuit-mart",
 
@@ -80,46 +120,6 @@ const projects = [
       "Fully extensible via @ConditionalOnMissingBean overrides",
       "Published to GitHub Packages",
       "CI/CD via GitHub Actions"
-    ]
-  },
-
-  {
-    id: "staygrid",
-
-    title: "StayGrid",
-
-    category: "Backend System",
-
-    featured: true,
-
-    status: "In Progress",
-
-    banner: "/images/projects/staygrid-cover.png",
-
-    description:
-      "Scalable hotel booking backend with JWT authentication, Redis caching, Stripe integration, dynamic pricing, and concurrency control.",
-
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "Spring Security",
-      "PostgreSQL",
-      "Redis",
-      "Docker"
-    ],
-
-    github:
-      "https://github.com/smitroy4/StayGrid",
-
-    demo: null,
-
-    highlights: [
-      "JWT auth with refresh tokens in HttpOnly cookies",
-      "Pessimistic locking to prevent overbooking on concurrent requests",
-      "Stripe Checkout with webhook-driven payment confirmation",
-      "Strategy Pattern dynamic pricing across 5 composable layers",
-      "Scheduled hourly job for automated price optimization",
-      "Full booking lifecycle with auto-expiry on unpaid reservations"
     ]
   },
 
