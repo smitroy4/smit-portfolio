@@ -336,3 +336,27 @@ rgba(0, 0, 0, 0.08);
   max-width: 100%;
   height: auto !important;
 }
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2563eb;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 22px;
+  font-weight: 700;
+}

@@ -16,6 +16,7 @@ FaExchangeAlt,
 FaCube,
 FaShieldAlt,
 FaGithub,
+FaTrain,
 } from "react-icons/fa";
 
 const techIcons = {
@@ -51,6 +52,9 @@ GitHub:
 
 React:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+
+Tailwind:
+"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
 
 JavaScript:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -101,6 +105,7 @@ Scalability: FaCloud,
 "CI/CD": FaExchangeAlt,
 Postman: FaExchangeAlt,
 Render: FaCloud,
+Railway: FaTrain,
 };
 
 const skillGroups = [
@@ -183,6 +188,7 @@ skills: [
 "Linux",
 "Postman",
 "Render",
+"Railway"
 ],
 },
 {
@@ -191,6 +197,7 @@ icon: FaReact,
 skills: [
 "JavaScript",
 "React",
+"Tailwind",
 ],
 },
 ];

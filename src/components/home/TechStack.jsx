@@ -11,6 +11,12 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
 import TechBadge from "../common/TechBadge";
 
 function TechStack() {
@@ -186,135 +192,99 @@ function TechStack() {
         </p>
       </div>
 
-      {/* Stats */}
+      <div className="relative overflow-hidden">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1280: {
+              slidesPerView: 3,
+            },
+          }}
+          className="w-full pb-12"
+        >
+          {groups.map((group) => {
+            const Icon = group.icon;
 
-      {/* <div
-        className="
-          grid
-          grid-cols-2
-          md:grid-cols-4
-          gap-4
-          mb-10
-        "
-      >
-        {[
-          {
-            value: "60+",
-            label: "Technologies",
-          },
-          {
-            value: "5+",
-            label: "Major Projects",
-          },
-          {
-            value: "Java",
-            label: "Core Expertise",
-          },
-          {
-            value: "Backend",
-            label: "Primary Focus",
-          },
-        ].map((item) => (
-          <motion.div
-            key={item.label}
-            whileHover={{
-              y: -4,
-            }}
-            className="
-              rounded-2xl
-              border
-              border-zinc-200
-              bg-white
-              p-5
-              shadow-sm
-            "
-          >
-            <h3 className="text-3xl font-bold">
-              {item.value}
-            </h3>
-
-            <p className="text-zinc-500 text-sm mt-1">
-              {item.label}
-            </p>
-          </motion.div>
-        ))}
-      </div> */}
-
-      {/* Tech Categories */}
-
-      <div
-        className="
-          grid
-          md:grid-cols-2
-          gap-6
-        "
-      >
-        {groups.map((group) => {
-          const Icon = group.icon;
-
-          return (
-            <motion.div
-              key={group.title}
-              whileHover={{
-                y: -5,
-                scale: 1.01,
-              }}
-              className="
-                rounded-3xl
-                border
-                border-zinc-200
-                bg-white
-                p-6
-                shadow-sm
-                hover:shadow-xl
-                transition-all
-              "
-            >
-              <div
-                className="
-                  flex
-                  items-center
-                  gap-3
-                  mb-5
-                "
+            return (
+              <SwiperSlide
+                key={group.title}
+                className="h-auto"
               >
-                <div
+                <motion.div
+                  whileHover={{
+                    y: -5,
+                    scale: 1.01,
+                  }}
                   className="
-                    h-12
-                    w-12
-                    rounded-xl
-                    bg-blue-50
-                    flex
-                    items-center
-                    justify-center
+                    rounded-3xl
+                    border
+                    border-zinc-200
+                    bg-white
+                    p-6
+                    shadow-sm
+                    hover:shadow-xl
+                    transition-all
+                    h-full
                   "
                 >
-                  <Icon
-                    size={22}
-                    className="text-blue-600"
-                  />
-                </div>
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-3
+                      mb-5
+                    "
+                  >
+                    <div
+                      className="
+                        h-12
+                        w-12
+                        rounded-xl
+                        bg-blue-50
+                        flex
+                        items-center
+                        justify-center
+                      "
+                    >
+                      <Icon
+                        size={22}
+                        className="text-blue-600"
+                      />
+                    </div>
 
-                <h3
-                  className="
-                    text-xl
-                    font-bold
-                  "
-                >
-                  {group.title}
-                </h3>
-              </div>
+                    <h3
+                      className="
+                        text-xl
+                        font-bold
+                      "
+                    >
+                      {group.title}
+                    </h3>
+                  </div>
 
-              <div className="flex flex-wrap gap-3">
-                {group.tech.map((tech) => (
-                  <TechBadge key={tech}>
-                    {tech}
-                  </TechBadge>
-                ))}
-              </div>
-            </motion.div>
-          );
-        })}
+                  <div className="flex flex-wrap gap-3">
+                    {group.tech.map((tech) => (
+                      <TechBadge key={tech}>
+                        {tech}
+                      </TechBadge>
+                    ))}
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </section>
   );
