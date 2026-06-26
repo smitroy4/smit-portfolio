@@ -1,6 +1,56 @@
 const blogMetadata = [
   
   {
+  slug: "introduction-to-spring-boot",
+
+  title:
+    "Introduction to Spring Boot — The Complete Overview",
+
+  description:
+    "A complete introduction to Spring Boot — what it is, how auto-configuration and starters work internally, and a concise overview of every major capability: REST APIs, JPA, security, messaging, testing, microservices, WebFlux, batch processing, and more.",
+
+  date: "27 June 2026",
+
+  readTime: "90 min read",
+
+  coverImage:
+    "/images/blogs/covers/Introduction-to-Spring-Boot.png",
+
+  tags: [
+    "Spring Boot",
+    "Java",
+    "Backend",
+    "Spring",
+    "Article"
+  ]
+},
+  
+  {
+  slug: "spring-framework-core-before-spring-boot",
+
+  title:
+    "Spring Framework Core — Everything You Need Before Touching Spring Boot",
+
+  description:
+    "A complete guide to Spring Framework Core — IoC container internals, dependency injection, bean scopes and lifecycle, AOP, profiles, events, and exactly what Spring Boot automates on top of all of it.",
+
+  date: "26 June 2026",
+
+  readTime: "120 min read",
+
+  coverImage:
+    "/images/blogs/covers/Spring-Framework-Core-Before-Spring-Boot.png",
+
+  tags: [
+    "Spring",
+    "Spring Boot",
+    "Java",
+    "Backend",
+    "Article"
+  ]
+},
+  
+  {
   slug: "complete-java-handbook-zero-to-expert",
 
   title:
