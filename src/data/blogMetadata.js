@@ -1,4 +1,52 @@
 const blogMetadata = [
+
+    {
+  slug: "spring-boot-data-jpa-postgresql",
+
+  title:
+    "Spring Data JPA With PostgreSQL — The Complete Mastery Guide",
+
+  description:
+    "A complete guide to Spring Data JPA with PostgreSQL — entity mapping, relationships, repositories, query methods, JPQL, native queries, pagination, sorting, transactions, and performance tuning.",
+
+  date: "29 June 2026",
+
+  readTime: "180 min read",
+
+  coverImage:
+    "/images/blogs/covers/Spring-Data-JPA-PostgreSQL.png",
+
+  tags: [
+    "Spring Boot",
+    "Data JPA",
+    "PostgreSQL",
+    "Article"
+  ]
+},
+
+    {
+  slug: "spring-boot-building-rest-apis",
+
+  title:
+    "Building REST APIs With Spring Boot — The Complete Guide",
+
+  description:
+    "A deep-dive into building production-grade REST APIs with Spring Boot — routing, DTOs, validation, global exception handling, pagination, CORS, Jackson configuration, API versioning, and the complete request lifecycle.",
+
+  date: "28 June 2026",
+
+  readTime: "120 min read",
+
+  coverImage:
+    "/images/blogs/covers/Spring-Boot-Building-REST-APIs.png",
+
+  tags: [
+    "Spring Boot",
+    "REST APIs",
+    "Spring",
+    "Article"
+  ]
+},
   
   {
   slug: "introduction-to-spring-boot",
@@ -18,8 +66,7 @@ const blogMetadata = [
 
   tags: [
     "Spring Boot",
-    "Java",
-    "Backend",
+    "Introduction",
     "Spring",
     "Article"
   ]
@@ -44,8 +91,7 @@ const blogMetadata = [
   tags: [
     "Spring",
     "Spring Boot",
-    "Java",
-    "Backend",
+    "Spring Core",
     "Article"
   ]
 },
@@ -71,7 +117,6 @@ const blogMetadata = [
     "OOP",
     "JVM",
     "Core Java",
-    "Backend",
     "Handbook"
   ],
   youtubeTutorials: [
@@ -250,7 +295,8 @@ const blogMetadata = [
     tags: [
       "Java",
       "Spring Boot",
-      "Spring Security"
+      "Spring Security",
+      "Article"
     ]
   },
 
