@@ -24,6 +24,9 @@ import { loadBlog } from "../utils/loadBlog";
 
 import blogMetadata from "../data/blogMetadata";
 
+import "react-medium-image-zoom/dist/styles.css";
+import Zoom from "react-medium-image-zoom";
+
 function BlogPost() {
   const { slug } = useParams();
 
@@ -216,6 +219,29 @@ function BlogPost() {
                     );
                   },
 
+                  img({ src, alt }) {
+                    return (
+                      <Zoom>
+                        <img
+                          src={src}
+                          alt={alt}
+                          loading="lazy"
+                          className="
+            w-full
+            rounded-2xl
+            my-8
+            border
+            border-zinc-200
+            shadow-sm
+            cursor-zoom-in
+            transition
+            hover:shadow-lg
+          "
+                        />
+                      </Zoom>
+                    );
+                  },
+
                   table({ children }) {
                     return (
                       <div className="overflow-x-auto my-8">
@@ -303,19 +329,17 @@ function BlogPost() {
           </article>
 
           <div
-  className="
+            className="
     hidden
     xl:block
     w-80
     shrink-0
   "
->
-  <TableOfContents />
+          >
+            <TableOfContents />
 
-  <RecommendedTutorials
-    tutorials={blog?.youtubeTutorials}
-  />
-</div>
+            <RecommendedTutorials tutorials={blog?.youtubeTutorials} />
+          </div>
         </div>
       </PageWrapper>
     </>

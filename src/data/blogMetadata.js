@@ -1,5 +1,31 @@
 const blogMetadata = [
 
+  {
+  slug: "arrays-in-java-complete-dsa-guide",
+  title: "Arrays in Java — The Complete DSA Foundation Guide",
+  description: "A complete guide to arrays in Java — memory layout, core operations, prefix sums, sliding window, two pointers, Kadane's Algorithm, rotation, matrix traversal, and the classic interview patterns every array problem builds on.",
+  date: "07 July 2026",
+  readTime: "360 min read",
+  coverImage: "/images/blogs/covers/arrays-complete-dsa-guide.png",
+  tags: ["DSA", "Arrays", "Java", "Article"]
+},
+
+  {
+  slug: "introduction-to-data-structures-and-algorithms-dsa",
+
+  title: "Introduction to Data Structures & Algorithms (DSA) — The Complete Beginner-to-Confident Foundation Guide",
+
+  description: "A complete foundation guide to DSA — what data structures and algorithms are, why they matter for real software and interviews.",
+
+  date: "06 July 2026",
+
+  readTime: "90 min read",
+
+  coverImage: "/images/blogs/covers/dsa-introduction-complete-guide.png",
+
+  tags: ["DSA", "Java", "Interview Preparation", "Article"]
+},
+
     {
   slug: "spring-boot-data-jpa-postgresql",
 
@@ -271,7 +297,6 @@ const blogMetadata = [
     "Collections Framework",
     "ArrayList",
     "HashMap",
-    "DSA",
     "Article"
   ]
 },
