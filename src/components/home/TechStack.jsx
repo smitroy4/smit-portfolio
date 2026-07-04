@@ -21,130 +21,123 @@ import TechBadge from "../common/TechBadge";
 
 function TechStack() {
   const groups = [
-    {
-      title: "Backend Development",
-      icon: Server,
-      tech: [
-        "Java",
-        "Spring Boot",
-        "Spring MVC",
-        "Spring Security",
-        "Spring Data JPA",
-        "Hibernate",
-        "REST APIs",
-        "JWT",
-        "OAuth2",
-        "Maven",
-        "Validation",
-      ],
-    },
+  {
+    title: "Backend Development",
+    icon: Server,
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Spring MVC",
+      "Spring Security",
+      "Spring Data JPA",
+      "Hibernate",
+      "REST APIs",
+      "JWT",
+      "OAuth2",
+      "Maven",
+      "Bean Validation",
+    ],
+  },
 
-    {
-      title: "Microservices & Distributed Systems",
-      icon: Boxes,
-      tech: [
-        "Microservices",
-        "Spring Cloud",
-        "Eureka",
-        "OpenFeign",
-        "API Gateway",
-        "Resilience4J",
-        "Kafka",
-        "Zipkin",
-        "Distributed Tracing",
-        "ELK Stack",
-        "Event-Driven Architecture",
-      ],
-    },
+  {
+    title: "Databases & Storage",
+    icon: Database,
+    tech: [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "SQL",
+      "JPQL",
+      "Database Design",
+      "Caching Strategies",
+    ],
+  },
 
-    {
-      title: "Databases & Storage",
-      icon: Database,
-      tech: [
-        "PostgreSQL",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "SQL",
-        "JPQL",
-        "Database Design",
-        "Caching",
-      ],
-    },
+  {
+    title: "Microservices & Distributed Systems",
+    icon: Boxes,
+    tech: [
+      "Microservices Architecture",
+      "Spring Cloud",
+      "Eureka Service Discovery",
+      "OpenFeign",
+      "API Gateway",
+      "Resilience4j",
+      "Apache Kafka",
+      "Event-Driven Architecture",
+      "Distributed Tracing (Zipkin)",
+      "ELK Stack",
+    ],
+  },
 
-    {
-      title: "Cloud & DevOps",
-      icon: Cloud,
-      tech: [
-        "Docker",
-        "Kubernetes",
-        "Render",
-        "GitHub Actions",
-        "CI/CD",
-        "Linux",
-        "Cloud Deployment",
-        "Containerization",
-      ],
-    },
+  {
+    title: "Testing & Quality",
+    icon: ShieldCheck,
+    tech: [
+      "JUnit 5",
+      "Mockito",
+      "MockMvc",
+      "Integration Testing",
+      "Testcontainers",
+      "Postman",
+      "API Testing",
+    ],
+  },
 
-    {
-      title: "Frontend Basics",
-      icon: Monitor,
-      tech: [
-        "React",
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "Tailwind CSS",
-        "Vite",
-        "Framer Motion",
-        "Responsive Design",
-      ],
-    },
+  {
+    title: "Cloud & DevOps",
+    icon: Cloud,
+    tech: [
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "CI/CD",
+      "Render",
+      "Linux",
+      "Cloud Deployment",
+    ],
+  },
 
-    {
-      title: "AI & Modern Engineering",
-      icon: Sparkles,
-      tech: [
-        "Spring AI",
-        "RAG",
-        "LLMs",
-        "Vector Databases",
-        "Prompt Engineering",
-        "Tool Calling",
-        "GenAI Applications",
-      ],
-    },
+  {
+    title: "Tools & Workflow",
+    icon: Code2,
+    tech: [
+      "Git & GitHub",
+      "IntelliJ IDEA",
+      "VS Code",
+      "Swagger / OpenAPI",
+      "DBeaver",
+      "Agile / Scrum",
+    ],
+  },
 
-    {
-      title: "Testing & Quality",
-      icon: ShieldCheck,
-      tech: [
-        "JUnit",
-        "Mockito",
-        "MockMvc",
-        "Integration Testing",
-        "Testcontainers",
-        "API Testing",
-        "Postman",
-      ],
-    },
+  {
+    title: "Frontend Development",
+    icon: Monitor,
+    tech: [
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Vite",
+      "Framer Motion",
+      "Responsive Design",
+    ],
+  },
 
-    {
-      title: "Tools & Workflow",
-      icon: Code2,
-      tech: [
-        "Git",
-        "GitHub",
-        "IntelliJ IDEA",
-        "VS Code",
-        "DBeaver",
-        "Swagger",
-        "REST Client",
-        "Agile Development",
-      ],
-    },
-  ];
+  {
+    title: "AI & Modern Engineering",
+    icon: Sparkles,
+    tech: [
+      "Spring AI",
+      "RAG",
+      "LLM Integration",
+      "Vector Databases",
+      "Prompt Engineering",
+      "Tool Calling / Function Calling",
+    ],
+  },
+];
 
   return (
     <section className="py-20">

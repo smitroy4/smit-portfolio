@@ -1,13 +1,12 @@
 ## From Entity Mapping to Advanced Queries, Relationships to Performance Tuning
 
-![Spring Data JPA with PostgreSQL Complete Guide](/images/blogs/covers/Spring-Data-JPA-PostgreSQL-Complete-Guide.png)
-
 > *Most Spring Boot developers know how to write a repository interface and call `findAll()`. Far fewer understand what Hibernate is actually doing when they add `@OneToMany`, why their application fires 47 SQL queries to load 10 entities, or why `@Transactional` sometimes appears to do nothing at all. This guide builds the complete mental model — from the ORM contract between Java objects and database rows, through entity relationships, through the N+1 problem and how to fix it, all the way to PostgreSQL-specific features that take your data layer from "it works" to genuinely production-grade.*
 
 ---
 
 <a id="ch1"></a>
 ## Chapter 1 — What JPA, Hibernate, and Spring Data JPA Actually Are
+![JPA, Hibernate, and Spring Data JPA layer stack diagram](/images/blogs/internals/jpa-hibernate-spring-data-layers.png)
 
 These three terms are used almost interchangeably in tutorials, which causes genuine confusion when you hit your first problem and don't know which layer to blame. They are three distinct things sitting on top of each other.
 
@@ -261,6 +260,7 @@ By default, Hibernate translates Java camelCase field names to snake_case column
 
 <a id="ch6"></a>
 ## Chapter 6 — Understanding Relationships: The Core Concepts
+![JPA entity relationship types — OneToOne, OneToMany, ManyToOne, ManyToMany](/images/blogs/internals/jpa-entity-relationship-types.png)
 
 Before writing a single relationship annotation, understand what Hibernate is actually doing when you declare one. A relationship annotation tells Hibernate two things: what the relationship structure is (one-to-one, one-to-many, many-to-many), and who owns it.
 
@@ -824,6 +824,7 @@ The generated SQL for an interface projection looks like: `SELECT e.id, e.name, 
 
 <a id="ch18"></a>
 ## Chapter 18 — The N+1 Problem: The Most Expensive Mistake in JPA
+![N+1 Query Problem in JPA visualization](/images/blogs/internals/jpa-n-plus-one-problem.png)
 
 The N+1 problem is the single most impactful performance issue in JPA applications. It is subtle enough to miss in code review, severe enough to make a production application unusable under moderate load, and so common that it deserves a full chapter.
 
@@ -1169,6 +1170,7 @@ This gives you the readability of `STRING` storage, database-level constraint en
 
 <a id="ch25"></a>
 ## Chapter 25 — Indexes in PostgreSQL: B-Tree, GIN, Partial
+![PostgreSQL index types comparison — B-Tree, GIN, Partial](/images/blogs/internals/postgresql-index-types-comparison.png)
 
 Indexes are the most important PostgreSQL performance tool available to a Spring Boot developer, and they're significantly more versatile in PostgreSQL than in most other databases. Understanding which index type to use for which query pattern is what separates an application that struggles under load from one that handles it comfortably.
 

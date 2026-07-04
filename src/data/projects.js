@@ -27,7 +27,7 @@ const projects = [
     github:
       "https://github.com/smitroy4/StayGrid",
 
-    demo: "https://stay-grid.up.railway.app/api/v1/",
+    demo: "https://staygrid-b02y.onrender.com/api/v1/",
 
     highlights: [
       "JWT auth with refresh tokens in HttpOnly cookies",
