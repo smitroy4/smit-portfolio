@@ -1,6 +1,30 @@
 const blogMetadata = [
 
   {
+  slug: "spring-security-complete-guide",
+
+  title:
+    "Spring Security — The Complete Guide",
+
+  description:
+    "A complete deep-dive into Spring Security — the filter chain internals, authentication flow, JWT structure and cryptography, refresh tokens, OAuth2 Authorization Code flow, resource servers, method-level security, CSRF, CORS, etc.",
+
+  date: "08 June 2026",
+
+  readTime: "180 min read",
+
+  coverImage:
+    "/images/blogs/covers/Spring-Security-Complete-Guide.png",
+
+  tags: [
+    "Spring Boot",
+    "Spring Security",
+    "JWT",
+    "Article"
+  ]
+},
+
+  {
   slug: "arrays-in-java-complete-dsa-guide",
   title: "Arrays in Java — The Complete DSA Foundation Guide",
   description: "A complete guide to arrays in Java — memory layout, core operations, prefix sums, sliding window, two pointers, Kadane's Algorithm, rotation, matrix traversal, and the classic interview patterns every array problem builds on.",
