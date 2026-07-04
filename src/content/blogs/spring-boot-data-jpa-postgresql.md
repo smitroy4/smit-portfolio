@@ -830,8 +830,6 @@ The N+1 problem is the single most impactful performance issue in JPA applicatio
 
 The name describes what happens: to load N entities, the application fires 1 query to load the parent entities, then N additional queries — one per parent — to load each parent's associated data. A list of 100 employees with their departments loads in 101 queries instead of 1.
 
-![N+1 Query Problem in JPA visualization](/images/blogs/internals/jpa-n-plus-one-problem.png)
-
 ```java
 // The code that looks innocent
 List<Employee> employees = employeeRepository.findAll();
