@@ -35,7 +35,7 @@ const blogMetadata = [
     description:
       "A complete deep-dive into Spring Security — the filter chain internals, authentication flow, JWT structure and cryptography, refresh tokens, OAuth2 Authorization Code flow, resource servers, method-level security, CSRF, CORS, etc.",
 
-    date: "08 June 2026",
+    date: "06 July 2026",
 
     readTime: "180 min read",
 
@@ -54,7 +54,7 @@ const blogMetadata = [
     slug: "arrays-in-java-complete-dsa-guide",
     title: "Arrays in Java — The Complete DSA Foundation Guide",
     description: "A complete guide to arrays in Java — memory layout, core operations, prefix sums, sliding window, two pointers, Kadane's Algorithm, rotation, matrix traversal, and the classic interview patterns every array problem builds on.",
-    date: "07 July 2026",
+    date: "06 July 2026",
     readTime: "360 min read",
     coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226578/arrays-complete-dsa-guide_wmorfx.png",
     tags: ["DSA", "Arrays", "Java", "Article"]
@@ -67,7 +67,7 @@ const blogMetadata = [
 
     description: "A complete foundation guide to DSA — what data structures and algorithms are, why they matter for real software and interviews.",
 
-    date: "06 July 2026",
+    date: "05 July 2026",
 
     readTime: "90 min read",
 
