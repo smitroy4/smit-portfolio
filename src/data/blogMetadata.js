@@ -14,7 +14,7 @@ const blogMetadata = [
   readTime: "180 min read",
 
   coverImage:
-    "/images/blogs/covers/Spring-Security-Complete-Guide.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226573/Spring-Security-Complete-Guide_q1lr5o.png",
 
   tags: [
     "Spring Boot",
@@ -30,7 +30,7 @@ const blogMetadata = [
   description: "A complete guide to arrays in Java — memory layout, core operations, prefix sums, sliding window, two pointers, Kadane's Algorithm, rotation, matrix traversal, and the classic interview patterns every array problem builds on.",
   date: "07 July 2026",
   readTime: "360 min read",
-  coverImage: "/images/blogs/covers/arrays-complete-dsa-guide.png",
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226578/arrays-complete-dsa-guide_wmorfx.png",
   tags: ["DSA", "Arrays", "Java", "Article"]
 },
 
@@ -45,7 +45,7 @@ const blogMetadata = [
 
   readTime: "90 min read",
 
-  coverImage: "/images/blogs/covers/dsa-introduction-complete-guide.png",
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226585/dsa-introduction-complete-guide_dfcdmp.png",
 
   tags: ["DSA", "Java", "Interview Preparation", "Article"]
 },
@@ -64,7 +64,7 @@ const blogMetadata = [
   readTime: "180 min read",
 
   coverImage:
-    "/images/blogs/covers/Spring-Data-JPA-PostgreSQL.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226584/Spring-Data-JPA-PostgreSQL_gyvxjm.png",
 
   tags: [
     "Spring Boot",
@@ -88,7 +88,7 @@ const blogMetadata = [
   readTime: "120 min read",
 
   coverImage:
-    "/images/blogs/covers/Spring-Boot-Building-REST-APIs.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226576/Spring-Boot-Building-REST-APIs_ofvyh7.png",
 
   tags: [
     "Spring Boot",
@@ -112,7 +112,7 @@ const blogMetadata = [
   readTime: "90 min read",
 
   coverImage:
-    "/images/blogs/covers/Introduction-to-Spring-Boot.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226574/Introduction-to-Spring-Boot_ntcs4r.png",
 
   tags: [
     "Spring Boot",
@@ -136,7 +136,7 @@ const blogMetadata = [
   readTime: "120 min read",
 
   coverImage:
-    "/images/blogs/covers/Spring-Framework-Core-Before-Spring-Boot.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226573/Spring-Framework-Core-Before-Spring-Boot_mvptpv.png",
 
   tags: [
     "Spring",
@@ -160,7 +160,7 @@ const blogMetadata = [
   readTime: "360 min read",
 
   coverImage:
-    "/images/blogs/covers/The-Complete-Java-Handbook.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226574/The-Complete-Java-Handbook_mzxjrg.png",
 
   tags: [
     "Java",
@@ -221,7 +221,7 @@ const blogMetadata = [
   readTime: "240 min read",
 
   coverImage:
-    "/images/blogs/covers/The-Complete-SQL-Handbook.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226575/The-Complete-SQL-Handbook_tbv8uc.png",
 
   tags: [
     "SQL",
@@ -269,7 +269,7 @@ const blogMetadata = [
   readTime: "30 min read",
 
   coverImage:
-    "/images/blogs/covers/Java-Fullstack-Backend-Heavy-Developer-Roadmap.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226587/Java-Fullstack-Backend-Heavy-Developer-Roadmap_x6z9ni.png",
 
   tags: [
     "Roadmap"
@@ -290,7 +290,7 @@ const blogMetadata = [
   readTime: "120 min read",
 
   coverImage:
-    "/images/blogs/covers/Your-Multithreading-Knowledge-Is-Probably-Just-new-Thread.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226582/Your-Multithreading-Knowledge-Is-Probably-Just-new-Thread_i0fezl.png",
 
   tags: [
     "Java",
@@ -314,7 +314,7 @@ const blogMetadata = [
   readTime: "60 min read",
 
   coverImage:
-    "/images/blogs/covers/You-Dont-Know-the-Collections-Framework.png",
+    "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226581/You-Dont-Know-the-Collections-Framework_r3aozp.png",
 
   tags: [
     "Java",
@@ -339,7 +339,7 @@ const blogMetadata = [
     readTime: "60 min read",
 
     coverImage:
-      "/images/blogs/covers/Stop-Letting-Exceptions-Embarrass-You-in-Production.png",
+      "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783226579/Stop-Letting-Exceptions-Embarrass-You-in-Production_spkh7p.png",
 
     tags: [
       "Java",
