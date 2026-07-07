@@ -236,7 +236,7 @@ function Hero() {
             >
               <div className="flex flex-col items-center text-center mb-8">
                 <img
-                  src="/smit-roy-porfolio-favicon.png"
+                  src="/smit-roy-portfolio-favicon.png"
                   alt="Smit Roy"
                   className="
       w-70

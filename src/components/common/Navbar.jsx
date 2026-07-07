@@ -130,7 +130,7 @@ function Navbar() {
               "
             >
               <img
-                src="/smit-roy-porfolio-favicon.png"
+                src="/smit-roy-portfolio-favicon.png"
                 alt="Smit Roy"
                 className="h-12 w-auto"
               />

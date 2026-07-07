@@ -13,7 +13,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/smit-roy-porfolio-favicon.png"
+                src="/smit-roy-portfolio-favicon.png"
                 alt="Smit Roy"
                 className="h-14 w-14"
               />
