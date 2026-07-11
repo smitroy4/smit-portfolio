@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* =========================================================
 GLOBAL
@@ -32,9 +33,18 @@ background: #ffffff;
 color: #18181b;
 }
 
-html.dark,
+html.dark {
+  --bg: #212830;
+  --surface: #27313A;
+  --card: #313C47;
+
+  --text: #F8FAFC;
+  --text-secondary: #CBD5E1;
+
+  --border: #475569;
+}
 html.dark body {
-background-color: #1D2A35;
+background-color: #131417;
 }
 
 /* =========================================================

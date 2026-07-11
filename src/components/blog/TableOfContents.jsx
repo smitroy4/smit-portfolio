@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ThemeToggle from "../common/ThemeToggle";
 
 function TableOfContents() {
   const [headings, setHeadings] = useState([]);

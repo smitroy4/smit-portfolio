@@ -11,14 +11,14 @@ function MainLayout({ children }) {
     <div
       className={`min-h-screen flex flex-col transition-colors duration-300 ${
         theme === "light"
-          ? `
-            bg-gradient-to-b
-            from-white
-            via-white
-            to-blue-50/40
-            text-zinc-900
-          `
-          : "bg-zinc-950 text-zinc-100"
+  ? `
+      bg-gradient-to-b
+      from-white
+      via-white
+      to-blue-50/40
+      text-zinc-900
+    `
+  : "bg-[#1D2A35] text-zinc-100"
       }`}
     >
       {/* Decorative Blur Effects */}

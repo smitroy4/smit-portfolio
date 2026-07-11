@@ -74,7 +74,7 @@ function CodeBlock({
         ) : (
           <>
             <Copy size={14} />
-            Copy
+            
           </>
         )}
       </button>
