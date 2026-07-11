@@ -6,9 +6,7 @@ function TableOfContents() {
 
   useEffect(() => {
     const headingElements = Array.from(
-      document.querySelectorAll(
-        ".blog-content h2, .blog-content h3"
-      )
+      document.querySelectorAll(".blog-content h2, .blog-content h3"),
     );
 
     const items = headingElements
@@ -23,9 +21,7 @@ function TableOfContents() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.find(
-          (entry) => entry.isIntersecting
-        );
+        const visible = entries.find((entry) => entry.isIntersecting);
 
         if (visible) {
           setActiveId(visible.target.id);
@@ -33,12 +29,10 @@ function TableOfContents() {
       },
       {
         rootMargin: "-20% 0px -65% 0px",
-      }
+      },
     );
 
-    headingElements.forEach((heading) =>
-      observer.observe(heading)
-    );
+    headingElements.forEach((heading) => observer.observe(heading));
 
     return () => observer.disconnect();
   }, []);
@@ -50,8 +44,7 @@ function TableOfContents() {
   const handleClick = (e, id) => {
     e.preventDefault();
 
-    const element =
-      document.getElementById(id);
+    const element = document.getElementById(id);
 
     if (!element) return;
 
@@ -60,11 +53,7 @@ function TableOfContents() {
       block: "start",
     });
 
-    window.history.replaceState(
-      null,
-      "",
-      `#${id}`
-    );
+    window.history.replaceState(null, "", `#${id}`);
   };
 
   return (
@@ -116,29 +105,21 @@ function TableOfContents() {
 
         <div
           className="
-            flex-1
-            overflow-y-auto
-            p-4
-          "
+    flex-1
+    overflow-y-auto
+    p-4
+    pb-24
+  "
         >
           <ul className="space-y-1">
             {headings.map((heading) => (
               <li
                 key={heading.id}
-                className={
-                  heading.level === "H3"
-                    ? "ml-4"
-                    : ""
-                }
+                className={heading.level === "H3" ? "ml-4" : ""}
               >
                 <a
                   href={`#${heading.id}`}
-                  onClick={(e) =>
-                    handleClick(
-                      e,
-                      heading.id
-                    )
-                  }
+                  onClick={(e) => handleClick(e, heading.id)}
                   className={`
                     block
                     rounded-lg

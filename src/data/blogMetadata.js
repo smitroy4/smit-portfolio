@@ -1,6 +1,46 @@
 const blogMetadata = [
 
   {
+  slug: "microservices-proficient-resilience-messaging-kubernetes",
+
+  title: "Microservices Proficient — Resilience, Messaging, and Kubernetes",
+
+  description: "A guide to intermediate microservices patterns with Spring Boot and Spring Cloud — covering load balancing, Resilience4j, Zipkin, the ELK stack, Kafka/RabbitMQ messaging, event-driven architecture, Spring Cloud Contract, Kubernetes basics, CI/CD pipelines, and the Saga pattern",
+
+  date: "11 July 2026",
+
+  readTime: "120 min read",
+
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783785640/Microservices-Proficient-Resilience-Messaging-Kubernetes_k5qoqq.png",
+
+  tags: [
+    "Microservices", 
+    "Spring Cloud", 
+    "Kafka", 
+    "Kubernetes",
+    "Handbook"
+  ]
+},
+
+  {
+  slug: "microservices-foundational-spring-boot-spring-cloud",
+
+  title: "Microservices Foundational — From Monoliths to Your First Service Mesh",
+
+  description: "A theory-first guide to foundational microservices with Spring Boot and Spring Cloud — covering monolith vs microservices trade-offs, when to split, REST API design between services, Eureka service discovery, Spring Cloud Gateway, Config Server, and so much more.",
+
+  date: "10 July 2026",
+  readTime: "120 min read",
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783784598/Microservices-Foundational-Spring-Boot-Spring-Cloud_vcppx8.png",
+  tags: [
+    "Microservices", 
+    "Spring Boot", 
+    "Spring Cloud", 
+    "System Design", 
+    "Handbook"]
+},
+
+  {
     slug:
       "the-java-spring-boot-bridge",
 
@@ -20,10 +60,12 @@ const blogMetadata = [
       "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1783272292/The-Java-Spring-Boot-Bridge_s7n62g.png",
 
     tags:
-      ["Java",
+      [
+        "Java",
         "Spring Boot",
         "Spring",
-        "Article"]
+        "Article"
+      ]
   },
 
   {
@@ -194,43 +236,8 @@ const blogMetadata = [
       "JVM",
       "Core Java",
       "Handbook"
-    ],
-    youtubeTutorials: [
-      {
-        title: "Java Full Course for Beginners",
-        channel: "Bro Code",
-        duration: "12h",
-        videoId: "xk4_1vDrzzo"
-      },
-
-      {
-        title: "Java Tutorial for Beginners",
-        channel: "Programming with Mosh",
-        duration: "2h 30m",
-        videoId: "eIrMbAQSU34"
-      },
-
-      {
-        title: "Java Complete Course",
-        channel: "freeCodeCamp",
-        duration: "16h",
-        videoId: "A74TOX803D0"
-      },
-
-      {
-        title: "Java Collections Framework Explained",
-        channel: "Anuj Kumar Sharma",
-        duration: "1h 15m",
-        videoId: "rzA7UJ-hQn4"
-      },
-
-      {
-        title: "Java Multithreading Complete Guide",
-        channel: "Coding with John",
-        duration: "1h 45m",
-        videoId: "r_MbozD32eo"
-      }
     ]
+
   },
 
   {
@@ -256,28 +263,6 @@ const blogMetadata = [
       "DBMS",
       "AI/ML",
       "Handbook"
-    ],
-    youtubeTutorials: [
-      {
-        title: "SQL Tutorial for Beginners",
-        channel: "freeCodeCamp",
-        duration: "4h 20m",
-        videoId: "HXV3zeQKqGY"
-      },
-
-      {
-        title: "PostgreSQL Full Course",
-        channel: "Amigoscode",
-        duration: "3h 15m",
-        videoId: "SpfIwlAYaKk"
-      },
-
-      {
-        title: "Database Design Course",
-        channel: "freeCodeCamp",
-        duration: "8h",
-        videoId: "ztHopE5Wnpc"
-      }
     ]
   },
 

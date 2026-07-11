@@ -13,7 +13,6 @@ import PageWrapper from "../components/common/PageWrapper";
 
 import CodeBlock from "../components/blog/CodeBlock";
 import TableOfContents from "../components/blog/TableOfContents";
-import RecommendedTutorials from "../components/blog/RecommendedTutorials";
 import ReadingProgress from "../components/blog/ReadingProgress";
 import RelatedBlogs from "../components/blog/RelatedBlogs";
 import BlogSkeleton from "../components/blog/BlogSkeleton";
@@ -328,18 +327,24 @@ function BlogPost() {
             <RelatedBlogs currentSlug={slug} />
           </article>
 
-          <div
-            className="
+          
+
+<aside
+  style={{
+    position: "sticky",
+    top: "80px",
+    alignSelf: "flex-start",
+    maxHeight: "calc(100vh - 96px)",
+  }}
+  className="
     hidden
     xl:block
     w-80
     shrink-0
   "
-          >
-            <TableOfContents />
-
-            <RecommendedTutorials tutorials={blog?.youtubeTutorials} />
-          </div>
+>
+  <TableOfContents />
+</aside>
         </div>
       </PageWrapper>
     </>
