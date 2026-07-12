@@ -21,123 +21,125 @@ import TechBadge from "../common/TechBadge";
 
 function TechStack() {
   const groups = [
-  {
-    title: "Backend Development",
-    icon: Server,
-    tech: [
-      "Java",
-      "Spring Boot",
-      "Spring MVC",
-      "Spring Security",
-      "Spring Data JPA",
-      "Hibernate",
-      "REST APIs",
-      "JWT",
-      "OAuth2",
-      "Maven",
-      "Bean Validation",
-    ],
-  },
+    {
+      title: "Backend Development",
+      icon: Server,
+      tech: [
+        "Java",
+        "Spring Boot",
+        "Spring MVC",
+        "Spring Security",
+        "Spring Data JPA",
+        "Hibernate",
+        "REST APIs",
+        "JWT",
+        "OAuth2",
+        "Maven",
+        "Bean Validation",
+      ],
+    },
 
-  {
-    title: "Databases & Storage",
-    icon: Database,
-    tech: [
-      "PostgreSQL",
-      "MySQL",
-      "MongoDB",
-      "Redis",
-      "SQL",
-      "JPQL",
-      "Database Design",
-      "Caching Strategies",
-    ],
-  },
+        {
+      title: "Microservices & Distributed Systems",
+      icon: Boxes,
+      tech: [
+        "Microservices Architecture",
+        "Spring Cloud",
+        "Eureka Service Discovery",
+        "OpenFeign",
+        "API Gateway",
+        "Resilience4j",
+        "Apache Kafka",
+        "Event-Driven Architecture",
+        "Distributed Tracing (Zipkin)",
+        "ELK Stack",
+      ],
+    },
 
-  {
-    title: "Microservices & Distributed Systems",
-    icon: Boxes,
-    tech: [
-      "Microservices Architecture",
-      "Spring Cloud",
-      "Eureka Service Discovery",
-      "OpenFeign",
-      "API Gateway",
-      "Resilience4j",
-      "Apache Kafka",
-      "Event-Driven Architecture",
-      "Distributed Tracing (Zipkin)",
-      "ELK Stack",
-    ],
-  },
+    {
+      title: "Databases & Storage",
+      icon: Database,
+      tech: [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "SQL",
+        "JPQL",
+        "Database Design",
+        "Caching Strategies",
+      ],
+    },
 
-  {
-    title: "Testing & Quality",
-    icon: ShieldCheck,
-    tech: [
-      "JUnit 5",
-      "Mockito",
-      "MockMvc",
-      "Integration Testing",
-      "Testcontainers",
-      "Postman",
-      "API Testing",
-    ],
-  },
+        {
+      title: "Cloud & DevOps",
+      icon: Cloud,
+      tech: [
+        "Docker",
+        "Kubernetes",
+        "GitHub Actions",
+        "CI/CD",
+        "Render",
+        "Linux",
+        "Cloud Deployment",
+      ],
+    },
 
-  {
-    title: "Cloud & DevOps",
-    icon: Cloud,
-    tech: [
-      "Docker",
-      "Kubernetes",
-      "GitHub Actions",
-      "CI/CD",
-      "Render",
-      "Linux",
-      "Cloud Deployment",
-    ],
-  },
+    {
+      title: "Testing & Quality",
+      icon: ShieldCheck,
+      tech: [
+        "JUnit 5",
+        "Mockito",
+        "MockMvc",
+        "Integration Testing",
+        "Testcontainers",
+        "Postman",
+        "API Testing",
+      ],
+    },
 
-  {
-    title: "Tools & Workflow",
-    icon: Code2,
-    tech: [
-      "Git & GitHub",
-      "IntelliJ IDEA",
-      "VS Code",
-      "Swagger / OpenAPI",
-      "DBeaver",
-      "Agile / Scrum",
-    ],
-  },
+    {
+      title: "Tools & Workflow",
+      icon: Code2,
+      tech: [
+        "Git & GitHub",
+        "IntelliJ IDEA",
+        "VS Code",
+        "Swagger / OpenAPI",
+        "DBeaver",
+        "Agile / Scrum",
+      ],
+    },
 
-  {
-    title: "Frontend Development",
-    icon: Monitor,
-    tech: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "Vite",
-      "Framer Motion",
-      "Responsive Design",
-    ],
-  },
+    {
+      title: "Frontend Development",
+      icon: Monitor,
+      tech: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Angular",
+        "Tailwind CSS",
+        "Vite",
+        "Framer Motion",
+        "Responsive Design",
+      ],
+    },
 
-  {
-    title: "AI & Modern Engineering",
-    icon: Sparkles,
-    tech: [
-      "Spring AI",
-      "RAG",
-      "LLM Integration",
-      "Vector Databases",
-      "Prompt Engineering",
-      "Tool Calling / Function Calling",
-    ],
-  },
-];
+    {
+      title: "AI & Modern Engineering",
+      icon: Sparkles,
+      tech: [
+        "Spring AI",
+        "RAG",
+        "LLM Integration",
+        "Vector Databases",
+        "Prompt Engineering",
+        "Tool Calling / Function Calling",
+      ],
+    },
+  ];
 
   return (
     <section className="py-20">
@@ -178,10 +180,9 @@ function TechStack() {
             max-w-3xl
           "
         >
-          Technologies, frameworks, databases,
-          cloud platforms, testing tools and
-          engineering practices I use to build
-          scalable production-ready applications.
+          Technologies, frameworks, databases, cloud platforms, testing tools
+          and engineering practices I use to build scalable production-ready
+          applications.
         </p>
       </div>
 
@@ -210,10 +211,7 @@ function TechStack() {
             const Icon = group.icon;
 
             return (
-              <SwiperSlide
-                key={group.title}
-                className="h-auto"
-              >
+              <SwiperSlide key={group.title} className="h-auto">
                 <motion.div
                   whileHover={{
                     y: -5,
@@ -250,10 +248,7 @@ function TechStack() {
                         justify-center
                       "
                     >
-                      <Icon
-                        size={22}
-                        className="text-blue-600"
-                      />
+                      <Icon size={22} className="text-blue-600" />
                     </div>
 
                     <h3
@@ -268,9 +263,7 @@ function TechStack() {
 
                   <div className="flex flex-wrap gap-3">
                     {group.tech.map((tech) => (
-                      <TechBadge key={tech}>
-                        {tech}
-                      </TechBadge>
+                      <TechBadge key={tech}>{tech}</TechBadge>
                     ))}
                   </div>
                 </motion.div>

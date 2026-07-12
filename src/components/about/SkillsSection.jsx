@@ -59,6 +59,12 @@ Tailwind:
 JavaScript:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 
+TypeScript:
+"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+
+Angular:
+"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+
 Linux:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
 
@@ -192,12 +198,13 @@ skills: [
 ],
 },
 {
-title: "Frontend (Supporting Skills)",
+title: "Frontend Development",
 icon: FaReact,
 skills: [
 "JavaScript",
+"TypeScript",
 "React",
-"Tailwind",
+"Angular",
 ],
 },
 ];
