@@ -8,13 +8,16 @@ function BlogCard({ post }) {
         group
         block
         bg-white
+        dark:bg-zinc-800
         border
         border-zinc-200
+        dark:border-zinc-700
         rounded-2xl
         overflow-hidden
         shadow-sm
         hover:-translate-y-1
         hover:shadow-lg
+        dark:hover:shadow-zinc-900/50
         transition-all
       "
     >
@@ -43,6 +46,7 @@ function BlogCard({ post }) {
             gap-3
             text-sm
             text-zinc-500
+            dark:text-zinc-400
             mb-4
           "
         >
@@ -71,6 +75,7 @@ function BlogCard({ post }) {
         <p
           className="
             text-zinc-600
+            dark:text-zinc-400
             mb-5
             leading-relaxed
           "
@@ -87,7 +92,9 @@ function BlogCard({ post }) {
                 py-1
                 rounded-full
                 bg-zinc-100
+                dark:bg-zinc-700
                 text-zinc-700
+                dark:text-zinc-300
                 text-xs
                 font-medium
               "

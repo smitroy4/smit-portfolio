@@ -1,4 +1,5 @@
-import { Download } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Download, MapPin, GraduationCap, Coffee, Settings, Cloud } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -15,8 +16,29 @@ const floatingTech = [
 ];
 
 function Hero() {
+  const [projects, setProjects] = useState(0);
+  const [techs, setTechs] = useState(0);
+
+  useEffect(() => {
+    const pTarget = 5;
+    const tTarget = 60;
+    if (projects < pTarget) {
+      const timer = setTimeout(
+        () => setProjects((c) => Math.min(c + 1, pTarget)),
+        80,
+      );
+      return () => clearTimeout(timer);
+    }
+    if (techs < tTarget) {
+      const timer = setTimeout(
+        () => setTechs((c) => Math.min(c + Math.ceil((tTarget - c) / 8), tTarget)),
+        40,
+      );
+      return () => clearTimeout(timer);
+    }
+  }, [projects, techs]);
   return (
-    <section className="relative pt-0 pb-20 md:pt-2 md:pb-28 overflow-hidden">
+    <section className="relative pt-0 pb-20 md:pt-2 md:pb-28">
       {/* Grid Background */}
       <div
         className="
@@ -147,6 +169,7 @@ function Hero() {
   text-lg
   md:text-xl
   text-zinc-600
+  dark:text-zinc-400
   leading-relaxed
   mb-10
   max-w-2xl
@@ -191,21 +214,25 @@ function Hero() {
             "
           >
             <div>
-              <h3 className="text-4xl font-bold">5+</h3>
+              <h3 className="text-4xl font-black tabular-nums">
+                {projects}+
+              </h3>
 
-              <p className="text-zinc-500 text-sm mt-1">Projects</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Projects</p>
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold">60+</h3>
+              <h3 className="text-4xl font-black tabular-nums">
+                {techs}+
+              </h3>
 
-              <p className="text-zinc-500 text-sm mt-1">Technologies</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Technologies</p>
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold">MCA</h3>
+              <h3 className="text-4xl font-black">Master's</h3>
 
-              <p className="text-zinc-500 text-sm mt-1">Cloud Computing</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Cloud Computing</p>
             </div>
           </motion.div>
         </div>
@@ -229,6 +256,8 @@ function Hero() {
                 border
                 border-zinc-200
                 bg-white/90
+                dark:border-zinc-700
+                dark:bg-zinc-800/90
                 backdrop-blur
                 p-8
                 shadow-xl
@@ -248,15 +277,29 @@ function Hero() {
 
                 <h3 className="text-2xl font-bold">Smit Roy</h3>
 
-                <p className="text-zinc-500">Java Backend Developer</p>
+                <p className="text-zinc-500 dark:text-zinc-400">Java Backend Developer</p>
               </div>
-              <div className="space-y-4 text-zinc-600">
-                <p></p>
-                <p>📍 Kolkata, India</p>
-                <p>🎓 MCA (2025 – 2027)</p>
-                <p>☕ Java Backend Development</p>
-                <p>⚙️ System Design & Architecture</p>
-                <p>☁️ Cloud-Native Development</p>
+              <div className="space-y-4 text-zinc-600 dark:text-zinc-300">
+                <p className="flex items-center gap-2">
+                  <MapPin size={16} className="text-zinc-400 shrink-0" />
+                  Kolkata, India
+                </p>
+                <p className="flex items-center gap-2">
+                  <GraduationCap size={16} className="text-zinc-400 shrink-0" />
+                  MCA (2025 – 2027)
+                </p>
+                <p className="flex items-center gap-2">
+                  <Coffee size={16} className="text-zinc-400 shrink-0" />
+                  Java Backend Development
+                </p>
+                <p className="flex items-center gap-2">
+                  <Settings size={16} className="text-zinc-400 shrink-0" />
+                  System Design & Architecture
+                </p>
+                <p className="flex items-center gap-2">
+                  <Cloud size={16} className="text-zinc-400 shrink-0" />
+                  Cloud-Native Development
+                </p>
               </div>
             </div>
 
@@ -264,27 +307,35 @@ function Hero() {
             {floatingTech.map((tech, index) => (
               <motion.div
                 key={tech}
-                animate={{
-                  y: [0, -12, 0],
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: [0, -12, 0] }}
                 transition={{
-                  duration: 3 + index,
-                  repeat: Infinity,
+                  opacity: { delay: 0.5 + index * 0.08, duration: 0.4 },
+                  y: {
+                    duration: 3 + index,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.15,
+                  },
                 }}
                 className="
                   absolute
-                  rounded-2xl
+                  rounded-xl
                   border
                   border-zinc-200
                   bg-white
-                  px-5
-                  py-3
-                  shadow-lg
+                  dark:border-zinc-700
+                  dark:bg-zinc-800
+                  dark:text-zinc-200
+                  px-3
+                  py-1.5
+                  shadow-md
+                  text-sm
                   font-medium
                 "
                 style={{
-                  top: `${40 + index * 75}px`,
-                  left: `${-70 + (index % 2) * 60}px`,
+                  top: `${60 + index * 60}px`,
+                  left: `${-40 + (index % 2) * 40}px`,
                 }}
               >
                 {tech}

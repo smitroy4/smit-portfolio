@@ -103,6 +103,7 @@ function PDFReader({
         px-6
         py-5
         bg-white
+        dark:bg-zinc-800
       "
     >
       {/* Page Controls */}
@@ -147,6 +148,8 @@ function PDFReader({
             rounded-full
             bg-blue-50
             text-blue-700
+            dark:bg-blue-900/50
+            dark:text-blue-300
             font-semibold
             min-w-[170px]
             text-center
@@ -253,6 +256,8 @@ function PDFReader({
         border
         border-zinc-200
         bg-white
+        dark:border-zinc-700
+        dark:bg-zinc-800
         shadow-xl
       "
     >
@@ -264,8 +269,10 @@ function PDFReader({
           top-0
           z-30
           bg-white
+          dark:bg-zinc-800
           border-b
           border-zinc-200
+          dark:border-zinc-700
         "
       >
         <Controls />
@@ -276,6 +283,7 @@ function PDFReader({
       <div
         className="
           bg-white
+          dark:bg-zinc-800
           flex
           justify-center
           p-6
@@ -291,6 +299,7 @@ function PDFReader({
               className="
                 py-20
                 text-zinc-500
+                dark:text-zinc-400
               "
             >
               Content Loading...
@@ -313,6 +322,8 @@ function PDFReader({
           border-t
           border-zinc-200
           bg-white
+          dark:border-zinc-700
+          dark:bg-zinc-800
         "
       >
         <Controls bottom />

@@ -223,11 +223,7 @@ function Blogs() {
                   text-transparent
                 "
               >
-                Articles &
-                <span className="text-black">
-                  {" "}
-                  Learnings
-                </span>
+                Articles & Learnings
               </span>
 
             </motion.h1>
@@ -248,6 +244,7 @@ function Blogs() {
                 text-lg
                 md:text-xl
                 text-zinc-600
+                dark:text-zinc-400
                 leading-relaxed
                 max-w-3xl
                 mb-12
@@ -299,8 +296,8 @@ function Blogs() {
                   className="
                     rounded-2xl
                     border
-                    border-zinc-200
-                    bg-white
+                    border-zinc-200 dark:border-zinc-700
+                    bg-white dark:bg-zinc-800
                     p-5
                     shadow-sm
                   "
@@ -309,7 +306,7 @@ function Blogs() {
                     {item.value}
                   </h3>
 
-                  <p className="text-zinc-500 text-sm mt-1">
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">
                     {item.label}
                   </p>
                 </motion.div>
@@ -391,8 +388,8 @@ function Blogs() {
                 z-30
                 rounded-3xl
                 border
-                border-zinc-200
-                bg-white/80
+                border-zinc-200 dark:border-zinc-700
+                bg-white/80 dark:bg-zinc-800/80
                 backdrop-blur-xl
                 p-6
                 shadow-sm
@@ -424,7 +421,7 @@ function Blogs() {
                       ${
                         selectedTag === tag
                           ? "bg-blue-600 text-white shadow-lg"
-                          : "bg-white border border-zinc-200 hover:border-blue-400"
+                          : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-blue-400"
                       }
                     `}
                   >
@@ -447,7 +444,7 @@ function Blogs() {
                     flex
                     items-center
                     gap-2
-                    text-zinc-500
+                    text-zinc-500 dark:text-zinc-400
                   "
                 >
                   <Filter size={16} />
@@ -483,7 +480,7 @@ function Blogs() {
                             sortBy ===
                             option.value
                               ? "bg-black text-white shadow-lg"
-                              : "bg-white border border-zinc-200 hover:border-zinc-400"
+                              : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-zinc-400"
                           }
                         `}
                       >
@@ -510,8 +507,8 @@ function Blogs() {
                         px-4
                         py-2
                         rounded-full
-                        bg-blue-50
-                        text-blue-700
+                        bg-blue-50 dark:bg-blue-900/30
+                        text-blue-700 dark:text-blue-300
                         text-sm
                         font-medium
                       "
@@ -527,8 +524,8 @@ function Blogs() {
                         px-4
                         py-2
                         rounded-full
-                        bg-emerald-50
-                        text-emerald-700
+                        bg-emerald-50 dark:bg-emerald-900/30
+                        text-emerald-700 dark:text-emerald-300
                         text-sm
                         font-medium
                       "
@@ -627,7 +624,7 @@ function Blogs() {
               size={48}
               className="
                 mx-auto
-                text-zinc-300
+                text-zinc-300 dark:text-zinc-600
                 mb-4
               "
             />
@@ -642,7 +639,7 @@ function Blogs() {
               No Articles Found
             </h3>
 
-            <p className="text-zinc-500">
+            <p className="text-zinc-500 dark:text-zinc-400">
               Try searching with
               different keywords or
               reset your filters.

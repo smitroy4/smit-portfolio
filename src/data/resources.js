@@ -1,7 +1,8 @@
 const resources = [
   {
     category: "Spring Boot Interview Questions",
-    subtitle: "by CoddingShuttle - Anuj Kumar Sharma",
+    subtitle: "© CoddingShuttle - Anuj Kumar Sharma",
+    slug: "spring-boot-interview-questions",
 
     sections: [
       {

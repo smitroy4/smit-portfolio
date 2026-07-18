@@ -139,7 +139,7 @@ function NotFound() {
             className="
               text-lg
               md:text-xl
-              text-zinc-600
+              text-zinc-600 dark:text-zinc-400
               leading-relaxed
               max-w-2xl
               mx-auto
@@ -193,16 +193,16 @@ function NotFound() {
                 gap-2
                 rounded-2xl
                 border
-                border-zinc-300
-                bg-white
+                border-zinc-300 dark:border-zinc-600
+                bg-white dark:bg-zinc-800
                 px-6
                 py-3
                 font-medium
                 transition-all
                 duration-300
-                hover:border-zinc-900
+                hover:border-zinc-900 dark:hover:border-zinc-400
                 hover:-translate-y-1
-                hover:shadow-lg
+                hover:shadow-lg dark:hover:shadow-zinc-900/50
               "
             >
               <ArrowLeft size={18} />

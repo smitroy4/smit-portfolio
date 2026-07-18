@@ -53,18 +53,16 @@ const projects = [
     banner: "/images/projects/circuit-mart-cover.png",
 
     description:
-      "CircuitMart is a cloud-native e-commerce backend built with Spring Boot Microservices, demonstrating service discovery, API gateway routing, centralized configuration, fault tolerance, distributed tracing, and centralized logging.",
+      "CircuitMart is a cloud-native e-commerce backend built with Spring Boot Microservices, API gateway routing, centralized configuration, fault tolerance, distributed tracing, and centralized logging.",
 
     technologies: [
       "Java",
       "Spring Boot",
-      "Microservices",
-      "Spring Cloud Gateway",
-      "Eureka Service",
-      "PostgreSQL",
+      "Spring Cloud",
+      "Eureka",
+      "Kafka",
       "Resilience4J",
       "Zipkin",
-      "ELK Stack",
     ],
 
     github:
@@ -73,11 +71,11 @@ const projects = [
     demo: null,
 
     highlights: [
-      "Five-service microservices architecture with Eureka discovery",
-      "Centralized configuration via Spring Cloud Config Server",
-      "Resilient inter-service calls using OpenFeign + Resilience4J",
-      "JWT-secured API Gateway with custom filters",
-      "Distributed tracing and centralized logging via Zipkin and ELK"
+      "5-service microservices with Eureka discovery & Config Server",
+      "Sync (OpenFeign) + Async (Kafka) inter-service communication",
+      "Resilience4J circuit breaker on Feign calls",
+      "JWT validated at API Gateway — stateless downstream services",
+      "Distributed tracing via Micrometer + Zipkin across HTTP, Feign, Kafka",
     ]
   },
 

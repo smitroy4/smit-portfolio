@@ -5,8 +5,8 @@ function FutureGoals() {
         Future Goals
       </h2>
 
-      <div className="border rounded-xl p-8">
-        <ul className="space-y-4 text-zinc-600">
+      <div className="border rounded-xl p-8 dark:border-zinc-700">
+        <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
           <li>
             Become a professional Java Full Stack
             Developer.

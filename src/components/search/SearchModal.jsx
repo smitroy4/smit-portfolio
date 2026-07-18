@@ -192,13 +192,13 @@ function SearchModal({
   const getBadge = (type) => {
     switch (type) {
       case "blog":
-        return "bg-blue-50 text-blue-700";
+        return "bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300";
 
       case "project":
-        return "bg-emerald-50 text-emerald-700";
+        return "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300";
 
       default:
-        return "bg-purple-50 text-purple-700";
+        return "bg-purple-50 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300";
     }
   };
 
@@ -229,6 +229,8 @@ function SearchModal({
           border
           border-zinc-200
           bg-white
+          dark:border-zinc-700
+          dark:bg-zinc-800
           shadow-2xl
           overflow-hidden
         "
@@ -242,13 +244,14 @@ function SearchModal({
             gap-4
             border-b
             border-zinc-200
+            dark:border-zinc-700
             px-6
             h-16
           "
         >
           <Search
             size={20}
-            className="text-zinc-400"
+            className="text-zinc-400 dark:text-zinc-500"
           />
 
           <input
@@ -264,6 +267,8 @@ function SearchModal({
               flex-1
               outline-none
               text-lg
+              dark:bg-transparent
+              dark:text-zinc-200
             "
           />
         </div>
@@ -302,18 +307,19 @@ function SearchModal({
                   py-4
                   border-b
                   border-zinc-100
+                  dark:border-zinc-700
                   transition-all
 
                   ${
                     index ===
                     selectedIndex
-                      ? "bg-zinc-50"
+                      ? "bg-zinc-50 dark:bg-zinc-700"
                       : ""
                   }
                 `}
               >
                 <div className="flex items-start gap-4">
-                  <div className="mt-1 text-zinc-500">
+                  <div className="mt-1 text-zinc-500 dark:text-zinc-400">
                     {getIcon(
                       result.type
                     )}
@@ -347,9 +353,10 @@ function SearchModal({
 
                     <p
                       className="
-                        text-sm
-                        text-zinc-500
-                        line-clamp-2
+                      text-sm
+                      text-zinc-500
+                      dark:text-zinc-400
+                      line-clamp-2
                       "
                     >
                       {
@@ -372,10 +379,11 @@ function SearchModal({
             >
               <Search
                 size={40}
-                className="
-                  mx-auto
-                  text-zinc-300
-                  mb-4
+              className="
+                mx-auto
+                text-zinc-300
+                dark:text-zinc-600
+                mb-4
                 "
               />
 
@@ -383,7 +391,7 @@ function SearchModal({
                 No Results Found
               </h3>
 
-              <p className="text-zinc-500 text-sm mt-1">
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">
                 Try a different
                 search term.
               </p>
@@ -399,11 +407,13 @@ function SearchModal({
             px-5
             border-t
             border-zinc-200
+            dark:border-zinc-700
             flex
             items-center
             justify-between
             text-xs
             text-zinc-500
+            dark:text-zinc-400
           "
         >
           <div>

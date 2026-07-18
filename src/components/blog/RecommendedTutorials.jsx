@@ -11,6 +11,8 @@ function RecommendedTutorials({ tutorials = [] }) {
         border
         border-zinc-200
         bg-white
+
+
         overflow-hidden
       "
     >
@@ -21,6 +23,8 @@ function RecommendedTutorials({ tutorials = [] }) {
           py-4
           border-b
           border-zinc-200
+
+
         "
       >
         <h3
@@ -30,6 +34,7 @@ function RecommendedTutorials({ tutorials = [] }) {
             tracking-wider
             font-bold
             text-zinc-900
+
           "
         >
           Recommended Tutorials
@@ -57,7 +62,9 @@ function RecommendedTutorials({ tutorials = [] }) {
                 rounded-xl
                 border
                 border-zinc-200
+
                 bg-zinc-100
+
               "
             >
               <img
@@ -143,6 +150,7 @@ function RecommendedTutorials({ tutorials = [] }) {
                   text-sm
                   font-semibold
                   text-zinc-900
+
                   leading-snug
                   line-clamp-2
                   group-hover:text-red-600
@@ -157,6 +165,7 @@ function RecommendedTutorials({ tutorials = [] }) {
                   mt-1
                   text-xs
                   text-zinc-500
+
                 "
               >
                 {tutorial.channel}

@@ -6,6 +6,8 @@ return ( <span
      rounded-full
      border
      border-zinc-300
+     dark:border-zinc-600
+     dark:text-zinc-300
      text-sm
      font-medium
      hover:bg-blue-600

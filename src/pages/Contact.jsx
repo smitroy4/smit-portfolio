@@ -129,7 +129,7 @@ function Contact() {
               className="
                 text-lg
                 md:text-xl
-                text-zinc-600
+                text-zinc-600 dark:text-zinc-400
                 leading-relaxed
                 max-w-3xl
                 mb-12
@@ -158,8 +158,8 @@ function Contact() {
                 className="
                   rounded-2xl
                   border
-                  border-zinc-200
-                  bg-white
+                  border-zinc-200 dark:border-zinc-700
+                  bg-white dark:bg-zinc-800
                   p-5
                   shadow-sm
                 "
@@ -170,7 +170,7 @@ function Contact() {
                   Kolkata
                 </h3>
 
-                <p className="text-sm text-zinc-500 mt-1">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                   India
                 </p>
               </div>
@@ -179,8 +179,8 @@ function Contact() {
                 className="
                   rounded-2xl
                   border
-                  border-zinc-200
-                  bg-white
+                  border-zinc-200 dark:border-zinc-700
+                  bg-white dark:bg-zinc-800
                   p-5
                   shadow-sm
                 "
@@ -191,7 +191,7 @@ function Contact() {
                   MCA
                 </h3>
 
-                <p className="text-sm text-zinc-500 mt-1">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                   2025 - 2027
                 </p>
               </div>
@@ -200,8 +200,8 @@ function Contact() {
                 className="
                   rounded-2xl
                   border
-                  border-zinc-200
-                  bg-white
+                  border-zinc-200 dark:border-zinc-700
+                  bg-white dark:bg-zinc-800
                   p-5
                   shadow-sm
                 "
@@ -212,7 +212,7 @@ function Contact() {
                   Java
                 </h3>
 
-                <p className="text-sm text-zinc-500 mt-1">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                   Backend Focus
                 </p>
               </div>
@@ -221,8 +221,8 @@ function Contact() {
                 className="
                   rounded-2xl
                   border
-                  border-zinc-200
-                  bg-white
+                  border-zinc-200 dark:border-zinc-700
+                  bg-white dark:bg-zinc-800
                   p-5
                   shadow-sm
                 "
@@ -233,7 +233,7 @@ function Contact() {
                   Open To Work
                 </h3>
 
-                <p className="text-sm text-zinc-500 mt-1">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                   Entry-Level Roles
                 </p>
               </div>
@@ -253,8 +253,8 @@ function Contact() {
             className="
               rounded-3xl
               border
-              border-zinc-200
-              bg-white
+              border-zinc-200 dark:border-zinc-700
+              bg-white dark:bg-zinc-800
               p-8
               shadow-sm
             "
@@ -263,21 +263,33 @@ function Contact() {
               Current Status
             </h2>
 
-            <p className="text-zinc-600 leading-relaxed mb-8">
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
               Currently focused on Java Backend
               Development, Microservices, System Design,
               and building production-ready applications
               while pursuing my MCA.
             </p>
 
-            <div className="space-y-4 text-zinc-700">
-              <p>📍 Kolkata, India</p>
+            <div className="space-y-4 text-zinc-700 dark:text-zinc-400">
+              <p className="flex items-center gap-2">
+                <MapPin size={16} className="text-zinc-400 shrink-0" />
+                Kolkata, India
+              </p>
 
-              <p>🎓 MCA Student</p>
+              <p className="flex items-center gap-2">
+                <GraduationCap size={16} className="text-zinc-400 shrink-0" />
+                MCA Student
+              </p>
 
-              <p>☕ Backend-Focused Java Developer</p>
+              <p className="flex items-center gap-2">
+                <Coffee size={16} className="text-zinc-400 shrink-0" />
+                Backend-Focused Java Developer
+              </p>
 
-              <p>🚀 Open to Entry-Level Opportunities</p>
+              <p className="flex items-center gap-2">
+                <Rocket size={16} className="text-zinc-400 shrink-0" />
+                Open to Entry-Level Opportunities
+              </p>
             </div>
 
             <a

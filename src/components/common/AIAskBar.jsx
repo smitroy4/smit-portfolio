@@ -99,28 +99,20 @@ ${Object.values(
         );
 
       const prompt = `
-You are Smit AI.
+You are Smit AI — Smit Roy's portfolio assistant.
 
-You represent Smit Roy's portfolio,
-projects, technical articles,
-engineering notes, and learning resources.
+You have TWO sources of knowledge:
+1. The supplied knowledge below (portfolio projects, tech notes, learning resources)
+2. Your own training data (general knowledge)
 
-Rules:
+RULES:
+- For questions about Smit Roy's portfolio, projects, or technical content → answer using the supplied knowledge FIRST. Prioritize accuracy over completeness.
+- For general questions about finance, sports, geopolitics, history, science, or any other topic → use your own training. Answer freely and accurately.
+- NEVER invent project details. If the supplied knowledge doesn't cover a portfolio-specific question, say so.
+- Use markdown with headings and bullet points when useful.
+- Keep answers concise, clear, and technically accurate.
 
-- Answer ONLY using the supplied knowledge.
-- Do not hallucinate.
-- Do not invent project details.
-- Do not assume facts not present in the knowledge.
-- If information is unavailable, reply exactly:
-
-"I couldn't find that information in the available knowledge base."
-
-- Use markdown.
-- Use headings.
-- Use bullet points when useful.
-- Keep answers concise but technically accurate.
-
-Knowledge:
+Supplied Knowledge:
 
 ${relevantContext}
 
@@ -160,6 +152,8 @@ ${question}
           border
           border-zinc-200
           bg-white
+          dark:border-zinc-700
+          dark:bg-zinc-800
           shadow-sm
         "
       >
@@ -171,6 +165,9 @@ ${question}
             from-blue-50
             via-white
             to-cyan-50
+            dark:from-zinc-800/50
+            dark:via-zinc-800
+            dark:to-zinc-800/50
           "
         />
 
@@ -182,6 +179,7 @@ ${question}
               gap-2
               rounded-full
               bg-blue-50
+              dark:bg-blue-900/50
               px-4
               py-2
               mb-5
@@ -189,18 +187,17 @@ ${question}
           >
             <Sparkles
               size={16}
-              className="text-blue-600"
+              className="text-blue-600 dark:text-blue-400"
             />
 
             <span
               className="
                 text-sm
                 font-medium
-                text-blue-700
+                text-blue-700 dark:text-blue-300
               "
             >
-              AI Project & Resource
-              Explainer
+              AI Assistant — Ask Me Anything
             </span>
           </div>
 
@@ -217,16 +214,15 @@ ${question}
           <p
             className="
               text-zinc-600
+              dark:text-zinc-400
               max-w-3xl
               mb-8
             "
           >
-            Ask questions about
-            projects, architecture,
-            Spring Boot, Java,
-            microservices, databases,
-            DSA, design patterns,
-            resources, and more.
+            Ask about distributed systems,
+            AI, cybersecurity, data science,
+            or Smit&apos;s projects — I&apos;ll
+            answer all your queries!
           </p>
 
           <div className="flex gap-3">
@@ -241,18 +237,22 @@ ${question}
                 e.key === "Enter" &&
                 handleAsk()
               }
-              placeholder="Ask about Java, Spring Boot, StayGrid, CircuitMart, JWT..."
+              placeholder="Ask about anything — distributed systems, AI, cybersecurity, data science..."
               className="
                 flex-1
                 h-14
                 rounded-2xl
                 border
                 border-zinc-200
+                dark:border-zinc-600
+                dark:bg-zinc-700
+                dark:text-zinc-200
                 px-5
                 outline-none
                 focus:border-blue-500
                 focus:ring-4
                 focus:ring-blue-100
+                dark:focus:ring-blue-900/50
               "
             />
 
@@ -292,12 +292,13 @@ ${question}
 
           <div className="flex flex-wrap gap-2 mt-5">
             {[
+              "Explain CircuitMart microservices architecture",
               "How does StayGrid dynamic pricing work?",
-              "Explain CircuitMart architecture",
-              "What is optimistic vs pessimistic locking?",
-              "Difference between HashMap and ConcurrentHashMap",
-              "Explain Java virtual threads",
-              "Which design patterns are used in StayGrid?",
+              "What is the CAP theorem in distributed systems?",
+              "Explain transformers in AI/ML",
+              "What are common types of cyber attacks?",
+              "Difference between supervised and unsupervised learning",
+              "How does load balancing work in distributed systems?",
             ].map((item) => (
               <button
                 key={item}
@@ -309,8 +310,11 @@ ${question}
                   py-2
                   rounded-full
                   bg-zinc-100
+                  dark:bg-zinc-700
+                  dark:text-zinc-300
                   text-sm
                   hover:bg-zinc-200
+                  dark:hover:bg-zinc-600
                   transition
                 "
               >
@@ -326,7 +330,9 @@ ${question}
                 rounded-2xl
                 border
                 border-zinc-200
+                dark:border-zinc-700
                 bg-zinc-50
+                dark:bg-zinc-800/50
                 p-6
               "
             >
@@ -335,6 +341,7 @@ ${question}
                   text-sm
                   font-semibold
                   text-zinc-500
+                  dark:text-zinc-400
                   mb-4
                 "
               >

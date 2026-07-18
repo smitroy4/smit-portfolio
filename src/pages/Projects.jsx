@@ -302,10 +302,10 @@ function Projects() {
               className="
                 text-lg
                 md:text-xl
-                text-zinc-600
-                leading-relaxed
-                max-w-3xl
-                mb-12
+                    text-zinc-600 dark:text-zinc-400
+                    leading-relaxed
+                    max-w-3xl
+                    mb-12
               "
             >
               A collection of backend systems,
@@ -383,8 +383,8 @@ function Projects() {
                       className="
                         rounded-2xl
                         border
-                        border-zinc-200
-                        bg-white
+                         border-zinc-200 dark:border-zinc-700
+                        bg-white dark:bg-zinc-800
                         p-5
                         shadow-sm
                       "
@@ -405,7 +405,7 @@ function Projects() {
                         }
                       </h3>
 
-                      <p className="text-zinc-500 text-sm mt-1">
+                      <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">
                         {
                           item.label
                         }
@@ -482,8 +482,8 @@ function Projects() {
                 z-30
                 rounded-3xl
                 border
-                border-zinc-200
-                bg-white/80
+                border-zinc-200 dark:border-zinc-700
+                bg-white/80 dark:bg-zinc-800/80
                 backdrop-blur-xl
                 p-6
                 shadow-sm
@@ -517,8 +517,8 @@ function Projects() {
                     h-16
                     rounded-2xl
                     border
-                    border-zinc-200
-                    bg-white
+                    border-zinc-200 dark:border-zinc-700
+                    bg-white dark:bg-zinc-800
                     pl-14
                     pr-14
                     outline-none
@@ -559,7 +559,7 @@ function Projects() {
                   className="
                     text-sm
                     font-semibold
-                    text-zinc-500
+                    text-zinc-500 dark:text-zinc-400
                     mb-3
                   "
                 >
@@ -590,7 +590,7 @@ function Projects() {
                             selectedCategory ===
                             category
                               ? "bg-blue-600 text-white shadow-lg"
-                              : "bg-white border border-zinc-200 hover:border-blue-400"
+                              : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-blue-400"
                           }
                         `}
                       >
@@ -664,7 +664,7 @@ function Projects() {
                     flex
                     items-center
                     gap-2
-                    text-zinc-500
+                    text-zinc-500 dark:text-zinc-400
                   "
                 >
                   <Filter size={16} />
@@ -704,7 +704,7 @@ function Projects() {
                             sortBy ===
                             option.value
                               ? "bg-black text-white shadow-lg"
-                              : "bg-white border border-zinc-200 hover:border-zinc-400"
+                              : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-zinc-400"
                           }
                         `}
                       >
@@ -736,8 +736,8 @@ function Projects() {
                         px-4
                         py-2
                         rounded-full
-                        bg-blue-50
-                        text-blue-700
+                        bg-blue-50 dark:bg-blue-900/30
+                        text-blue-700 dark:text-blue-300
                         text-sm
                         font-medium
                       "
@@ -755,8 +755,8 @@ function Projects() {
                         px-4
                         py-2
                         rounded-full
-                        bg-emerald-50
-                        text-emerald-700
+                        bg-emerald-50 dark:bg-emerald-900/30
+                        text-emerald-700 dark:text-emerald-300
                         text-sm
                         font-medium
                       "
@@ -774,8 +774,8 @@ function Projects() {
                         px-4
                         py-2
                         rounded-full
-                        bg-purple-50
-                        text-purple-700
+                        bg-purple-50 dark:bg-purple-900/30
+                        text-purple-700 dark:text-purple-300
                         text-sm
                         font-medium
                       "
@@ -882,11 +882,10 @@ function Projects() {
               size={48}
               className="
                 mx-auto
-                text-zinc-300
+                text-zinc-300 dark:text-zinc-600
                 mb-4
               "
             />
-
             <h3
               className="
                 text-2xl
@@ -897,7 +896,7 @@ function Projects() {
               No Projects Found
             </h3>
 
-            <p className="text-zinc-500">
+            <p className="text-zinc-500 dark:text-zinc-400">
               Try searching with
               different keywords or
               reset the filters.

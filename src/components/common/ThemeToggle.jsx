@@ -22,7 +22,7 @@ export default function ThemeToggle() {
 
         dark:bg-zinc-800
         dark:border-zinc-700
-        dark:text-yellow-300
+        dark:text-blue-400
         dark:hover:bg-zinc-700
 
         transition-all

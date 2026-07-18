@@ -9,6 +9,7 @@ import {
   Menu,
   X,
   Search,
+  Coffee,
 } from "lucide-react";
 
 import Container from "./Container";
@@ -90,14 +91,19 @@ function Navbar() {
       ? `
         px-4 py-2 rounded-lg
         bg-zinc-100
+        dark:bg-zinc-800
         text-zinc-900
+        dark:text-zinc-100
         font-medium
       `
       : `
         px-4 py-2 rounded-lg
         text-zinc-600
+        dark:text-zinc-400
         hover:text-zinc-900
+        dark:hover:text-zinc-100
         hover:bg-zinc-100
+        dark:hover:bg-zinc-800
         transition-all
         duration-300
       `;
@@ -112,10 +118,10 @@ function Navbar() {
       />
 
       <header
-        className={`sticky top-0 z-50 backdrop-blur-xl border-b ${
+        className={`sticky top-0 z-50 backdrop-blur-xl ${
           theme === "light"
-            ? "bg-white/90 border-zinc-200"
-            : "bg-zinc-950/90 border-zinc-800"
+            ? "bg-white/80"
+            : "bg-[#0B0E14]/80"
         }`}
       >
         <Container className="max-w-7xl">
@@ -218,7 +224,10 @@ function Navbar() {
                   border
                   border-zinc-200
                   bg-white
+                  dark:border-zinc-700
+                  dark:bg-zinc-800
                   hover:bg-zinc-50
+                  dark:hover:bg-zinc-700
                   transition-all
                 "
               >
@@ -230,6 +239,7 @@ function Navbar() {
                   className="
                     text-sm
                     text-zinc-500
+                    dark:text-zinc-400
                   "
                 >
                   Search
@@ -239,10 +249,12 @@ function Navbar() {
                   className="
                     text-xs
                     bg-zinc-100
+                    dark:bg-zinc-700
                     px-2
                     py-1
                     rounded-md
                     text-zinc-500
+                    dark:text-zinc-400
                   "
                 >
                   Ctrl K
@@ -252,10 +264,10 @@ function Navbar() {
               {/* Meeting */}
 
               <div className="flex items-center gap-3">
-  {/* <ThemeToggle /> */}
+  <ThemeToggle />
 
   <Link
-    to="/meeting"
+    to="/hack4j"
     className="
       inline-flex
       items-center
@@ -274,7 +286,8 @@ function Navbar() {
       hover:shadow-lgF
     "
   >
-    Schedule a Meeting
+    Hack4j
+    <Coffee size={18} className="text-white" />
   </Link>
 </div>
             </div>
@@ -300,6 +313,7 @@ function Navbar() {
                   rounded-lg
                   border
                   border-zinc-200
+                  dark:border-zinc-700
                 "
               >
                 <Search
@@ -308,7 +322,7 @@ function Navbar() {
               </button>
 
               <Link
-                to="/meeting"
+                to="/hack4j"
                 className="
                   rounded-lg
                   bg-zinc-900
@@ -317,9 +331,13 @@ function Navbar() {
                   text-xs
                   font-medium
                   text-white
+                  inline-flex
+                  items-center
+                  gap-1.5
                 "
               >
-                Meet
+                Hack4j
+                <Coffee size={14} className="text-white" />
               </Link>
 
               <button
@@ -387,7 +405,7 @@ function Navbar() {
                 )}
 
                 <Link
-                  to="/meeting"
+                  to="/hack4j"
                   onClick={() =>
                     setOpen(
                       false
@@ -402,10 +420,14 @@ function Navbar() {
                     text-white
                     text-center
                     font-medium
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
                   "
                 >
-                  Schedule a
-                  Meeting
+                  Hack4j
+                  <Coffee size={18} className="text-white" />
                 </Link>
               </div>
             </div>

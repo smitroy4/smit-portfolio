@@ -120,6 +120,7 @@ function AboutHero() {
               space-y-6
               text-lg
               text-zinc-600
+              dark:text-zinc-400
               leading-relaxed
               max-w-2xl
             "
@@ -205,6 +206,9 @@ function AboutHero() {
                     border
                     border-zinc-200
                     bg-white
+                    dark:border-zinc-700
+                    dark:bg-zinc-800
+                    dark:text-zinc-200
                     px-4
                     py-2
                     shadow-lg

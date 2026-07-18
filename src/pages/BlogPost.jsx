@@ -98,6 +98,23 @@ function BlogPost() {
       <PageWrapper>
         <div
           className="
+            bg-white
+            text-zinc-900
+            rounded-3xl
+            my-6
+            px-4
+            sm:px-8
+            lg:px-12
+            py-8
+            md:py-12
+            shadow-xl
+            shadow-zinc-900/10
+            border
+            border-zinc-200/50
+          "
+        >
+        <div
+          className="
             max-w-[1600px]
             mx-auto
             flex
@@ -197,6 +214,8 @@ function BlogPost() {
                 prose-zinc
                 lg:prose-lg
                 max-w-none
+
+
               "
             >
               <ReactMarkdown
@@ -234,7 +253,7 @@ function BlogPost() {
             shadow-sm
             cursor-zoom-in
             transition
-            hover:shadow-lg
+            hover:shadow-lg:shadow-zinc-900/50
           "
                         />
                       </Zoom>
@@ -243,8 +262,8 @@ function BlogPost() {
 
                   table({ children }) {
                     return (
-                      <div className="overflow-x-auto my-8">
-                        <table className="w-full border-collapse">
+                      <div className="overflow-x-auto my-8 not-prose">
+                        <table className="w-full border-collapse border border-zinc-300">
                           {children}
                         </table>
                       </div>
@@ -252,18 +271,27 @@ function BlogPost() {
                   },
 
                   thead({ children }) {
-                    return <thead className="bg-zinc-100">{children}</thead>;
+                    return <thead className="bg-zinc-200">{children}</thead>;
+                  },
+
+                  tbody({ children }) {
+                    return <tbody className="bg-white">{children}</tbody>;
+                  },
+
+                  tr({ children }) {
+                    return <tr className="even:bg-zinc-50">{children}</tr>;
                   },
 
                   th({ children }) {
                     return (
                       <th
                         className="
-                          border
+                          border border-zinc-300
                           px-4
                           py-3
                           text-left
                           font-semibold
+                          text-zinc-900
                         "
                       >
                         {children}
@@ -275,9 +303,10 @@ function BlogPost() {
                     return (
                       <td
                         className="
-                          border
+                          border border-zinc-300
                           px-4
                           py-3
+                          text-zinc-700
                         "
                       >
                         {children}
@@ -345,6 +374,7 @@ function BlogPost() {
 >
   <TableOfContents />
 </aside>
+        </div>
         </div>
       </PageWrapper>
     </>

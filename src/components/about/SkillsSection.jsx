@@ -218,7 +218,7 @@ Expertise </p>
       Skills & Technologies
     </h2>
 
-    <p className="max-w-3xl text-zinc-600 leading-relaxed">
+      <p className="max-w-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
       Technologies, frameworks, tools, and architectural
       concepts used to build scalable backend systems and
       production-ready applications.
@@ -233,16 +233,19 @@ Expertise </p>
         <div
           key={group.title}
           className="
-            rounded-3xl
-            border
-            border-zinc-200
-            bg-white
-            p-8
-            shadow-sm
-            hover:-translate-y-1
-            hover:shadow-xl
-            transition-all
-            duration-500
+              rounded-3xl
+              border
+              border-zinc-200
+              bg-white
+              dark:border-zinc-700
+              dark:bg-zinc-800
+              p-8
+              shadow-sm
+              hover:-translate-y-1
+              hover:shadow-xl
+              dark:hover:shadow-zinc-900/50
+              transition-all
+              duration-500
           "
         >
           <div className="flex items-center gap-4 mb-6">
@@ -274,18 +277,21 @@ Expertise </p>
                 <span
                   key={skill}
                   className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    rounded-full
-                    border
-                    border-zinc-200
-                    bg-zinc-50
-                    px-4
-                    py-2
-                    text-sm
-                    font-medium
-                    text-zinc-700
+                      inline-flex
+                      items-center
+                      gap-2
+                      rounded-full
+                      border
+                      border-zinc-200
+                      bg-zinc-50
+                      dark:border-zinc-600
+                      dark:bg-zinc-700
+                      px-4
+                      py-2
+                      text-sm
+                      font-medium
+                      text-zinc-700
+                      dark:text-zinc-200
                     hover:bg-blue-600
                     hover:text-white
                     hover:border-blue-600

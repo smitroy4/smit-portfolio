@@ -9,12 +9,15 @@ function ResourceCard({ item }) {
         block
         border
         border-zinc-200
+        dark:border-zinc-700
         rounded-2xl
         p-6
         bg-white
+        dark:bg-zinc-800
         shadow-sm
         hover:-translate-y-1
         hover:shadow-lg
+        dark:hover:shadow-zinc-900/50
         transition-all
       "
     >
@@ -26,6 +29,8 @@ function ResourceCard({ item }) {
           rounded-full
           bg-blue-50
           text-blue-700
+          dark:bg-blue-900/50
+          dark:text-blue-300
           text-xs
           font-medium
           mb-4
@@ -45,7 +50,7 @@ function ResourceCard({ item }) {
         {item.title}
       </h3>
 
-      <p className="text-zinc-600">
+      <p className="text-zinc-600 dark:text-zinc-400">
         {item.description}
       </p>
 

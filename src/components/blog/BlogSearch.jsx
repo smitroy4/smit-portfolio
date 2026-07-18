@@ -89,6 +89,8 @@ function BlogSearch({ value, onChange }) {
             border
             border-zinc-200
             bg-white/90
+            dark:border-zinc-700
+            dark:bg-zinc-800/90
             backdrop-blur-xl
             shadow-sm
             overflow-hidden
@@ -102,6 +104,7 @@ function BlogSearch({ value, onChange }) {
               top-1/2
               -translate-y-1/2
               text-zinc-400
+              dark:text-zinc-500
               group-focus-within:text-blue-600
               transition-colors
               duration-300
@@ -124,7 +127,9 @@ function BlogSearch({ value, onChange }) {
               text-base
               font-medium
               text-zinc-800
+              dark:text-zinc-200
               placeholder:text-zinc-400
+              dark:placeholder:text-zinc-500
               outline-none
             "
           />
@@ -153,8 +158,10 @@ function BlogSearch({ value, onChange }) {
                   py-1
                   rounded-lg
                   bg-zinc-100
+                  dark:bg-zinc-700
                   text-xs
                   text-zinc-500
+                  dark:text-zinc-400
                   font-medium
                 "
               >
@@ -186,9 +193,13 @@ function BlogSearch({ value, onChange }) {
                     h-9
                     rounded-full
                     bg-zinc-100
+                    dark:bg-zinc-700
                     text-zinc-500
+                    dark:text-zinc-400
                     hover:bg-zinc-200
+                    dark:hover:bg-zinc-600
                     hover:text-zinc-700
+                    dark:hover:text-zinc-200
                     transition-all
                   "
                 >
@@ -210,6 +221,7 @@ function BlogSearch({ value, onChange }) {
             gap-1
             text-xs
             text-zinc-500
+            dark:text-zinc-400
             mr-2
           "
         >
@@ -234,7 +246,10 @@ function BlogSearch({ value, onChange }) {
               text-xs
               font-medium
               bg-zinc-100
+              dark:bg-zinc-700
+              dark:text-zinc-300
               hover:bg-blue-50
+              dark:hover:bg-blue-900/30
               hover:text-blue-700
               transition-all
             "

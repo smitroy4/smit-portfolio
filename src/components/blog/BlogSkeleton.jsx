@@ -12,33 +12,34 @@ function BlogSkeleton() {
             h-[450px]
             rounded-3xl
             bg-zinc-200
+            dark:bg-zinc-700
             mb-8
           "
         />
 
         {/* Tags */}
         <div className="flex gap-3 mb-6">
-          <div className="h-8 w-20 rounded-full bg-zinc-200" />
-          <div className="h-8 w-24 rounded-full bg-zinc-200" />
-          <div className="h-8 w-28 rounded-full bg-zinc-200" />
+          <div className="h-8 w-20 rounded-full bg-zinc-200 dark:bg-zinc-700 dark:bg-zinc-700" />
+          <div className="h-8 w-24 rounded-full bg-zinc-200 dark:bg-zinc-700 dark:bg-zinc-700" />
+          <div className="h-8 w-28 rounded-full bg-zinc-200 dark:bg-zinc-700 dark:bg-zinc-700" />
         </div>
 
         {/* Title */}
         <div className="space-y-4 mb-8">
-          <div className="h-12 w-4/5 rounded-xl bg-zinc-200" />
-          <div className="h-12 w-3/5 rounded-xl bg-zinc-200" />
+          <div className="h-12 w-4/5 rounded-xl bg-zinc-200 dark:bg-zinc-700" />
+          <div className="h-12 w-3/5 rounded-xl bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
         {/* Description */}
         <div className="space-y-3 mb-10">
-          <div className="h-5 w-full rounded-lg bg-zinc-200" />
-          <div className="h-5 w-5/6 rounded-lg bg-zinc-200" />
+          <div className="h-5 w-full rounded-lg bg-zinc-200 dark:bg-zinc-700" />
+          <div className="h-5 w-5/6 rounded-lg bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
         {/* Meta */}
         <div className="flex gap-6 mb-10">
-          <div className="h-5 w-24 rounded bg-zinc-200" />
-          <div className="h-5 w-28 rounded bg-zinc-200" />
+          <div className="h-5 w-24 rounded bg-zinc-200 dark:bg-zinc-700" />
+          <div className="h-5 w-28 rounded bg-zinc-200 dark:bg-zinc-700" />
         </div>
 
         {/* Fake Content */}
@@ -46,7 +47,7 @@ function BlogSkeleton() {
           {[...Array(8)].map((_, index) => (
             <div
               key={index}
-              className="h-5 w-full rounded-lg bg-zinc-200"
+              className="h-5 w-full rounded-lg bg-zinc-200 dark:bg-zinc-700"
             />
           ))}
         </div>
@@ -79,7 +80,7 @@ function BlogSkeleton() {
           {[...Array(12)].map((_, index) => (
             <div
               key={index}
-              className="h-5 w-full rounded-lg bg-zinc-200"
+              className="h-5 w-full rounded-lg bg-zinc-200 dark:bg-zinc-700"
             />
           ))}
         </div>
@@ -94,12 +95,14 @@ function BlogSkeleton() {
             rounded-2xl
             border
             border-zinc-200
+            dark:border-zinc-700
             bg-white
+            dark:bg-zinc-800
             p-5
             animate-pulse
           "
         >
-          <div className="h-5 w-40 bg-zinc-200 rounded mb-6" />
+          <div className="h-5 w-40 bg-zinc-200 dark:bg-zinc-700 rounded mb-6" />
 
           <div className="space-y-3">
             {[...Array(12)].map((_, index) => (
@@ -107,7 +110,7 @@ function BlogSkeleton() {
                 key={index}
                 className="
                   h-4
-                  bg-zinc-200
+                  bg-zinc-200 dark:bg-zinc-700
                   rounded
                 "
               />

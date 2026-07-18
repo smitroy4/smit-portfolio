@@ -75,6 +75,52 @@ Pricing: PricingStrategy, BasePricingStrategy, SurgePricingStrategy, OccupancyPr
 Entities: Hotel, Room, Inventory, Booking, Guest, User, HotelMinPrice
 `,
 
+  circuitmart: `
+Project: CircuitMart
+
+Overview:
+Cloud-native e-commerce backend built with Spring Boot 4.1 + Spring Cloud 2025.1.2 (Java 25). Demonstrates service discovery, API gateway routing, centralized config, sync & async inter-service communication, circuit breakers, distributed tracing, and centralized logging in a 5-service distributed architecture.
+
+Architecture (5 services):
+- Discovery Service: Eureka registry — service registration, discovery, health monitoring
+- Config Server: Git-backed centralized configuration with @RefreshScope support
+- API Gateway: Single entry point — request routing, JWT validation, custom gateway filters
+- Inventory Service: Product CRUD, stock tracking, availability checks, Kafka consumer
+- Order Service: Order creation/tracking, Feign client, Kafka producer
+
+Communication Patterns:
+- Sync: Order → Inventory via OpenFeign (returns total price for order validation), protected by Resilience4J circuit breaker (prevents cascading failures)
+- Async: Order publishes OrderCreatedEvent to Kafka topic "order.created"; Inventory consumes it to deduct inventory
+- Auth: JWT validated at the Gateway level (X-User-Id header injected) — downstream services stay stateless
+
+Order Creation Flow:
+1. Client → POST /orders → API Gateway (JWT validation)
+2. Gateway → Order Service
+3. Order Service Feign calls Inventory (POST /inventory/products/reduce-stocks) with circuit breaker protection
+4. Order saved to PostgreSQL (status: CONFIRMED)
+5. Order publishes OrderCreatedEvent to Kafka → Inventory consumes and deducts stock
+
+Observability:
+- Micrometer Tracing + Brave + Zipkin — trace IDs propagate across HTTP, Feign, and Kafka
+- Distributed tracing enables end-to-end request visualization
+
+Project Structure:
+- CircuitMart/discovery-service (:8761)
+- CircuitMart/config-server (:8888, Git-backed, reads from circuitmart-config-server repo via GITHUB_ACCESS_TOKEN)
+- CircuitMart/api-gateway
+- CircuitMart/inventory-service
+- CircuitMart/order-service
+- CircuitMart/docker-compose.yml (Kafka 3.7.1)
+Base package: com.smit.{service_name}
+
+Tech Stack:
+- Java 25, Spring Boot 4.1.0, Spring Data JPA, Hibernate
+- Spring Cloud 2025.1.2: Eureka, Spring Cloud Gateway (WebFlux), OpenFeign, Resilience4J
+- Apache Kafka 3.7.1, Spring Cloud Stream Kafka Binder
+- JWT (jjwt 0.12.6), Gateway-level authorization
+- PostgreSQL, Zipkin, ModelMapper, Maven
+`,
+
   clinixhub: `
 Project: ClinicXHub
 

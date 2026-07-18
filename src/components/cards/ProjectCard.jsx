@@ -13,13 +13,16 @@ function ProjectCard({ project }) {
       className="
         group
         bg-white
+        dark:bg-zinc-800
         border
         border-zinc-200
+        dark:border-zinc-700
         rounded-2xl
         overflow-hidden
         shadow-sm
         hover:-translate-y-1
         hover:shadow-lg
+        dark:hover:shadow-zinc-900/50
         transition-all
       "
     >
@@ -69,7 +72,7 @@ function ProjectCard({ project }) {
           </span>
         </div>
 
-        <p className="text-zinc-600 mb-5 leading-relaxed">
+        <p className="text-zinc-600 dark:text-zinc-400 mb-5 leading-relaxed">
           {project.description}
         </p>
 
@@ -82,7 +85,9 @@ function ProjectCard({ project }) {
                 py-1
                 rounded-full
                 bg-zinc-100
+                dark:bg-zinc-700
                 text-zinc-700
+                dark:text-zinc-300
                 text-xs
                 font-medium
               "
@@ -93,7 +98,7 @@ function ProjectCard({ project }) {
         </div>
 
         <div className="mb-6">
-          <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-zinc-500">
+            <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
             Key Highlights
           </h4>
 
@@ -101,7 +106,7 @@ function ProjectCard({ project }) {
             {project.highlights.map((item) => (
               <li
                 key={item}
-                className="text-sm text-zinc-600 flex gap-2"
+                className="text-sm text-zinc-600 dark:text-zinc-400 flex gap-2"
               >
                 <span className="text-blue-600 mt-[2px]">
                   •
@@ -112,7 +117,7 @@ function ProjectCard({ project }) {
           </ul>
         </div>
 
-        <div className="flex items-center gap-3 pt-2 border-t border-zinc-100">
+        <div className="flex items-center gap-3 pt-2 border-t border-zinc-100 dark:border-zinc-700">
           <a
             href={project.github}
             target="_blank"
@@ -125,9 +130,12 @@ function ProjectCard({ project }) {
               py-2
               rounded-xl
               border
-              border-zinc-200
-              hover:bg-zinc-50
-              transition
+                  border-zinc-200
+                  dark:border-zinc-600
+                  dark:text-zinc-300
+                  hover:bg-zinc-50
+                  dark:hover:bg-zinc-700
+                  transition
             "
           >
             <FaGithub size={16} />

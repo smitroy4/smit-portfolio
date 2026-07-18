@@ -119,7 +119,7 @@ function Meeting() {
               className="
                 text-lg
                 md:text-xl
-                text-zinc-600
+                text-zinc-600 dark:text-zinc-400
                 leading-relaxed
                 max-w-3xl
               "
@@ -141,8 +141,8 @@ function Meeting() {
           className="
             rounded-3xl
             border
-            border-zinc-200
-            bg-white
+            border-zinc-200 dark:border-zinc-700
+            bg-white dark:bg-zinc-800
             overflow-hidden
             shadow-sm
           "

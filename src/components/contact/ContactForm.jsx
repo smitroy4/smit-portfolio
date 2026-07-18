@@ -34,7 +34,7 @@ function ContactForm() {
   }
 
   return (
-    <div className="border rounded-2xl p-8">
+    <div className="border rounded-2xl p-8 dark:border-zinc-700">
       <h2 className="text-2xl font-bold mb-6">
         Send a Message
       </h2>
@@ -54,6 +54,9 @@ function ContactForm() {
             rounded-xl
             px-4
             py-3
+            dark:border-zinc-600
+            dark:bg-zinc-800
+            dark:text-zinc-200
           "
         />
 
@@ -68,6 +71,9 @@ function ContactForm() {
             rounded-xl
             px-4
             py-3
+            dark:border-zinc-600
+            dark:bg-zinc-800
+            dark:text-zinc-200
           "
         />
 
@@ -82,6 +88,9 @@ function ContactForm() {
             rounded-xl
             px-4
             py-3
+            dark:border-zinc-600
+            dark:bg-zinc-800
+            dark:text-zinc-200
           "
         />
 

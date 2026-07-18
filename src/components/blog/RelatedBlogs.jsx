@@ -37,10 +37,13 @@ function RelatedBlogs({ currentSlug }) {
               group
               border
               border-zinc-200
+
               rounded-2xl
               overflow-hidden
               bg-white
+
               hover:shadow-lg
+
               transition-all
             "
           >
@@ -70,6 +73,7 @@ function RelatedBlogs({ currentSlug }) {
               <p
                 className="
                   text-zinc-500
+
                   text-sm
                   line-clamp-3
                 "

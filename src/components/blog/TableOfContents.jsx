@@ -78,6 +78,8 @@ function TableOfContents() {
           border
           border-zinc-200
           bg-white
+          dark:bg-zinc-800
+          dark:border-zinc-700
 
           flex
           flex-col
@@ -89,15 +91,15 @@ function TableOfContents() {
             py-4
             border-b
             border-zinc-200
+            dark:border-zinc-700
           "
         >
           <h3
             className="
-              text-xs
-              uppercase
-              tracking-wider
+              text-sm
               font-bold
-              text-zinc-900
+              text-zinc-700
+              dark:text-zinc-200
             "
           >
             Table of Contents
@@ -134,11 +136,15 @@ function TableOfContents() {
                         ? `
                           bg-blue-50
                           text-blue-700
+                          dark:bg-blue-900/30
+                          dark:text-blue-300
                           font-semibold
                         `
                         : `
                           text-zinc-600
+                          dark:text-zinc-400
                           hover:bg-zinc-50
+                          dark:hover:bg-zinc-700/50
                           hover:text-blue-600
                         `
                     }

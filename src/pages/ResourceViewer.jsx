@@ -102,6 +102,8 @@ function ResourceViewer() {
                 rounded-full
                 bg-blue-50
                 text-blue-700
+                dark:bg-blue-900/50
+                dark:text-blue-300
                 text-sm
                 font-semibold
                 mb-5
@@ -129,6 +131,7 @@ function ResourceViewer() {
                 text-lg
                 md:text-xl
                 text-zinc-600
+                dark:text-zinc-400
                 leading-relaxed
                 max-w-4xl
               "
@@ -193,12 +196,15 @@ function ResourceViewer() {
                       border
                       border-zinc-200
                       bg-white
+                      dark:border-zinc-700
+                      dark:bg-zinc-800
                       p-6
                       shadow-sm
                       transition-all
                       duration-300
                       hover:-translate-y-2
                       hover:shadow-xl
+                      dark:hover:shadow-zinc-900/50
                     "
                   >
                     <div
@@ -209,6 +215,8 @@ function ResourceViewer() {
                         rounded-full
                         bg-blue-50
                         text-blue-700
+                        dark:bg-blue-900/50
+                        dark:text-blue-300
                         text-xs
                         font-medium
                         mb-4
@@ -231,8 +239,9 @@ function ResourceViewer() {
 
                     <p
                       className="
-                        text-zinc-600
-                        leading-relaxed
+                      text-zinc-600
+                      dark:text-zinc-400
+                      leading-relaxed
                       "
                     >
                       {item.description}

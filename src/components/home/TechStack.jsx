@@ -153,6 +153,8 @@ function TechStack() {
             rounded-full
             bg-blue-50
             text-blue-700
+            dark:bg-blue-900/50
+            dark:text-blue-300
             text-sm
             font-medium
             mb-5
@@ -176,6 +178,7 @@ function TechStack() {
         <p
           className="
             text-zinc-600
+            dark:text-zinc-400
             text-lg
             max-w-3xl
           "
@@ -186,7 +189,7 @@ function TechStack() {
         </p>
       </div>
 
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <Swiper
           modules={[Navigation, Autoplay]}
           navigation
@@ -213,19 +216,21 @@ function TechStack() {
             return (
               <SwiperSlide key={group.title} className="h-auto">
                 <motion.div
-                  whileHover={{
-                    y: -5,
-                    scale: 1.01,
-                  }}
                   className="
                     rounded-3xl
                     border
                     border-zinc-200
                     bg-white
+                    dark:border-zinc-700
+                    dark:bg-zinc-800
                     p-6
                     shadow-sm
-                    hover:shadow-xl
+                    hover:border-blue-200
+                    dark:hover:border-blue-800
+                    hover:shadow-md
+                    dark:hover:shadow-zinc-900/30
                     transition-all
+                    duration-300
                     h-full
                   "
                 >

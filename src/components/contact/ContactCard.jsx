@@ -14,10 +14,12 @@ function ContactCard({
         rounded-2xl
         p-6
         hover:shadow-lg
+        dark:border-zinc-700
+        dark:hover:shadow-zinc-900/50
         transition
       "
     >
-      <p className="text-sm text-zinc-500 mb-2">
+      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
         {title}
       </p>
 
