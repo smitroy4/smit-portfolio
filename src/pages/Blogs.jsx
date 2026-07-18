@@ -152,11 +152,14 @@ function Blogs() {
                 gap-3
                 rounded-full
                 border
-                border-emerald-200
-                bg-emerald-50
+                border-zinc-200
+                bg-white
+                dark:border-zinc-700
+                dark:bg-zinc-800
                 px-4
                 py-2
                 mb-8
+                shadow-sm
               "
             >
               <span className="relative flex h-3 w-3">
@@ -169,7 +172,7 @@ function Blogs() {
                     h-full
                     w-full
                     rounded-full
-                    bg-emerald-500
+                    bg-blue-500
                     opacity-75
                   "
                 />
@@ -181,12 +184,12 @@ function Blogs() {
                     rounded-full
                     h-3
                     w-3
-                    bg-emerald-500
+                    bg-blue-500
                   "
                 />
               </span>
 
-              <span className="text-sm font-medium text-emerald-700">
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 Sharing What I Learn
               </span>
 

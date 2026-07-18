@@ -20,7 +20,6 @@ import SEO from "../components/common/SEO";
 import CTA from "../components/home/CTA";
 
 import projects from "../data/projects";
-import AIAskBar from "../components/common/AIAskBar";
 
 function Projects() {
   const [search, setSearch] = useState("");
@@ -207,11 +206,14 @@ function Projects() {
                 gap-3
                 rounded-full
                 border
-                border-emerald-200
-                bg-emerald-50
+                border-zinc-200
+                bg-white
+                dark:border-zinc-700
+                dark:bg-zinc-800
                 px-4
                 py-2
                 mb-8
+                shadow-sm
               "
             >
               <span className="relative flex h-3 w-3">
@@ -224,7 +226,7 @@ function Projects() {
                     h-full
                     w-full
                     rounded-full
-                    bg-emerald-500
+                    bg-blue-500
                     opacity-75
                   "
                 />
@@ -236,12 +238,12 @@ function Projects() {
                     rounded-full
                     h-3
                     w-3
-                    bg-emerald-500
+                    bg-blue-500
                   "
                 />
               </span>
 
-              <span className="text-sm font-medium text-emerald-700">
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 Engineering Through Projects
               </span>
 
@@ -471,7 +473,6 @@ function Projects() {
               </p>
             </motion.div> */}
 
-                <AIAskBar />
 
                         {/* Sticky Toolbar */}
 

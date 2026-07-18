@@ -1,17 +1,18 @@
 const generalKnowledge = {
 
   about: `
-Name: Smit Roy
-Location: Kolkata, West Bengal, India
+Name: Smit Roy | Java Backend Developer | Expertise in Spring Boot, Microservices, System Design
+Location: Kolkata, India
 Education: MCA (Master of Computer Applications), specialization in Cloud Computing
-Current Role: Associate Web Developer at Task Virtual Services, Kolkata (WordPress, Elementor, PHP)
-Transition Goal: Java Backend Developer — targeting fresher/entry-level roles at service-based IT companies and startups in India
+Current Role: Associate Developer at Task Virtual Services, Kolkata (PHP-based systems, exposure to JavaScript)
+Career Focus: Java Backend Developer — building production-grade Spring Boot systems, microservices, and distributed architectures
 
 Technical Identity:
-- Primary stack: Java 21, Spring Boot, Spring Security, PostgreSQL, Hibernate/JPA
-- Secondary: JavaScript, React (learning), WordPress, basic PHP
+- Core expertise: Java, Spring Boot, Spring Security, PostgreSQL, Hibernate/JPA, Spring Cloud
+- Proficient: JavaScript/TypeScript, React, SQL, Docker, Kafka, Redis
+- Systems background: PHP-based systems, legacy modernization
 - Published a JWT Spring Boot starter library to GitHub Packages with CI/CD via GitHub Actions
-- Maintains a tech blog on portfolio site with deep-dive articles on Spring Boot, Java, SQL, DSA, and backend roadmaps
+- Maintains a deep-dive technical blog on Spring Boot internals, Java concurrency, SQL optimization, DSA, and backend architecture
 
 Portfolio Projects (in order of complexity):
 1. CircuitMart — Spring Boot microservices e-commerce backend (in progress)
@@ -21,7 +22,7 @@ Portfolio Projects (in order of complexity):
 
 Links:
 - GitHub: github.com/smitroy4
-- Portfolio: smitroy.vercel.app
+- Portfolio: smitroy.com
 - LinkedIn: linkedin.com/in/smitroy22
 `,
 

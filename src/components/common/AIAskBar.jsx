@@ -3,6 +3,7 @@ import {
   Sparkles,
   ArrowRight,
   Loader2,
+  Coffee,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { GoogleGenerativeAI } from "@google/generative-ai";
@@ -172,7 +173,7 @@ ${question}
         />
 
         <div className="relative p-8">
-          <div
+<div
             className="
               inline-flex
               items-center
@@ -185,7 +186,7 @@ ${question}
               mb-5
             "
           >
-            <Sparkles
+            <Coffee
               size={16}
               className="text-blue-600 dark:text-blue-400"
             />
@@ -197,7 +198,7 @@ ${question}
                 text-blue-700 dark:text-blue-300
               "
             >
-              AI Assistant — Ask Me Anything
+              Hack4j AI — Ask Me Anything
             </span>
           </div>
 

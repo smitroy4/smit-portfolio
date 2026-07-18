@@ -4,7 +4,7 @@ function SEO({
   title,
   description,
   image = "/sr-og-image.png",
-  url = "https://smitroy.vercel.app",
+  url = "https://smitroy.com",
 }) {
   const fullTitle = title
     ? `${title} | Smit Roy`

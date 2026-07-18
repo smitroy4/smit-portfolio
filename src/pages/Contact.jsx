@@ -52,11 +52,14 @@ function Contact() {
                 gap-3
                 rounded-full
                 border
-                border-emerald-200
-                bg-emerald-50
+                border-zinc-200
+                bg-white
+                dark:border-zinc-700
+                dark:bg-zinc-800
                 px-4
                 py-2
                 mb-8
+                shadow-sm
               "
             >
               <span className="relative flex h-3 w-3">
@@ -68,7 +71,7 @@ function Contact() {
                     h-full
                     w-full
                     rounded-full
-                    bg-emerald-500
+                    bg-blue-500
                     opacity-75
                   "
                 />
@@ -80,12 +83,12 @@ function Contact() {
                     rounded-full
                     h-3
                     w-3
-                    bg-emerald-500
+                    bg-blue-500
                   "
                 />
               </span>
 
-              <span className="text-sm font-medium text-emerald-700">
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 Open for Opportunities
               </span>
             </motion.div>
@@ -171,7 +174,7 @@ function Contact() {
                 </h3>
 
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                  India
+                  Remote | Onsite, India
                 </p>
               </div>
 
@@ -192,7 +195,7 @@ function Contact() {
                 </h3>
 
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                  2025 - 2027
+                  Cloud Computing | 2027'
                 </p>
               </div>
 
@@ -213,7 +216,7 @@ function Contact() {
                 </h3>
 
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                  Backend Focus
+                  Backend Heavy Full-Stack
                 </p>
               </div>
 
@@ -234,7 +237,7 @@ function Contact() {
                 </h3>
 
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                  Entry-Level Roles
+                  Backend Roles | OS Projects
                 </p>
               </div>
             </motion.div>
@@ -288,7 +291,7 @@ function Contact() {
 
               <p className="flex items-center gap-2">
                 <Rocket size={16} className="text-zinc-400 shrink-0" />
-                Open to Entry-Level Opportunities
+                Open to New Opportunities
               </p>
             </div>
 

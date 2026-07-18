@@ -42,13 +42,13 @@ function Resources() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 mb-8"
+              className="inline-flex items-center gap-3 rounded-full border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-4 py-2 mb-8"
             >
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500" />
               </span>
-              <span className="text-sm font-medium text-emerald-700">
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 Curated Learning Resources
               </span>
             </motion.div>

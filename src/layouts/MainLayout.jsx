@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
+import AIFloatingButton from "../components/common/AIFloatingButton";
 
 import { useTheme } from "../components/common/ThemeWrapper";
 
@@ -136,6 +137,9 @@ function MainLayout({ children }) {
 
       {/* Rocket Scroll To Top */}
       <ScrollToTopButton />
+
+      {/* Hack4j AI Floating Chat */}
+      <AIFloatingButton />
     </div>
   );
 }

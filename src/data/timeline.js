@@ -1,100 +1,114 @@
 const timeline = [
   {
     year: "Mar 2024",
-    title: "First Step into Tech",
+    title: "Data Operations & SQL Foundations",
+    tagline: "Every row of data told a story I wanted to understand.",
     description:
-      "Started as a Data Operations Associate at a growing startup. What began as a three-month internship soon became a full-time role, introducing me to the world of business data, reporting, Excel, and SQL."
+      "Started as a Data Operations Associate at a growing startup, working with business data, reporting, Excel, and SQL. What began as a short-term internship turned into a full-time role — my first exposure to how real systems handle data.",
   },
 
   {
     year: "Aug 2024",
-    title: "Graduation & New Direction",
+    title: "From Finance to Software",
+    tagline: "The pivot wasn't an escape — it was a deliberate choice.",
     description:
-      "Completed my Bachelor's degree in Finance while realizing that my strongest curiosity was no longer in finance — it was in technology, software, and how digital products are built."
+      "Completed my Bachelor's in Finance, but my strongest pull was toward technology — understanding how software is built and how systems work together.",
   },
 
   {
     year: "Dec 2024",
-    title: "Learning from Developers",
+    title: "Working Alongside Engineers",
+    tagline: "Proximity to production teaches what nois the best teacher.",
     description:
-      "Spent months working closely with developers, writing SQL queries, understanding databases, troubleshooting data issues, and gaining first-hand exposure to real software development workflows."
+      "Worked closely with developers daily — writing SQL, troubleshooting data issues, understanding databases, and gaining first-hand exposure to real software development workflows.",
   },
 
   {
     year: "Feb 2025",
-    title: "The Web Development Phase",
+    title: "Building on the Web",
+    tagline: "Interfaces are contracts. I learned to honor them.",
     description:
-      "Moved beyond data operations and into development. Started building websites with HTML, CSS, JavaScript, CMS and hosting platforms transforming ideas into interfaces that users could interact with."
+      "Moved from data into development — building websites with HTML, CSS, JavaScript, and CMS platforms, turning designs into functional interfaces.",
   },
 
   {
     year: "Mar 2025",
-    title: "First Backend Exposure",
+    title: "Server-Side Flows",
+    tagline: "The request comes in. The logic runs. The response goes out.",
     description:
-      "Began working with PHP to support business requirements, gaining my first practical experience with server-side development, application logic, and dynamic web systems. Learnt how to setup "
+      "Worked with PHP to support business requirements, gaining practical experience with server-side logic, dynamic systems, and backend workflows.",
   },
 
   {
     year: "Jun 2025",
     title: "MCA in Cloud Computing",
+    tagline: "Structure accelerates self-taught speed.",
     description:
-      "Started pursuing a Master of Computer Applications with a specialization in Cloud Computing, strengthening my foundations in software engineering and modern application architecture."
+      "Started pursuing a Master of Computer Applications with a specialization in Cloud Computing, strengthening foundations in software engineering and modern application architecture.",
   },
 
   {
     year: "Jul 2025",
-    title: "Discovering Java",
+    title: "Building with Java",
+    tagline: "Strong typing, stronger fundamentals.",
     description:
-      "Picked up Java and SQL with a simple goal: to build strong engineering fundamentals. What started as curiosity soon became a serious commitment to backend development."
+      "Chose Java and SQL as my primary stack to build strong engineering fundamentals. What started as a focused decision became a serious commitment to backend development.",
   },
 
   {
     year: "Nov 2025",
-    title: "Behind the Scenes of the Web",
+    title: "Backend Development",
+    tagline: "Hooks, filters, endpoints — the plumbing that matters.",
     description:
-      "Worked with WordPress internals, custom plugins, APIs, and backend integrations. For the first time, I began understanding the systems that power applications beyond what users see on the screen."
+      "Worked with hooks, filters, custom REST API endpoints, and server-side logic using JavaScript. Built backend integrations and understood how data flows between the database, server, and client.",
   },
 
   {
     year: "Dec 2025",
-    title: "The Spring Challenge",
+    title: "Doubling Down on Spring",
+    tagline: "When the framework pushed back, I pushed harder.",
     description:
-      "Started learning the Spring Framework. The concepts felt overwhelming at first, and gaps in my Java knowledge became obvious. Instead of moving on, I doubled down, revisited fundamentals, and kept building."
+      "Started with the Spring Framework — the concepts were demanding and gaps in my knowledge became clear. Instead of backing off, I doubled down on fundamentals and kept building until things clicked.",
   },
 
   {
     year: "Jan 2026",
     title: "Spring Boot & Real Projects",
+    tagline: "Auto-configuration is magic until you read the source.",
     description:
-      "Transitioned into Spring Boot and began building backend applications focused on APIs, authentication, databases, and production-oriented architecture."
+      "Transitioned into Spring Boot and began building backend applications focused on APIs, authentication, databases, and production-oriented architecture.",
   },
 
   {
     year: "Mar 2026",
     title: "Building with Purpose",
+    tagline: "Tutorials teach syntax. Projects teach judgment.",
     description:
-      "Moved beyond tutorials and started creating serious projects. Each application became an opportunity to write cleaner code, design better systems, and think more like an engineer."
+      "Moved beyond tutorials and started creating serious projects. Each application became an opportunity to write cleaner code, design better systems, and think more like an engineer.",
   },
 
   {
     year: "May 2026",
     title: "Open Source Journey",
+    tagline: "Code reviewed by strangers improves faster.",
     description:
-      "Started contributing to open-source projects and publishing my own work, including Spring Boot libraries and backend tooling. Sharing code became another way to learn."
+      "Started contributing to open-source projects and publishing my own work, including Spring Boot libraries and backend tooling. Sharing code became another way to learn.",
   },
 
   {
     year: "Jun 2026",
     title: "Microservices & Distributed Systems",
+    tagline: "Distributed systems fail in ways monoliths never imagine.",
     description:
-      "Began exploring the world of scalable backend systems through Microservices, Apache Kafka, Redis, Docker, Kubernetes, and modern distributed architectures."
+      "Began exploring the world of scalable backend systems through Microservices, Apache Kafka, Redis, Docker, Kubernetes, and modern distributed architectures.",
   },
 
   {
     year: "Today",
-    title: "Backend Engineer in Progress",
+    title: "Backend Engineering in Practice",
+    tagline: "Still building. Still learning. Shipping what works.",
     description:
-      "Still learning, still building, and still refining my craft-focused on creating scalable Java applications, mastering backend engineering, and growing into the developer I once looked up to."
+      "Building scalable Java applications, working with distributed systems, and contributing to open source. Every project is a chance to refine my craft and ship something that works.",
   }
 ];
 
