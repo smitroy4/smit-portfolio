@@ -232,7 +232,7 @@ function Hero() {
             </div>
 
             <div>
-              <h3 className="text-4xl font-black">Master's</h3>
+              <h3 className="text-4xl font-black">MCA</h3>
 
               <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Cloud Computing</p>
             </div>
