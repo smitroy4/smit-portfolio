@@ -11,7 +11,6 @@ import {
   Globe,
   Gauge,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
 import PageWrapper from "../components/common/PageWrapper";
 import SEO from "../components/common/SEO";
@@ -418,8 +417,10 @@ function Hack4j() {
                 Want to help shape the future? I'd love to have a word with you.
               </p>
 
-              <Link
-                to="/meeting"
+              <a
+                href="https://hack4j.smitroy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   inline-flex
                   items-center
@@ -442,9 +443,9 @@ function Hack4j() {
                   shadow-purple-500/25
                 "
               >
-                Join the Volunteer Team
+                Volunteer Hack4j
                 <Rocket size={16} />
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>
