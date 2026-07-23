@@ -1,6 +1,30 @@
 const blogMetadata = [
 
   {
+  slug: "web-development-core-zero-to-hero-roadmap",
+
+  title: "Web Development Core — The Zero to Hero Roadmap",
+
+  description: "A beginner-to-advanced roadmap covering HTML, CSS, and JavaScript foundations, the DOM, Git/GitHub, React, Angular, Node.js, Express.js, MongoDB and SQL, Next.js, deployment and scalability, and how coding compares to WordPress, no-code platforms",
+
+  date: "23 July 2026",
+
+  readTime: "60 min read",
+
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1784826522/web-dev-zero-to-hero-roadmap-cover_pd84p6.png",
+
+  tags: [
+    "Web Development",
+    "React",
+    "Node.js",
+    "Express.js",
+    "SQL",
+    "MongoDB",
+    "Roadmap"
+  ]
+},
+
+  {
   slug: "microservices-proficient-resilience-messaging-kubernetes",
 
   title: "Microservices Proficient — Resilience, Messaging, and Kubernetes",

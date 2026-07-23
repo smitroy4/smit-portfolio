@@ -82,7 +82,7 @@ function Hack4j() {
   return (
     <>
       <SEO
-        title="Hack4j — The Future of Engineering"
+        title="Hack4j — The Future of Java"
         description="A learning community exploring Java, Spring Boot, React, DevOps, Cloud, AI-integrated systems, advanced system design, and how real systems scale — 10 years ahead."
       />
 
