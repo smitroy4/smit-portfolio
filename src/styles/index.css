@@ -288,6 +288,10 @@ color: #fafafa;
 background-color: #18181b !important;
 }
 
+.dark .resource-content pre code {
+color: #fafafa;
+}
+
 .resource-content pre {
 font-size: 1rem;
 }
