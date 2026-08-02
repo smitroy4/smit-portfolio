@@ -178,7 +178,7 @@ function Hero() {
 "
           >
             Java Backend Developer focused on Spring Boot, Microservices,
-            PostgreSQL, Redis, Kafka, System Design, and production-ready
+            PostgreSQL, Kafka, System Design, and production-ready
             software.
           </motion.p>
 
@@ -244,16 +244,17 @@ function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="hidden lg:block"
+          className="relative mt-10 lg:mt-0"
         >
-          <div className="relative h-[550px]">
+          <div className="relative lg:h-[550px]">
             {/* Main Card */}
             <div
               className="
-                absolute
-                right-0
-                top-10
-                w-[420px]
+                w-full
+                lg:absolute
+                lg:right-0
+                lg:top-10
+                lg:w-[420px]
                 rounded-3xl
                 border
                 border-zinc-200
@@ -267,14 +268,21 @@ function Hero() {
             >
               <div className="flex flex-col items-center text-center mb-8">
                 <img
-                  src="/smit-roy-portfolio-favicon.png"
+                  src="/images/smit-roy-1.jpg"
                   alt="Smit Roy"
                   className="
-      w-70
-      h-70
-      object-contain
-      mb-4
-    "
+                    w-56
+                    h-56
+                    rounded-full
+                    object-cover
+                    object-top
+                    border-4
+                    border-cyan-500/40
+                    ring-2
+                    ring-cyan-500/30
+                    shadow-lg
+                    mb-4
+                  "
                 />
 
                 <h3 className="text-2xl font-bold">Smit Roy</h3>
@@ -321,6 +329,8 @@ function Hero() {
                   },
                 }}
                 className="
+                  hidden
+                  lg:block
                   absolute
                   rounded-xl
                   border

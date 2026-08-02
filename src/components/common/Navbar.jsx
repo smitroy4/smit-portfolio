@@ -44,12 +44,12 @@ function Navbar() {
       path: "/projects",
     },
     {
-      name: "Blogs",
-      path: "/blogs",
-    },
-    {
       name: "Resources",
       path: "/resources",
+    },
+    {
+      name: "Blogs",
+      path: "/blogs",
     },
     {
       name: "Contact",

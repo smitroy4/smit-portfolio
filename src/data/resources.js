@@ -15,7 +15,7 @@ const resources = [
             description:
               "Core Spring Framework concepts including IoC, Dependency Injection, Bean Lifecycle, and Spring Architecture.",
             category: "Spring",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961891/Module_1_-_Spring_Framework_h6gd9r.pdf"
+            file: "spring-boot-interview-questions/1. Spring Framework, Spring Boot, and Maven.md"
           },
 
           {
@@ -24,7 +24,7 @@ const resources = [
             description:
               "Building REST APIs, Controllers, Request Mapping, Validation, and MVC architecture using Spring Boot.",
             category: "Spring Boot",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961891/Module_2_-_Spring_Boot_Web_MVC_qwmksl.pdf"
+            file: "spring-boot-interview-questions/2. Spring Boot Web MVC, JPA, Validation, Exception Handling, Lambda, and Streams.md"
           },
 
           {
@@ -33,7 +33,7 @@ const resources = [
             description:
               "Persistence, Repositories, Entity Mapping, JPQL, Hibernate, and database interaction.",
             category: "Database",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_3_-_Spring_Data_JPA_xnqaca.pdf"
+            file: "spring-boot-interview-questions/3. Spring Data JPA, Hibernate, and Database Concepts.md"
           },
 
           {
@@ -42,7 +42,7 @@ const resources = [
             description:
               "Production-ready Spring Boot applications, monitoring, logging, configuration, and best practices.",
             category: "Production",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961891/Module_4_-_Spring_Boot_Production_dkzaub.pdf"
+            file: "spring-boot-interview-questions/4. Spring Boot Fundamentals, DevTools, Auditing, RestClient, Logging, Actuator, and OpenAPI.md"
           },
 
           {
@@ -51,7 +51,7 @@ const resources = [
             description:
               "Authentication, Authorization, JWT, OAuth2, Role-Based Access Control, and Security Best Practices.",
             category: "Security",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_5_6_-_Spring_Security_pkpbf2.pdf"
+            file: "spring-boot-interview-questions/5. Spring Security, JWT, OAuth2, Authorization, and Exception Handling.md"
           },
 
           {
@@ -60,7 +60,7 @@ const resources = [
             description:
               "Unit Testing, Integration Testing, MockMvc, Mockito, JUnit, and Testcontainers.",
             category: "Testing",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961891/Module_7_-_Spring_Boot_Testing_zcltey.pdf#"
+            file: "spring-boot-interview-questions/6. Spring Boot Testing — JUnit, Mockito, Integration Testing, and JaCoCo.md"
           },
 
           {
@@ -69,7 +69,7 @@ const resources = [
             description:
               "Deploying Spring Boot applications using Docker, Cloud Platforms, and CI/CD pipelines.",
             category: "Deployment",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_8_-_Spring_Boot_Deployment_aypsc5.pdf"
+            file: "spring-boot-interview-questions/7. Spring Boot Production Deployment — AWS, Profiles, CI-CD, and Flyway.md"
           },
 
           {
@@ -78,7 +78,7 @@ const resources = [
             description:
               "Generative AI, Spring AI, Retrieval Augmented Generation, Vector Databases, and LLM Integration.",
             category: "AI",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_9_-_GenAI_Spring_AI_RAG_tzm4py.pdf"
+            file: "spring-boot-interview-questions/8. Generative AI, Spring AI, Embeddings, RAG, Advisors, and Tool Calling.md"
           },
 
           {
@@ -87,7 +87,7 @@ const resources = [
             description:
               "Cross-cutting concerns, AOP concepts, Pointcuts, Advices, and AspectJ integration.",
             category: "AOP",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_10_-_Aspect_Oriented_Programming_pw6yrn.pdf"
+            file: "spring-boot-interview-questions/9. Aspect Oriented Programming (AOP) in Spring Boot.md"
           },
 
           {
@@ -96,7 +96,7 @@ const resources = [
             description:
               "Spring Cache, Transaction Propagation, Isolation Levels, and Distributed Transactions.",
             category: "Performance",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_11_-_Caching_and_Transaction_Mgt._n5dakb.pdf"
+            file: "spring-boot-interview-questions/10. Caching and Transaction Management in Spring Boot.md"
           }
         ]
       },
@@ -111,7 +111,7 @@ const resources = [
             description:
               "Microservices fundamentals, Service Discovery, API Gateway, Resilience, and Communication Patterns.",
             category: "Microservices",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961892/Module_12_-_Microservices_Architecture_sccx3d.pdf"
+            file: "spring-boot-interview-questions/11. Microservices Architecture with Spring Boot — Eureka, Gateway, OpenFeign, and Resilience4J.md"
           },
 
           {
@@ -120,7 +120,7 @@ const resources = [
             description:
               "Distributed Systems, Event-Driven Architecture, Observability, and Scalability Patterns.",
             category: "Microservices",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961893/Module_13_-_Advanced_Microservices_edrcsi.pdf"
+            file: "spring-boot-interview-questions/12. API Gateway Filters, Centralized Configuration, Distributed Tracing, and Centralized Logging.md"
           },
 
           {
@@ -129,7 +129,7 @@ const resources = [
             description:
               "Kafka Architecture, Topics, Partitions, Consumer Groups, Event Streaming, and Messaging Systems.",
             category: "Kafka",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961893/Module_14_-_Apache_Kafka_aluq02.pdf"
+            file: "spring-boot-interview-questions/13. Apache Kafka with Spring Boot.md"
           }
         ]
       },
@@ -144,7 +144,7 @@ const resources = [
             description:
               "Containerization, Docker Images, Volumes, Networking, and Backend Application Deployment.",
             category: "Docker",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961895/Module_15_-_Docker_for_Backend_ygvmff.pdf"
+            file: "spring-boot-interview-questions/14. Docker for Backend and DevOps Engineers.md"
           },
 
           {
@@ -153,7 +153,7 @@ const resources = [
             description:
               "Pods, Deployments, Services, ConfigMaps, Secrets, and Kubernetes Architecture.",
             category: "Kubernetes",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961896/Module_16_-_Kubernetes_Components_oqpdkf.pdf"
+            file: "spring-boot-interview-questions/15. Kubernetes for Backend and DevOps Engineers.md"
           },
 
           {
@@ -162,7 +162,7 @@ const resources = [
             description:
               "Deploying and managing Kubernetes workloads on Google Cloud Platform using GKE.",
             category: "Cloud",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961896/Module_17_-_Google_Kubernetes_Engine_yrfkj6.pdf"
+            file: "spring-boot-interview-questions/16. Google Kubernetes Engine, Stateful Workloads, Microservices DNS, Ingress, ConfigMap, Secrets, and CI-CD.md"
           }
         ]
       },
@@ -177,7 +177,447 @@ const resources = [
             description:
               "Concurrency, Thread Pools, CompletableFuture, Virtual Threads, and Asynchronous Programming.",
             category: "Java",
-            link: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1781961896/Module_18_-_Java_Multithreading_Spring_Boot_Async_lsx66u.pdf"
+            file: "spring-boot-interview-questions/17. Java Threads, Executor Framework, CompletableFuture, Spring Boot Scheduling, Async, and Tomcat Threading Model.md"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    category: "Java Interview Questions",
+    subtitle: "© GenZ Career - Faizan Ali",
+    slug: "java-interview-questions",
+
+    sections: [
+      {
+        title: "Java Core",
+        items: [
+          {
+            title: "Topic 1 - Java Basics",
+            slug: "java-topic-1-basics",
+            description:
+              "Fundamental Java concepts including features, packages, coding standards, and application security.",
+            category: "Java",
+            file: "java-interview-questions/1. Java Basics.md"
+          },
+          {
+            title: "Topic 2 - Data Types & Variables",
+            slug: "java-topic-2-data-types-variables",
+            description:
+              "Primitive and non-primitive types, wrapper classes, autoboxing, unboxing, and null handling.",
+            category: "Java",
+            file: "java-interview-questions/2. Data Types and Variables.md"
+          },
+          {
+            title: "Topic 3 - Enums",
+            slug: "java-topic-3-enums",
+            description:
+              "Enums in Java, iterating values, the Enum class, and inheritance rules.",
+            category: "Java",
+            file: "java-interview-questions/3. Enums.md"
+          },
+          {
+            title: "Topic 4 - Operators & Expressions",
+            slug: "java-topic-4-operators-expressions",
+            description:
+              "The diamond operator, equality with == and .equals(), and custom equality logic.",
+            category: "Java",
+            file: "java-interview-questions/4. Operators and Expressions.md"
+          },
+          {
+            title: "Topic 5 - Strings",
+            slug: "java-topic-5-strings",
+            description:
+              "String literals vs objects, the string pool, StringBuffer, and memory representation.",
+            category: "Java",
+            file: "java-interview-questions/5. Strings.md"
+          },
+          {
+            title: "Topic 6 - Java Keywords & Modifiers",
+            slug: "java-topic-6-keywords-modifiers",
+            description:
+              "final, static, this, super, access modifiers, and memory implications of the static keyword.",
+            category: "Java",
+            file: "java-interview-questions/6. Java Keywords and Modifiers.md"
+          },
+          {
+            title: "Topic 7 - Methods",
+            slug: "java-topic-7-methods",
+            description:
+              "Method overloading and overriding, main method rules, and covariant return types.",
+            category: "Java",
+            file: "java-interview-questions/7. Methods.md"
+          },
+          {
+            title: "Topic 8 - OOPs Concepts",
+            slug: "java-topic-8-oops-concepts",
+            description:
+              "Classes, objects, inheritance, constructors, coupling, cohesion, and object-oriented design.",
+            category: "Java",
+            file: "java-interview-questions/8. OOPs Concepts.md"
+          }
+        ]
+      },
+
+      {
+        title: "Advanced Java & JVM",
+        items: [
+          {
+            title: "Topic 9 - Generics",
+            slug: "java-topic-9-generics",
+            description:
+              "Generic types, type safety, and how generics work in the Java language.",
+            category: "Java",
+            file: "java-interview-questions/9. Generics.md"
+          },
+          {
+            title: "Topic 10 - Exception Handling",
+            slug: "java-topic-10-exception-handling",
+            description:
+              "Checked and unchecked exceptions, try-with-resources, and best practices.",
+            category: "Java",
+            file: "java-interview-questions/10. Exception Handling.md"
+          },
+          {
+            title: "Topic 11 - Collections Framework",
+            slug: "java-topic-11-collections-framework",
+            description:
+              "Lists, Sets, Maps, iteration order, concurrency, and choosing the right collection.",
+            category: "Java",
+            file: "java-interview-questions/11. Collections Framework.md"
+          },
+          {
+            title: "Topic 12 - Java 8+ Features",
+            slug: "java-topic-12-java-8-features",
+            description:
+              "Lambdas, Streams, Optional, functional interfaces, and modern Java APIs.",
+            category: "Java",
+            file: "java-interview-questions/12. Java 8 Plus Features.md"
+          },
+          {
+            title: "Topic 13 - Multithreading & Concurrency",
+            slug: "java-topic-13-multithreading-concurrency",
+            description:
+              "Threads, synchronization, executors, CompletableFuture, and concurrency utilities.",
+            category: "Java",
+            file: "java-interview-questions/13. Multithreading and Concurrency.md"
+          },
+          {
+            title: "Topic 14 - Memory Management & GC",
+            slug: "java-topic-14-memory-management-gc",
+            description:
+              "Heap and stack, garbage collection algorithms, and memory leak prevention.",
+            category: "JVM",
+            file: "java-interview-questions/14. Memory Management and GC.md"
+          },
+          {
+            title: "Topic 15 - JVM & ClassLoaders",
+            slug: "java-topic-15-jvm-classloaders",
+            description:
+              "JVM architecture, class loading process, and the ClassLoader hierarchy.",
+            category: "JVM",
+            file: "java-interview-questions/15. JVM and ClassLoaders.md"
+          },
+          {
+            title: "Topic 16 - Serialization",
+            slug: "java-topic-16-serialization",
+            description:
+              "Serialization basics, serialVersionUID, custom serialization, and security concerns.",
+            category: "Java",
+            file: "java-interview-questions/16. Serialization.md"
+          },
+          {
+            title: "Topic 17 - Reflection & Annotations",
+            slug: "java-topic-17-reflection-annotations",
+            description:
+              "Reflection API, annotations, and runtime inspection of Java classes.",
+            category: "Java",
+            file: "java-interview-questions/17. Reflection and Annotations.md"
+          },
+          {
+            title: "Topic 18 - Design Patterns",
+            slug: "java-topic-18-design-patterns",
+            description:
+              "Creational, structural, and behavioral design patterns with practical examples.",
+            category: "Java",
+            file: "java-interview-questions/18. Design Patterns.md"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    category: "SQL Interview Questions",
+    subtitle: "© Vinay Kumar Panika",
+    slug: "sql-interview-questions",
+
+    sections: [
+      {
+        title: "Basic Level",
+        items: [
+          {
+            title: "Part 1 - SQL Basics & Commands",
+            slug: "sql-basic-1-basics-commands",
+            description:
+              "SQL fundamentals, databases, commands, keys, constraints, joins, normalization, and SQL vs MySQL.",
+            category: "SQL",
+            file: "sql-interview-questions/1. Basic Level.md"
+          },
+          {
+            title: "Part 2 - Intermediate SQL",
+            slug: "sql-basic-2-intermediate",
+            description:
+              "Subqueries, GROUP BY, window functions, indexing, views, stored procedures, triggers, and cursors.",
+            category: "SQL",
+            file: "sql-interview-questions/2. Intermediate Level.md"
+          },
+          {
+            title: "Part 3 - Advanced SQL",
+            slug: "sql-basic-3-advanced",
+            description:
+              "ACID properties, transactions, RANK functions, pivots, recursive queries, JSON, XML, and NULL handling.",
+            category: "SQL",
+            file: "sql-interview-questions/3. Advanced Level.md"
+          },
+          {
+            title: "Part 4 - Real-Time Scenarios",
+            slug: "sql-basic-4-real-time-scenarios",
+            description:
+              "Practical problems: duplicate records, highest salaries, alternate rows, column swaps, and more.",
+            category: "SQL",
+            file: "sql-interview-questions/4. Real-Time Scenarios.md"
+          },
+          {
+            title: "Part 5 - Optimization Techniques",
+            slug: "sql-basic-5-optimization-techniques",
+            description:
+              "Query optimization, execution plans, indexing, table partitioning, deadlocks, and performance.",
+            category: "SQL",
+            file: "sql-interview-questions/5. Optimization Techniques.md"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    category: "JavaScript Interview Questions",
+    subtitle: "© Sudheer Jonna",
+    slug: "javascript-interview-questions",
+
+    sections: [
+      {
+        title: "Language Fundamentals",
+        items: [
+          {
+            title: "Module 1 - Objects, Prototypes & Functions",
+            slug: "js-module-1-objects-prototypes-functions",
+            description:
+              "Object creation patterns, prototypes, prototype chains, call/apply/bind, and function fundamentals.",
+            category: "JavaScript",
+            file: "javascript-interview-questions/1. Objects, Prototypes & Functions.md"
+          },
+          {
+            title: "Module 2 - Browser Storage & Web Workers",
+            slug: "js-module-2-browser-storage-web-workers",
+            description:
+              "LocalStorage, sessionStorage, cookies, IndexedDB, service workers, and web worker APIs.",
+            category: "Browser",
+            file: "javascript-interview-questions/2. Browser Storage & Web Workers.md"
+          },
+          {
+            title: "Module 3 - Promises & Callbacks",
+            slug: "js-module-3-promises-callbacks",
+            description:
+              "Callbacks, promises, promise chaining, async/await, and handling asynchronous operations.",
+            category: "Async",
+            file: "javascript-interview-questions/3. Promises & Callbacks.md"
+          },
+          {
+            title: "Module 4 - Operators, Types & Strict Mode",
+            slug: "js-module-4-operators-types-strict-mode",
+            description:
+              "Equality and comparison operators, data types, type coercion, and strict mode behavior.",
+            category: "JavaScript",
+            file: "javascript-interview-questions/4. Operators, Types & Strict Mode.md"
+          },
+          {
+            title: "Module 5 - Events & DOM",
+            slug: "js-module-5-events-dom",
+            description:
+              "Event handling, event propagation, DOM manipulation, and browser event models.",
+            category: "DOM",
+            file: "javascript-interview-questions/5. Events & DOM.md"
+          }
+        ]
+      },
+
+      {
+        title: "Objects & Data Structures",
+        items: [
+          {
+            title: "Module 6 - JSON, URLs & Strings",
+            slug: "js-module-6-json-urls-strings",
+            description:
+              "JSON parsing and stringify, URL handling, string methods, and text processing.",
+            category: "JavaScript",
+            file: "javascript-interview-questions/6. JSON, URLs & Strings.md"
+          },
+          {
+            title: "Module 7 - Object Methods & Property Management",
+            slug: "js-module-7-object-methods-property-management",
+            description:
+              "Object methods, property descriptors, destructuring, spread, and property manipulation.",
+            category: "Objects",
+            file: "javascript-interview-questions/7. Object Methods & Property Management.md"
+          },
+          {
+            title: "Module 8 - Collections: Set, Map & Weak",
+            slug: "js-module-8-collections-set-map-weak",
+            description:
+              "Set, Map, WeakSet, WeakMap, and their use cases and performance characteristics.",
+            category: "Collections",
+            file: "javascript-interview-questions/8. Collections Set, Map and Weak.md"
+          }
+        ]
+      },
+
+      {
+        title: "Functions & Async Patterns",
+        items: [
+          {
+            title: "Module 9 - Function Parameters & Error Handling",
+            slug: "js-module-9-function-parameters-error-handling",
+            description:
+              "Parameters, rest/spread, default values, and try/catch error handling techniques.",
+            category: "JavaScript",
+            file: "javascript-interview-questions/9. Function Parameters & Error Handling.md"
+          },
+          {
+            title: "Module 10 - Classes, Prototypes & TypeScript",
+            slug: "js-module-10-classes-prototypes-typescript",
+            description:
+              "ES6 classes, inheritance, prototype-based patterns, and TypeScript fundamentals.",
+            category: "OOP",
+            file: "javascript-interview-questions/10. Classes, Prototypes & TypeScript.md"
+          },
+          {
+            title: "Module 11 - ES6 & Modules",
+            slug: "js-module-11-es6-modules",
+            description:
+              "ES6 syntax, template literals, arrow functions, and module import/export systems.",
+            category: "ES6",
+            file: "javascript-interview-questions/11. ES6 & Modules.md"
+          },
+          {
+            title: "Module 12 - Iterators, Generators & Async Patterns",
+            slug: "js-module-12-iterators-generators-async",
+            description:
+              "Iterators, generators, async iterators, for-await, and advanced async control flow.",
+            category: "Async",
+            file: "javascript-interview-questions/12. Iterators, Generators & Async Patterns.md"
+          }
+        ]
+      },
+
+      {
+        title: "Advanced Concepts & Performance",
+        items: [
+          {
+            title: "Module 13 - Modern JavaScript & Advanced Concepts",
+            slug: "js-module-13-modern-javascript-advanced",
+            description:
+              "Closures, currying, memoization, event loop, hoisting, scope, and advanced JS topics.",
+            category: "Advanced",
+            file: "javascript-interview-questions/13. Modern JavaScript & Advanced Concepts.md"
+          },
+          {
+            title: "Module 14 - Performance & Optimization",
+            slug: "js-module-14-performance-optimization",
+            description:
+              "Memory leaks, debouncing, throttling, web vitals, bundle optimization, and rendering performance.",
+            category: "Performance",
+            file: "javascript-interview-questions/14. Performance & Optimization.md"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    category: "React Interview Questions",
+    subtitle: "© GM-Sunshine",
+    slug: "react-interview-questions",
+
+    sections: [
+      {
+        title: "Part I - Fundamentals",
+        items: [
+          {
+            title: "Module 1 - React Fundamentals",
+            slug: "react-module-1-fundamentals",
+            description:
+              "JSX, components, props, state, events, forms, lists, composition, and the virtual DOM.",
+            category: "React",
+            file: "react-interview-questions/1-20 Part I - React Fundamentals.md"
+          }
+        ]
+      },
+
+      {
+        title: "Part II - Hooks",
+        items: [
+          {
+            title: "Module 2 - Hooks",
+            slug: "react-module-2-hooks",
+            description:
+              "useState, useEffect, useContext, useRef, useMemo, useCallback, custom hooks, and the Rules of Hooks.",
+            category: "React",
+            file: "react-interview-questions/21-40 Part II - Hooks.md"
+          }
+        ]
+      },
+
+      {
+        title: "Part III - State & Data",
+        items: [
+          {
+            title: "Module 3 - State & Data",
+            slug: "react-module-3-state-data",
+            description:
+              "Context, Redux Toolkit, server state, React Query, forms, and error boundaries.",
+            category: "State",
+            file: "react-interview-questions/41-60 Part III - State & Data.md"
+          }
+        ]
+      },
+
+      {
+        title: "Part IV - Performance & Rendering",
+        items: [
+          {
+            title: "Module 4 - Performance & Rendering",
+            slug: "react-module-4-performance-rendering",
+            description:
+              "Reconciliation, memo, re-renders, code splitting, React 18 batching, and hydration.",
+            category: "Performance",
+            file: "react-interview-questions/61-80 Part IV - Performance & Rendering.md"
+          }
+        ]
+      },
+
+      {
+        title: "Part V - Advanced & Testing",
+        items: [
+          {
+            title: "Module 5 - Advanced & Testing",
+            slug: "react-module-5-advanced-testing",
+            description:
+              "Server Components, React 19, routing, TypeScript, and React Testing Library.",
+            category: "Testing",
+            file: "react-interview-questions/81-100 Part V - Advanced & Testing.md"
           }
         ]
       }

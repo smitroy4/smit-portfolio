@@ -120,6 +120,32 @@ PROSE
 max-width: 100%;
 }
 
+.blog-content,
+.blog-content * {
+font-family: "iA Writer Quattro", "Inter", system-ui, sans-serif;
+}
+
+.blog-content.prose p {
+font-size: 1.25rem;
+line-height: 1.85;
+}
+
+.blog-content.prose li {
+font-size: 1.25rem;
+}
+
+.blog-content.prose blockquote {
+font-size: 1.25rem;
+}
+
+.blog-content.prose h2 {
+font-size: 2.25rem;
+}
+
+.blog-content.prose h3 {
+font-size: 1.75rem;
+}
+
 .prose h1 {
 font-size: 3rem;
 font-weight: 800;
@@ -227,6 +253,135 @@ background: #fafafa;
 }
 
 /* =========================================================
+RESOURCE READER (always light, dark text)
+========================================================= */
+
+.resource-content,
+.resource-content * {
+color: #18181b;
+font-family: "iA Writer Quattro", "Inter", system-ui, sans-serif;
+}
+
+.resource-content {
+font-size: 1.375rem;
+line-height: 1.8;
+}
+
+.resource-content pre {
+color: #fafafa;
+background-color: #18181b !important;
+font-family: "JetBrains Mono", monospace;
+}
+
+.resource-content pre code {
+color: inherit;
+background-color: transparent;
+font-family: "JetBrains Mono", monospace;
+}
+
+.resource-content pre .token {
+background-color: transparent;
+}
+
+.dark .resource-content pre {
+color: #fafafa;
+background-color: #18181b !important;
+}
+
+.resource-content pre {
+font-size: 1rem;
+}
+
+.resource-content :not(pre) > code {
+font-family: "JetBrains Mono", monospace;
+}
+
+.resource-content p {
+margin-bottom: 1.25rem;
+}
+
+.resource-content h1,
+.resource-content h2,
+.resource-content h3,
+.resource-content h4,
+.resource-content h5,
+.resource-content h6,
+.resource-content strong,
+.resource-content b {
+color: #09090b;
+}
+
+.resource-content h1 {
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+}
+
+.resource-content h2 {
+font-size: 2rem;
+margin-bottom: 1.25rem;
+}
+
+.resource-content h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
+.resource-content h4,
+.resource-content h5,
+.resource-content h6 {
+font-size: 1.5rem;
+margin-bottom: 0.75rem;
+}
+
+.resource-content p > strong:only-child {
+font-size: 1.5rem;
+display: block;
+margin-bottom: 0.75rem;
+}
+
+.resource-content ul,
+.resource-content ol {
+padding-left: 1.5rem;
+margin-bottom: 1.25rem;
+}
+
+.resource-content li {
+margin-bottom: 0.5rem;
+}
+
+.resource-content a {
+color: #2563eb;
+}
+
+.resource-content :not(pre) > code {
+color: #dc2626;
+}
+
+.dark .resource-content,
+.dark .resource-content * {
+color: #18181b;
+}
+
+.dark .resource-content h1,
+.dark .resource-content h2,
+.dark .resource-content h3,
+.dark .resource-content h4,
+.dark .resource-content h5,
+.dark .resource-content h6,
+.dark .resource-content strong,
+.dark .resource-content b {
+color: #09090b;
+}
+
+.dark .resource-content a {
+color: #2563eb;
+}
+
+.dark .resource-content :not(pre) > code {
+color: #dc2626;
+}
+
+/* =========================================================
 UTILITIES
 ========================================================= */
 
@@ -329,24 +484,6 @@ box-shadow:
 rgba(0, 0, 0, 0.08);
 }
 
-.react-pdf__Page {
-  background: white;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow:
-    0 10px 40px rgba(
-      0,
-      0,
-      0,
-      0.08
-    );
-}
-
-.react-pdf__Page canvas {
-  max-width: 100%;
-  height: auto !important;
-}
-
 .swiper {
   width: 100%;
   overflow: hidden;
@@ -358,17 +495,6 @@ rgba(0, 0, 0, 0.08);
 
 .swiper-slide {
   height: auto;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #2563eb;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 22px;
-  font-weight: 700;
 }
 
 @keyframes gradient {

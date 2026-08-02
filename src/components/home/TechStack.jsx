@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -9,17 +10,20 @@ import {
   Monitor,
   Sparkles,
   ShieldCheck,
+  ArrowLeft,
+  ArrowRight,
 } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 
 import TechBadge from "../common/TechBadge";
 
 function TechStack() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   const groups = [
     {
       title: "Backend Development",
@@ -190,9 +194,76 @@ function TechStack() {
       </div>
 
       <div className="relative">
+        <div className="mb-6 flex items-center justify-end gap-3">
+          <button
+            ref={prevRef}
+            aria-label="Previous tech stack"
+            className="
+              flex
+              h-11
+              w-11
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-zinc-200
+              bg-white
+              text-zinc-600
+              shadow-sm
+              hover:border-blue-300
+              hover:bg-blue-50
+              hover:text-blue-600
+              dark:border-zinc-700
+              dark:bg-zinc-800
+              dark:text-zinc-300
+              dark:hover:border-blue-800
+              dark:hover:bg-blue-900/40
+              dark:hover:text-blue-300
+              transition-all
+              duration-300
+            "
+          >
+            <ArrowLeft size={20} />
+          </button>
+
+          <button
+            ref={nextRef}
+            aria-label="Next tech stack"
+            className="
+              flex
+              h-11
+              w-11
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-zinc-200
+              bg-white
+              text-zinc-600
+              shadow-sm
+              hover:border-blue-300
+              hover:bg-blue-50
+              hover:text-blue-600
+              dark:border-zinc-700
+              dark:bg-zinc-800
+              dark:text-zinc-300
+              dark:hover:border-blue-800
+              dark:hover:bg-blue-900/40
+              dark:hover:text-blue-300
+              transition-all
+              duration-300
+            "
+          >
+            <ArrowRight size={20} />
+          </button>
+        </div>
+
         <Swiper
           modules={[Navigation, Autoplay]}
-          navigation
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -208,7 +279,7 @@ function TechStack() {
               slidesPerView: 3,
             },
           }}
-          className="w-full pb-12"
+          className="w-full"
         >
           {groups.map((group) => {
             const Icon = group.icon;

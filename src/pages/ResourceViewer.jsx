@@ -1,15 +1,36 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import PageWrapper from "../components/common/PageWrapper";
 import SEO from "../components/common/SEO";
 
-import PDFReader from "../components/resources/PDFReader";
+import ResourceReader from "../components/resources/ResourceReader";
 
 import resources from "../data/resources";
+import { loadResource } from "../utils/loadResource";
+
+// Flatten:
+// Collections -> Sections -> Items
+const allResources = resources.flatMap((collection) =>
+  (collection.sections || []).flatMap(
+    (section) => section.items || []
+  )
+);
+
+const findCollectionSlug = (itemSlug) =>
+  resources.find((collection) =>
+    (collection.sections || []).some((section) =>
+      (section.items || []).some(
+        (item) => item.slug === itemSlug
+      )
+    )
+  )?.slug || "resources";
 
 function ResourceViewer() {
   const { slug } = useParams();
+
+  const [content, setContent] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo({
@@ -18,17 +39,42 @@ function ResourceViewer() {
     });
   }, [slug]);
 
-  // Flatten:
-  // Collections -> Sections -> Items
-  const allResources = resources.flatMap((collection) =>
-    (collection.sections || []).flatMap(
-      (section) => section.items || []
-    )
-  );
-
   const resource = allResources.find(
     (item) => item.slug === slug
   );
+
+  const collectionSlug = findCollectionSlug(slug);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function fetchContent() {
+      const currentResource = allResources.find(
+        (item) => item.slug === slug
+      );
+
+      if (!currentResource) return;
+
+      setLoading(true);
+
+      const markdown = await loadResource(
+        currentResource.file
+      );
+
+      if (!cancelled) {
+        setContent(
+          markdown || "# Content Not Found"
+        );
+        setLoading(false);
+      }
+    }
+
+    fetchContent();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
   if (!resource) {
     return (
@@ -75,7 +121,7 @@ function ResourceViewer() {
 
           {/* Back Button */}
           <Link
-            to="/resources"
+            to={`/resources/collection/${collectionSlug}`}
             className="
               inline-flex
               items-center
@@ -87,7 +133,7 @@ function ResourceViewer() {
               transition-colors
             "
           >
-            ← Back to Resources
+            ← Back to {resource.category}
           </Link>
 
           {/* Header */}
@@ -141,12 +187,30 @@ function ResourceViewer() {
 
           </header>
 
-          {/* PDF Reader */}
-          <PDFReader
-            file={resource.link}
-            currentResource={resource}
-            allResources={allResources}
-          />
+          {/* Markdown Reader */}
+          {loading ? (
+            <div
+              className="
+                w-full
+                rounded-3xl
+                border
+                border-zinc-200
+                bg-white
+                shadow-xl
+                py-24
+                text-center
+                text-zinc-500
+              "
+            >
+              Content Loading...
+            </div>
+          ) : (
+            <ResourceReader
+              content={content}
+              currentResource={resource}
+              allResources={allResources}
+            />
+          )}
 
           {/* Related Resources */}
           {relatedResources.length > 0 && (

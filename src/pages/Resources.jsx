@@ -1,11 +1,89 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Database } from "lucide-react";
 
 import PageWrapper from "../components/common/PageWrapper";
 import SEO from "../components/common/SEO";
 
 import resources from "../data/resources";
 import CTA from "../components/home/CTA";
+
+const collectionLogos = {
+  "spring-boot-interview-questions": {
+    type: "img",
+    src: "/images/resources/spring.svg",
+    alt: "Spring",
+  },
+  "java-interview-questions": {
+    type: "img",
+    src: "/images/resources/java.svg",
+    alt: "Java",
+  },
+  "sql-interview-questions": {
+    type: "icon",
+    icon: Database,
+    alt: "Database",
+  },
+  "javascript-interview-questions": {
+    type: "img",
+    src: "/images/resources/javascript.svg",
+    alt: "JavaScript",
+  },
+  "react-interview-questions": {
+    type: "img",
+    src: "/images/resources/react.svg",
+    alt: "React",
+  },
+};
+
+function CollectionLogo({ slug }) {
+  const logo = collectionLogos[slug];
+
+  if (!logo) {
+    return null;
+  }
+
+  return (
+    <div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        -bottom-5
+        -right-5
+        h-40
+        w-40
+        opacity-[0.13]
+        mix-blend-multiply
+        dark:mix-blend-screen
+        dark:opacity-[0.18]
+        transition-all
+        duration-300
+        group-hover:scale-105
+      "
+      style={{
+        maskImage:
+          "radial-gradient(ellipse at center, black 55%, transparent 78%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse at center, black 55%, transparent 78%)",
+      }}
+    >
+      {logo.type === "img" ? (
+        <img
+          src={logo.src}
+          alt={logo.alt}
+          className="h-full w-full object-contain"
+        />
+      ) : (
+        <logo.icon
+          size={160}
+          className="h-full w-full text-blue-700 dark:text-blue-300"
+          strokeWidth={1.5}
+        />
+      )}
+    </div>
+  );
+}
 
 function Resources() {
   const totalResources = resources.reduce(
@@ -99,8 +177,8 @@ function Resources() {
                 </p>
               </div>
               <div className="rounded-2xl border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-800 p-5 shadow-sm">
-                <h3 className="text-3xl font-bold">PDF</h3>
-                <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Format</p>
+                <h3 className="text-3xl font-bold">From</h3>
+                <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Industry Experts</p>
               </div>
             </motion.div>
           </div>
@@ -112,25 +190,28 @@ function Resources() {
             <Link
               key={collection.slug}
               to={`/resources/collection/${collection.slug}`}
-              className="group block border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-white dark:bg-zinc-800 shadow-sm hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-zinc-900/50 transition-all"
+              className="group relative block overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-white dark:bg-zinc-800 shadow-sm hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-zinc-900/50 transition-all"
             >
-              <div className="inline-flex px-3 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 text-xs font-medium mb-4">
-                Resource Collection
-              </div>
-              <h3 className="font-semibold text-lg mb-3 group-hover:text-blue-600 transition-colors">
-                {collection.category}
-              </h3>
-              {collection.subtitle && (
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3">
-                  {collection.subtitle}
+              <CollectionLogo slug={collection.slug} />
+              <div className="relative">
+                <div className="inline-flex px-3 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 text-xs font-medium mb-4">
+                  Resource Collection
+                </div>
+                <h3 className="font-semibold text-lg mb-3 group-hover:text-blue-600 transition-colors">
+                  {collection.category}
+                </h3>
+                {collection.subtitle && (
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3">
+                    {collection.subtitle}
+                  </p>
+                )}
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+                  {collection.sections.length} sections ·{" "}
+                  {collection.sections.reduce((sum, s) => sum + s.items.length, 0)} modules
                 </p>
-              )}
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm">
-                {collection.sections.length} sections ·{" "}
-                {collection.sections.reduce((sum, s) => sum + s.items.length, 0)} modules
-              </p>
-              <div className="mt-4 text-blue-600 text-sm font-medium">
-                Browse Collection →
+                <div className="mt-4 text-blue-600 text-sm font-medium">
+                  Browse Collection →
+                </div>
               </div>
             </Link>
           ))}

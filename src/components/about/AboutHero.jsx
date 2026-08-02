@@ -168,27 +168,39 @@ function AboutHero() {
         >
           <div className="relative">
             {/* Profile Image */}
-            <motion.img
-              src="/images/profile/smit-roy.webp"
-              alt="Smit Roy"
-              whileHover={{
-                scale: 1.03,
-              }}
-              transition={{
-                duration: 0.4,
-              }}
-              className="
-                w-72
-                h-72
-                sm:w-80
-                sm:h-80
-                lg:w-96
-                lg:h-96
-                object-contain
-                rounded-[32px]
-                shadow-2xl
-              "
-            />
+            <div className="relative">
+              <motion.img
+                src="/images/profile/smit-roy.webp"
+                alt="Smit Roy"
+                whileHover={{
+                  scale: 1.03,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                className="
+                  w-72
+                  h-72
+                  sm:w-80
+                  sm:h-80
+                  lg:w-96
+                  lg:h-96
+                  object-contain
+                  rounded-[40px]
+                  shadow-2xl
+                "
+              />
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  rounded-[40px]
+                  shadow-[inset_0_0_28px_rgba(0,0,0,0.1)]
+                  pointer-events-none
+                "
+              />
+            </div>
 
             {/* Floating Badges - Desktop Only */}
             <div className="hidden lg:block">

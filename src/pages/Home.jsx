@@ -13,7 +13,7 @@ function Home() {
     <>
       <SEO
         title="Scaling The Stack"
-        description="Smit Roy is a Java Backend Developer focused on Spring Boot, Microservices, PostgreSQL, Redis, Kafka, System Design, and scalable backend architecture."
+        description="Smit Roy is a Java Backend Developer focused on Spring Boot, Microservices, PostgreSQL, Kafka, System Design, and scalable backend architecture."
       />
 
       <PageWrapper>
