@@ -193,7 +193,7 @@ function Footer() {
             </p>
 
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              Built with React, Tailwind CSS & Vite.
+              Made with patience, curiosity, and a love for figuring things out.
             </p>
 
           </div>

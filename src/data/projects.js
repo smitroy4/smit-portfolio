@@ -1,4 +1,35 @@
 const projects = [
+
+{
+  id: "eclat-ai",
+  title: "EclatAI",
+  category: "AI Web Builder",
+  featured: true,
+  status: "In Development",
+  banner: "/images/projects/eclat-ai-cover.png",
+  description:
+    "EclatAI is a production-focused AI web builder that generates clean, deployable React frontends developers actually want to work with. Built on Generative AI + RAG for intelligent code generation, powered by Spring Boot, Qdrant, PostgreSQL, and Kubernetes.",
+  technologies: [
+    "Java",
+    "Spring Boot",
+    "Microservices",
+    "Gen AI",
+    "RAG",
+    "PostgreSQL",
+    "Qdrant",
+    "Kubernetes",
+  ],
+  github: "https://github.com/smitroy4/EclatAI",
+  demo: null,
+  highlights: [
+    "Intelligent React code generation leveraging Gemini API with RAG",
+    "Cloud-native deployment architecture for scalability",
+    "Vector database for semantic understanding of design patterns",
+    "GCP integration for managed infrastructure and ML services",
+    "MVP launch planned for Q1 2027",
+  ]
+},
+
     {
     id: "staygrid",
 
@@ -8,7 +39,7 @@ const projects = [
 
     featured: true,
 
-    status: "In Progress",
+    status: "Completed",
 
     banner: "/images/projects/staygrid-cover.png",
 
@@ -48,7 +79,7 @@ const projects = [
 
     featured: true,
 
-    status: "In Progress",
+    status: "Completed",
 
     banner: "/images/projects/circuit-mart-cover.png",
 

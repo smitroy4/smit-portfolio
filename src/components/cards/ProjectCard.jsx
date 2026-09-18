@@ -3,10 +3,15 @@ import { FaGithub } from "react-icons/fa";
 
 function ProjectCard({ project }) {
   const statusStyles = {
-    Completed: "bg-green-50 text-green-700",
-    Released: "bg-blue-50 text-blue-700",
-    Ongoing: "bg-yellow-50 text-yellow-700",
-  };
+  Completed:
+    "bg-emerald-100 text-emerald-800 dark:bg-emerald-400/15 dark:text-emerald-300",
+
+  Released:
+    "bg-violet-100 text-violet-800 dark:bg-violet-400/15 dark:text-violet-300",
+
+  "In Development":
+    "bg-amber-100 text-amber-800 dark:bg-amber-400/15 dark:text-amber-300",
+};
 
   return (
     <article

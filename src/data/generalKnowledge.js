@@ -4,7 +4,7 @@ const generalKnowledge = {
 Name: Smit Roy | Java Backend Developer | Expertise in Spring Boot, Microservices, System Design
 Location: Kolkata, India
 Education: MCA (Master of Computer Applications), specialization in Cloud Computing
-Current Role: Associate Developer at Task Virtual Services, Kolkata (PHP-based systems, exposure to JavaScript)
+Current Role: Associate Developer at Task Virtual Services, Kolkata
 Career Focus: Java Backend Developer — building production-grade Spring Boot systems, microservices, and distributed architectures
 
 Technical Identity:

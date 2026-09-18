@@ -185,6 +185,7 @@ skills: [
 title: "Cloud, Containers & DevOps",
 icon: FaDocker,
 skills: [
+"AWS",
 "Docker",
 "Kubernetes",
 "Git",
@@ -193,6 +194,7 @@ skills: [
 "CI/CD",
 "Linux",
 "Postman",
+"Oracle Cloud",
 "Render",
 "Railway"
 ],

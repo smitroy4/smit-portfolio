@@ -79,8 +79,10 @@ function TechStack() {
       title: "Cloud & DevOps",
       icon: Cloud,
       tech: [
+        "AWS",
         "Docker",
         "Kubernetes",
+        "Oracle Cloud",
         "GitHub Actions",
         "CI/CD",
         "Render",

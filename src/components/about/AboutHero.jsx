@@ -128,9 +128,10 @@ function AboutHero() {
             "
           >
             <p>
-              I'm Smit Roy an MCA student and a Backend Developer focused on
-              Java, Spring Boot, Microservices, System Design, and scalable
-              software engineering.
+              I'm Smit Roy, an MCA student and Backend Developer with 2.5+
+              years of experience in software development, focused on Java,
+              Spring Boot, Microservices, System Design, and scalable software
+              engineering.
             </p>
 
             <p>
@@ -140,9 +141,9 @@ function AboutHero() {
             </p>
 
             <p>
-              Today I spend most of my time learning backend development,
-              distributed systems, databases, cloud-native development, and
-              modern software architecture.
+              Today I spend most of my time building backend development and
+              distributed systems, working with databases, cloud-native
+              development, and modern software architecture.
             </p>
 
             <p>
