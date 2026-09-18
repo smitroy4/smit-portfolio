@@ -293,11 +293,10 @@ ${question}
 
           <div className="flex flex-wrap gap-2 mt-5">
             {[
+              "What is EclatAI and how does it work?",
               "Explain CircuitMart microservices architecture",
               "How does StayGrid dynamic pricing work?",
               "What is the CAP theorem in distributed systems?",
-              "Explain transformers in AI/ML",
-              "What are common types of cyber attacks?",
               "Difference between supervised and unsupervised learning",
               "How does load balancing work in distributed systems?",
             ].map((item) => (
