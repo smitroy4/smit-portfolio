@@ -62,6 +62,7 @@ function AuthorBox({ author }) {
               rel="noopener noreferrer"
               className="
                 inline-flex
+                group
                 items-center
                 gap-2
                 px-4
@@ -72,12 +73,13 @@ function AuthorBox({ author }) {
                 border
                 border-zinc-300
                 text-zinc-700
-                hover:bg-white
-                hover:border-blue-300
+                hover:bg-[#0A66C2]
+                hover:text-white
+                hover:border-[#0A66C2]
                 transition
               "
             >
-              <FaLinkedin className="text-blue-600" />
+              <FaLinkedin className="text-blue-600 group-hover:text-white transition-colors" />
               LinkedIn
             </a>
           )}

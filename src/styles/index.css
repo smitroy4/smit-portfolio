@@ -103,13 +103,13 @@ TEXT SELECTION
 ========================================================= */
 
 ::selection {
-background: #2563eb;
-color: white;
+background: #fbbf24;
+color: #1c1917;
 }
 
 ::-moz-selection {
-background: #2563eb;
-color: white;
+background: #fbbf24;
+color: #1c1917;
 }
 
 /* =========================================================
@@ -126,24 +126,24 @@ font-family: "iA Writer Quattro", "Inter", system-ui, sans-serif;
 }
 
 .blog-content.prose p {
-font-size: 1.25rem;
+font-size: 1.125rem;
 line-height: 1.85;
 }
 
 .blog-content.prose li {
-font-size: 1.25rem;
+font-size: 1.125rem;
 }
 
 .blog-content.prose blockquote {
-font-size: 1.25rem;
+font-size: 1.125rem;
 }
 
 .blog-content.prose h2 {
-font-size: 2.25rem;
+font-size: 2rem;
 }
 
 .blog-content.prose h3 {
-font-size: 1.75rem;
+font-size: 1.5rem;
 }
 
 .prose h1 {
@@ -509,4 +509,15 @@ rgba(0, 0, 0, 0.08);
 
 .animate-gradient {
   animation: gradient 4s ease infinite;
+}
+
+/* =========================================================
+CUSTOM COFFEE CURSOR
+========================================================= */
+
+@media (pointer: fine) {
+  body,
+  body * {
+    cursor: none;
+  }
 }

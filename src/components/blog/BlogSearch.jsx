@@ -10,14 +10,12 @@ function BlogSearch({ value, onChange }) {
   const suggestions = [
     "Java",
     "Spring Boot",
-    "Microservices",
     "SQL",
-    "Web Development",
-    "DevOps & Deployment",
+    "Data Analytics",
+    "Cloud & DevOps",
     "System Design",
-    "RAG & Gen AI",
+    "AI/ML",
     "DSA",
-    "Cloud & AWS",
     "CS Fundamentals",
     "Career & Interview Prep",
   ];

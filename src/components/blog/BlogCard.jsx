@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
+import { getAuthor } from "../../data/authors";
+
 function BlogCard({ post }) {
+  const author = getAuthor(post.authorId);
+
   return (
     <Link
       to={`/blogs/${post.slug}`}
@@ -50,6 +54,28 @@ function BlogCard({ post }) {
             mb-4
           "
         >
+          {author && (
+            <span className="flex items-center gap-2">
+              <img
+                src={author.image}
+                alt={author.name}
+                className="
+                  w-6
+                  h-6
+                  rounded-full
+                  object-cover
+                  object-top
+                  border
+                  border-zinc-200
+                  dark:border-zinc-600
+                "
+              />
+              <span className="font-medium text-zinc-700 dark:text-zinc-300">
+                {author.name}
+              </span>
+            </span>
+          )}
+
           <span>{post.date}</span>
 
           {post.readTime && (

@@ -1,6 +1,30 @@
 const blogMetadata = [
 
   {
+  slug: "ai-backend-development-copilot",
+
+  authorId: 1,
+
+  title: "AI as Your Backend Development Copilot: What Actually Works",
+
+  description: "Move beyond the AI hype and discover how AI is transforming real-world backend development. Explore where it accelerates coding, debugging, and documentation, and where it falls short. Learn to use AI strategically, strengthen your engineering judgment, and build better systems.",
+
+  date: "19 September 2026",
+
+  readTime: "150 min read",
+
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1789827939/ai-backend-development-copilot_urupcq.png",
+
+  tags: [
+    "AI",
+    "Backend Development",
+    "Productivity",
+    "Spring Boot",
+    "Career"
+  ]
+},
+
+  {
   slug: "web-development-core-zero-to-hero-roadmap",
 
   authorId: 1,
@@ -418,18 +442,5 @@ const blogMetadata = [
   },
 
 ];
-
-export const authorsById = {
-  1: {
-    id: 1,
-    name: "Smit Roy",
-    role: "Java Backend Developer",
-    image: "/images/profile/smit-roy.webp",
-    description:
-      "Backend Developer, focused on Java, Spring Boot, Microservices, System Design, Cloud-Native Development, and building scalable distributed applications.",
-    linkedin: "https://linkedin.com/in/smitroy22",
-    github: "https://github.com/smitroy4",
-  },
-};
 
 export default blogMetadata;

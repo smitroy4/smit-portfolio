@@ -16,12 +16,15 @@ import PageWrapper from "../components/common/PageWrapper";
 import BlogCard from "../components/blog/BlogCard";
 import BlogSearch from "../components/blog/BlogSearch";
 import blogMetadata from "../data/blogMetadata";
+import { authorsById } from "../data/authors";
 import SEO from "../components/common/SEO";
 
 function Blogs() {
   const [search, setSearch] = useState("");
   const [selectedTag, setSelectedTag] =
     useState("All");
+  const [selectedAuthor, setSelectedAuthor] =
+    useState("all");
 
   const [sortBy, setSortBy] =
     useState("latest");
@@ -84,6 +87,14 @@ function Blogs() {
       );
     }
 
+    if (selectedAuthor !== "all") {
+      posts = posts.filter(
+        (post) =>
+          post.authorId ===
+          selectedAuthor
+      );
+    }
+
     switch (sortBy) {
       case "title":
         posts.sort((a, b) =>
@@ -109,7 +120,7 @@ function Blogs() {
     }
 
     return posts;
-  }, [search, selectedTag, sortBy]);
+  }, [search, selectedTag, selectedAuthor, sortBy]);
 
   const featuredPost =
     filteredPosts[0] || blogMetadata[0];
@@ -406,14 +417,43 @@ function Blogs() {
                 />
               </div>
 
-              <div className="flex flex-wrap gap-3 mb-6">
-                {categories.map((tag) => (
+              <div className="flex flex-wrap justify-between items-center gap-3 mb-6">
+                <div className="flex flex-wrap gap-3">
+                  {categories.map((tag) => (
+                    <button
+                      key={tag}
+                      onClick={() =>
+                        setSelectedTag(tag)
+                      }
+                      className={`
+                        px-4
+                        py-2
+                        rounded-xl
+                        text-sm
+                        font-medium
+                        transition-all
+
+                        ${
+                          selectedTag === tag
+                            ? "bg-blue-600 text-white shadow-lg"
+                            : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-blue-400"
+                        }
+                      `}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-3">
                   <button
-                    key={tag}
                     onClick={() =>
-                      setSelectedTag(tag)
+                      setSelectedAuthor("all")
                     }
                     className={`
+                      inline-flex
+                      items-center
+                      gap-2
                       px-4
                       py-2
                       rounded-xl
@@ -422,15 +462,62 @@ function Blogs() {
                       transition-all
 
                       ${
-                        selectedTag === tag
+                        selectedAuthor === "all"
                           ? "bg-blue-600 text-white shadow-lg"
                           : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-blue-400"
                       }
                     `}
                   >
-                    {tag}
+                    All Authors
                   </button>
-                ))}
+
+                  {Object.values(
+                    authorsById
+                  ).map((author) => (
+                    <button
+                      key={author.id}
+                      onClick={() =>
+                        setSelectedAuthor(
+                          author.id
+                        )
+                      }
+                      className={`
+                        inline-flex
+                        items-center
+                        gap-2
+                        px-4
+                        py-2
+                        rounded-xl
+                        text-sm
+                        font-medium
+                        transition-all
+
+                        ${
+                          selectedAuthor ===
+                          author.id
+                            ? "bg-blue-600 text-white shadow-lg"
+                            : "bg-white dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-600 hover:border-blue-400"
+                        }
+                      `}
+                    >
+                      <img
+                        src={author.image}
+                        alt={author.name}
+                        className="
+                          w-6
+                          h-6
+                          rounded-full
+                          object-cover
+                          object-top
+                          border
+                          border-zinc-200
+                          dark:border-zinc-600
+                        "
+                      />
+                      {author.name}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div
@@ -495,7 +582,8 @@ function Blogs() {
               </div>
 
               {(search ||
-                selectedTag !== "All") && (
+                selectedTag !== "All" ||
+                selectedAuthor !== "all") && (
                 <div
                   className="
                     flex
@@ -537,11 +625,38 @@ function Blogs() {
                     </span>
                   )}
 
+                  {selectedAuthor !==
+                    "all" && (
+                    <span
+                      className="
+                        inline-flex
+                        items-center
+                        gap-2
+                        px-4
+                        py-2
+                        rounded-full
+                        bg-purple-50 dark:bg-purple-900/30
+                        text-purple-700 dark:text-purple-300
+                        text-sm
+                        font-medium
+                      "
+                    >
+                      {
+                        authorsById[
+                          selectedAuthor
+                        ]?.name
+                      }
+                    </span>
+                  )}
+
                   <button
                     onClick={() => {
                       setSearch("");
                       setSelectedTag(
                         "All"
+                      );
+                      setSelectedAuthor(
+                        "all"
                       );
                       setSortBy(
                         "latest"
