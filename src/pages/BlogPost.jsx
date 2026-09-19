@@ -16,12 +16,14 @@ import TableOfContents from "../components/blog/TableOfContents";
 import ReadingProgress from "../components/blog/ReadingProgress";
 import RelatedBlogs from "../components/blog/RelatedBlogs";
 import BlogSkeleton from "../components/blog/BlogSkeleton";
+import AuthorBox from "../components/blog/AuthorBox";
 
 import SEO from "../components/common/SEO";
 
 import { loadBlog } from "../utils/loadBlog";
 
 import blogMetadata from "../data/blogMetadata";
+import { getAuthor } from "../data/authors";
 
 import "react-medium-image-zoom/dist/styles.css";
 import Zoom from "react-medium-image-zoom";
@@ -34,6 +36,8 @@ function BlogPost() {
   const [rendered, setRendered] = useState(false);
 
   const blog = blogMetadata.find((item) => item.slug === slug);
+
+  const author = getAuthor(blog?.authorId);
 
   useEffect(() => {
     async function fetchBlog() {
@@ -204,6 +208,8 @@ function BlogPost() {
 
                   <span>{blog.readTime}</span>
                 </div>
+
+                <AuthorBox author={author} />
               </header>
             )}
 

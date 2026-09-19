@@ -3,6 +3,8 @@ const blogMetadata = [
   {
   slug: "web-development-core-zero-to-hero-roadmap",
 
+  authorId: 1,
+
   title: "Web Development Core — The Zero to Hero Roadmap",
 
   description: "A beginner-to-advanced roadmap covering HTML, CSS, and JavaScript foundations, the DOM, Git/GitHub, React, Angular, Node.js, Express.js, MongoDB and SQL, Next.js, deployment and scalability, and how coding compares to WordPress, no-code platforms",
@@ -27,6 +29,8 @@ const blogMetadata = [
   {
   slug: "microservices-proficient-resilience-messaging-kubernetes",
 
+  authorId: 1,
+
   title: "Microservices Proficient — Resilience, Messaging, and Kubernetes",
 
   description: "A guide to intermediate microservices patterns with Spring Boot and Spring Cloud — covering load balancing, Resilience4j, Zipkin, the ELK stack, Kafka/RabbitMQ messaging, event-driven architecture, Spring Cloud Contract, Kubernetes basics, CI/CD pipelines, and the Saga pattern",
@@ -49,6 +53,8 @@ const blogMetadata = [
   {
   slug: "microservices-foundational-spring-boot-spring-cloud",
 
+  authorId: 1,
+
   title: "Microservices Foundational — From Monoliths to Your First Service Mesh",
 
   description: "A theory-first guide to foundational microservices with Spring Boot and Spring Cloud — covering monolith vs microservices trade-offs, when to split, REST API design between services, Eureka service discovery, Spring Cloud Gateway, Config Server, and so much more.",
@@ -67,6 +73,8 @@ const blogMetadata = [
   {
     slug:
       "the-java-spring-boot-bridge",
+
+    authorId: 1,
 
     title:
       "The Java → Spring Boot Bridge: Every Java Concept You Need Before Spring Boot Makes Sense",
@@ -95,6 +103,8 @@ const blogMetadata = [
   {
     slug: "spring-security-complete-guide",
 
+    authorId: 1,
+
     title:
       "Spring Security — The Complete Guide",
 
@@ -118,6 +128,7 @@ const blogMetadata = [
 
   {
     slug: "arrays-in-java-complete-dsa-guide",
+    authorId: 1,
     title: "Arrays in Java — The Complete DSA Foundation Guide",
     description: "A complete guide to arrays in Java — memory layout, core operations, prefix sums, sliding window, two pointers, Kadane's Algorithm, rotation, matrix traversal, and the classic interview patterns every array problem builds on.",
     date: "06 July 2026",
@@ -128,6 +139,8 @@ const blogMetadata = [
 
   {
     slug: "introduction-to-data-structures-and-algorithms-dsa",
+
+    authorId: 1,
 
     title: "Introduction to Data Structures & Algorithms (DSA) — The Complete Beginner-to-Confident Foundation Guide",
 
@@ -144,6 +157,8 @@ const blogMetadata = [
 
   {
     slug: "spring-boot-data-jpa-postgresql",
+
+    authorId: 1,
 
     title:
       "Spring Data JPA With PostgreSQL — The Complete Mastery Guide",
@@ -169,6 +184,8 @@ const blogMetadata = [
   {
     slug: "spring-boot-building-rest-apis",
 
+    authorId: 1,
+
     title:
       "Building REST APIs With Spring Boot — The Complete Guide",
 
@@ -192,6 +209,8 @@ const blogMetadata = [
 
   {
     slug: "introduction-to-spring-boot",
+
+    authorId: 1,
 
     title:
       "Introduction to Spring Boot — The Complete Overview",
@@ -217,6 +236,8 @@ const blogMetadata = [
   {
     slug: "spring-framework-core-before-spring-boot",
 
+    authorId: 1,
+
     title:
       "Spring Framework Core — Everything You Need Before Touching Spring Boot",
 
@@ -240,6 +261,8 @@ const blogMetadata = [
 
   {
     slug: "complete-java-handbook-zero-to-expert",
+
+    authorId: 1,
 
     title:
       "The Complete Java Handbook — From Absolute Zero to Java Expert",
@@ -267,6 +290,8 @@ const blogMetadata = [
   {
     slug: "complete-sql-handbook-zero-to-expert",
 
+    authorId: 1,
+
     title:
       "The Complete SQL Handbook — From Absolute Zero to SQL Expert",
 
@@ -293,6 +318,8 @@ const blogMetadata = [
   {
     slug: "java-fullstack-backend-heavy-developer-roadmap",
 
+    authorId: 1,
+
     title:
       "The Complete Roadmap to Becoming a Java Full Stack, Backend-Heavy Developer",
 
@@ -313,6 +340,8 @@ const blogMetadata = [
 
   {
     slug: "java-multithreading-complete-guide",
+
+    authorId: 1,
 
     title:
       "Your \"Multithreading Knowledge\" Is Probably Just new Thread() and a Prayer",
@@ -337,6 +366,8 @@ const blogMetadata = [
 
   {
     slug: "java-collections-framework",
+
+    authorId: 1,
 
     title:
       "You Don't Know the Collections Framework — You Know ArrayList and HashMap",
@@ -363,6 +394,8 @@ const blogMetadata = [
   {
     slug: "spring-boot-exception-handling",
 
+    authorId: 1,
+
     title:
       "Stop Letting Exceptions Embarrass You in Production",
 
@@ -385,5 +418,18 @@ const blogMetadata = [
   },
 
 ];
+
+export const authorsById = {
+  1: {
+    id: 1,
+    name: "Smit Roy",
+    role: "Java Backend Developer",
+    image: "/images/profile/smit-roy.webp",
+    description:
+      "Backend Developer, focused on Java, Spring Boot, Microservices, System Design, Cloud-Native Development, and building scalable distributed applications.",
+    linkedin: "https://linkedin.com/in/smitroy22",
+    github: "https://github.com/smitroy4",
+  },
+};
 
 export default blogMetadata;
