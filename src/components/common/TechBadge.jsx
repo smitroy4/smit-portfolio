@@ -10,9 +10,9 @@ return ( <span
      dark:text-zinc-300
      text-sm
      font-medium
-     hover:bg-blue-600
-     hover:text-white
-     hover:border-blue-600
+     hover:bg-[#fbbf24]
+     hover:text-zinc-900
+     hover:border-[#fbbf24]
      transition-all
      duration-300
    "

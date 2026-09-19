@@ -226,7 +226,7 @@ function Projects() {
                     h-full
                     w-full
                     rounded-full
-                    bg-blue-500
+                    bg-[#fbbf24]
                     opacity-75
                   "
                 />
@@ -238,7 +238,7 @@ function Projects() {
                     rounded-full
                     h-3
                     w-3
-                    bg-blue-500
+                    bg-[#fbbf24]
                   "
                 />
               </span>
@@ -276,7 +276,8 @@ function Projects() {
                 className="
                   bg-gradient-to-r
                   from-blue-600
-                  to-cyan-500
+                  via-cyan-500
+                  to-[#fbbf24]
                   bg-clip-text
                   text-transparent
                 "

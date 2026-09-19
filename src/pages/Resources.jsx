@@ -120,11 +120,11 @@ function Resources() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 rounded-full border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 px-4 py-2 mb-8"
+              className="inline-flex items-center gap-3 rounded-full border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-800 px-4 py-2 mb-8 shadow-sm"
             >
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-500 opacity-75" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#fbbf24] opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#fbbf24]" />
               </span>
               <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                 Curated Learning Resources
@@ -138,7 +138,7 @@ function Resources() {
               className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95] mb-8"
             >
               Learning
-              <span className="block bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 via-cyan-500 to-[#fbbf24] bg-clip-text text-transparent">
                 Resources
               </span>
             </motion.h1>

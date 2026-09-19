@@ -510,14 +510,3 @@ rgba(0, 0, 0, 0.08);
 .animate-gradient {
   animation: gradient 4s ease infinite;
 }
-
-/* =========================================================
-CUSTOM COFFEE CURSOR
-========================================================= */
-
-@media (pointer: fine) {
-  body,
-  body * {
-    cursor: none;
-  }
-}

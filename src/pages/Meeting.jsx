@@ -61,7 +61,7 @@ function Meeting() {
                     h-full
                     w-full
                     rounded-full
-                    bg-blue-500
+                    bg-[#fbbf24]
                     opacity-75
                   "
                 />
@@ -73,7 +73,7 @@ function Meeting() {
                     rounded-full
                     h-3
                     w-3
-                    bg-blue-500
+                    bg-[#fbbf24]
                   "
                 />
               </span>

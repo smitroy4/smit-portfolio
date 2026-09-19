@@ -56,7 +56,7 @@ function AboutHero() {
                   h-full
                   w-full
                   rounded-full
-                  bg-cyan-500
+                  bg-[#fbbf24]
                   opacity-75
                 "
               />
@@ -68,7 +68,7 @@ function AboutHero() {
                   rounded-full
                   h-3
                   w-3
-                  bg-cyan-500
+                  bg-[#fbbf24]
                 "
               />
             </span>
@@ -100,7 +100,8 @@ function AboutHero() {
               className="
                 bg-gradient-to-r
                 from-blue-600
-                to-cyan-500
+                via-cyan-500
+                to-[#fbbf24]
                 bg-clip-text
                 text-transparent
               "

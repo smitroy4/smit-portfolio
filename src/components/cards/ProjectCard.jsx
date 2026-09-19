@@ -113,7 +113,7 @@ function ProjectCard({ project }) {
                 key={item}
                 className="text-sm text-zinc-600 dark:text-zinc-400 flex gap-2"
               >
-                <span className="text-blue-600 mt-[2px]">
+                <span className="text-[#fbbf24] mt-[2px]">
                   •
                 </span>
                 <span>{item}</span>

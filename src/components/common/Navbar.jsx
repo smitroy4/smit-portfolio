@@ -287,7 +287,7 @@ function Navbar() {
     "
   >
     Hack4j
-    <Coffee size={18} className="text-white" />
+    <Coffee size={18} className="text-amber-400" />
   </Link>
 </div>
             </div>
@@ -337,7 +337,7 @@ function Navbar() {
                 "
               >
                 Hack4j
-                <Coffee size={14} className="text-white" />
+                <Coffee size={14} className="text-amber-400" />
               </Link>
 
               <button
@@ -427,7 +427,7 @@ function Navbar() {
                   "
                 >
                   Hack4j
-                  <Coffee size={18} className="text-white" />
+<Coffee size={18} className="text-amber-400" />
                 </Link>
               </div>
             </div>

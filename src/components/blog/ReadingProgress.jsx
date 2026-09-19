@@ -47,8 +47,8 @@ function ReadingProgress() {
         className="
           h-full
           bg-gradient-to-r
-          from-blue-600
-          to-cyan-500
+          from-[#fbbf24]
+          to-amber-500
           transition-all
           duration-150
         "

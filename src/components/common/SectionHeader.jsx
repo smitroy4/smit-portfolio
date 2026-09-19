@@ -6,7 +6,7 @@ function SectionHeader({
   return (
     <div className="mb-12">
       {eyebrow && (
-        <p className="text-sm font-medium text-blue-600 mb-2">
+        <p className="text-sm font-medium text-[#fbbf24] mb-2">
           {eyebrow}
         </p>
       )}

@@ -320,13 +320,13 @@ function TechStack() {
                         h-12
                         w-12
                         rounded-xl
-                        bg-blue-50
+                        bg-amber-50
                         flex
                         items-center
                         justify-center
                       "
                     >
-                      <Icon size={22} className="text-blue-600" />
+                      <Icon size={22} className="text-[#fbbf24]" />
                     </div>
 
                     <h3

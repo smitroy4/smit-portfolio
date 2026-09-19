@@ -131,6 +131,7 @@ function ScrollToTopButton() {
                   duration-300
                   group-hover:scale-110
                   group-hover:-translate-y-1
+                  group-hover:text-[#fbbf24]
                 "
               />
             </motion.div>

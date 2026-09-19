@@ -27,10 +27,10 @@ function ResourceCard({ item }) {
           px-3
           py-1
           rounded-full
-          bg-blue-50
-          text-blue-700
-          dark:bg-blue-900/50
-          dark:text-blue-300
+          bg-amber-50
+          text-amber-700
+          dark:bg-amber-400/15
+          dark:text-amber-300
           text-xs
           font-medium
           mb-4
@@ -57,7 +57,7 @@ function ResourceCard({ item }) {
       <div
         className="
           mt-4
-          text-blue-600
+          text-[#fbbf24]
           text-sm
           font-medium
         "

@@ -69,7 +69,6 @@ public class Salon {
 
 With AI: **5 minutes.** You describe the schema, paste the relationships, and get a scaffold that's 80% there. The remaining 20% — custom validations, business logic constraints — you actually *should* be writing yourself anyway.
 
-![Boilerplate code generation — Before and after comparison of repetitive Java entity annotations](/images/blogs/ai/boilerplate-before-after.png)
 
 **Real time saved:** 30-40 minutes per feature sprint on entity scaffolding.
 
@@ -314,8 +313,6 @@ log.error("Payment failed for customer",
 
 Now the PII (full credit card number) is in centralized logs, searchable, retained for 30 days. GDPR violation. Cost: fines.
 
-![Security trap illustration — API endpoint with missing security controls highlighted in red (no auth, PII in logs, no row-level security)](/images/blogs/ai/security-trap-illustration.png)
-
 ![Security trap illustration — Harmless-looking API endpoint with red warning indicators for missing auth, PII in logs, and no row-level security](/images/blogs/internals/security-trap-illustration.png)
 
 **How to catch it:**
@@ -456,8 +453,6 @@ This is where AI adds real value to a team.
 2. Code review: Three reviewers validate business logic, security, edge cases
 3. If AI missed something, you fix it *in review*, and the team learns why
 
-![Code review workflow — Circular flow of Developer/AI writes code → Code review → Rigorous validation → Merge → Team learns](/images/blogs/ai/code-review-workflow.png)
-
 **What this teaches:** Your junior sees that AI generated the entity mapping, but the reviewer caught that the `@OneToMany` relationship should be `LAZY`, not `EAGER`. The junior learns something. The next time, they catch it themselves.
 
 If you let AI code ship without rigorous review, you're not automating repetitive work — you're automating the introduction of bugs.
@@ -485,8 +480,6 @@ Let's ground this in real scenarios from actual backend work.
 ### 5.1 — Onboarding New Features
 
 **Scenario:** You're adding a "rebook appointment" feature to the salon system. Customer selects a past appointment and wants to schedule the same service again.
-
-![Salon booking complexity — Entity-relationship diagram showing Salon → Employee → Service → Booking → Customer with edge case annotations](/images/blogs/ai/salon-booking-complexity.png)
 
 **Without AI:** You start from scratch. Create DTO, write the service method, think through validations, write the endpoint.
 
@@ -634,8 +627,6 @@ Here's the uncomfortable truth: Backend developers who don't use AI strategicall
 - Treating AI suggestions as angles to investigate, not answers to accept
 - Staying fluent in the fundamentals (SQL, Spring internals, distributed systems) so you recognize when AI code is wrong
 - Teaching your team to do the same
-
-![Irreplaceable developer triangle — Three vertices: Strong fundamentals, Strategic AI usage, Domain expertise — meeting at center point "Irreplaceable Developer"](/images/blogs/ai/ai-competitive-edge.png)
 
 **Why this matters:** AI doesn't replace judgment. It exposes bad judgment. A developer who doesn't think deeply can use AI to generate fast bad code. A developer with strong fundamentals can use AI to move faster *and* stay right.
 

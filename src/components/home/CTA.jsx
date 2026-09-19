@@ -33,7 +33,7 @@ function CTA() {
             h-72
             w-72
             rounded-full
-            bg-blue-500/20
+            bg-[#fbbf24]/20
             blur-3xl
           "
         />
@@ -82,7 +82,7 @@ function CTA() {
                   h-full
                   w-full
                   rounded-full
-                  bg-blue-500
+                  bg-[#fbbf24]
                   opacity-75
                 "
               />
@@ -94,7 +94,7 @@ function CTA() {
                   rounded-full
                   h-3
                   w-3
-                  bg-blue-500
+                  bg-[#fbbf24]
                 "
               />
             </span>

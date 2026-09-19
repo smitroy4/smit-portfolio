@@ -212,7 +212,7 @@ skills: [
 ];
 
 function SkillsSection() {
-return ( <section className="mb-24"> <div className="mb-14"> <p className="text-blue-600 font-medium mb-3">
+return ( <section className="mb-24"> <div className="mb-14"> <p className="text-[#fbbf24] font-medium mb-3">
 Expertise </p>
 
 
@@ -294,9 +294,9 @@ Expertise </p>
                       font-medium
                       text-zinc-700
                       dark:text-zinc-200
-                    hover:bg-blue-600
-                    hover:text-white
-                    hover:border-blue-600
+                    hover:bg-[#fbbf24]
+                    hover:text-zinc-900
+                    hover:border-[#fbbf24]
                     transition-all
                     duration-300
                   "

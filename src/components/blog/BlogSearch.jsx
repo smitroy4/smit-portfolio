@@ -223,7 +223,7 @@ function BlogSearch({ value, onChange }) {
             mr-2
           "
         >
-          <Sparkles size={12} />
+          <Sparkles size={12} className="text-[#fbbf24]" />
           Popular:
         </div>
 

@@ -132,7 +132,7 @@ function BlogCard({ post }) {
 
         <div
           className="
-            text-blue-600
+            text-[#fbbf24]
             text-sm
             font-medium
           "

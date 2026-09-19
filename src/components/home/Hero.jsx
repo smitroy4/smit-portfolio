@@ -65,13 +65,14 @@ function Hero() {
               gap-3
               rounded-full
               border
-              border-zinc-300
+              border-zinc-200
+              bg-white
               dark:border-zinc-700
-              bg-zinc-100
               dark:bg-zinc-800
               px-4
               py-2
               mb-8
+              shadow-sm
             "
           >
             <span className="relative flex h-3 w-3">
@@ -83,7 +84,7 @@ function Hero() {
                   h-full
                   w-full
                   rounded-full
-                  bg-cyan-500
+                  bg-[#fbbf24]
                   opacity-75
                 "
               />
@@ -95,7 +96,7 @@ function Hero() {
                   rounded-full
                   h-3
                   w-3
-                  bg-cyan-500
+                  bg-[#fbbf24]
                 "
               />
             </span>
@@ -151,7 +152,8 @@ function Hero() {
               className="
                 bg-gradient-to-r
                 from-blue-600
-                to-cyan-500
+                via-cyan-500
+                to-[#fbbf24]
                 bg-clip-text
                 text-transparent
               "

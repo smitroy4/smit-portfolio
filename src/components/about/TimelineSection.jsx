@@ -150,12 +150,12 @@ function TimelineSection() {
                   w-12 h-1 rounded-full mb-4 transition-colors duration-300
                   ${isViewed || (isOpen && index <= activeIndex)
                     ? "bg-zinc-300 dark:bg-zinc-600"
-                    : "bg-gradient-to-r from-blue-500 to-cyan-400"
+                    : "bg-gradient-to-r from-[#fbbf24] to-amber-500"
                   }
                 `}
               />
 
-              <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+              <span className="text-xs font-semibold text-[#fbbf24] uppercase tracking-wider">
                 {item.year}
               </span>
 
@@ -171,7 +171,7 @@ function TimelineSection() {
                 {item.description}
               </p>
 
-              <span className="inline-flex items-center gap-1 mt-3 text-xs font-medium text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="inline-flex items-center gap-1 mt-3 text-xs font-medium text-[#fbbf24] opacity-0 group-hover:opacity-100 transition-opacity">
                 View story
                 <ChevronRight size={14} />
               </span>

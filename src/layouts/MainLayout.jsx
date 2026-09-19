@@ -5,7 +5,6 @@ import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import AIFloatingButton from "../components/common/AIFloatingButton";
-import CustomCursor from "../components/common/CustomCursor";
 
 import { useTheme } from "../components/common/ThemeWrapper";
 
@@ -141,9 +140,6 @@ function MainLayout({ children }) {
 
       {/* Hack4j AI Floating Chat */}
       <AIFloatingButton />
-
-      {/* Custom Coffee Cursor */}
-      <CustomCursor />
     </div>
   );
 }
