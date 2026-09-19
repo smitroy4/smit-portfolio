@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ExternalLink, BookOpen } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 function ProjectCard({ project }) {
@@ -123,6 +124,27 @@ function ProjectCard({ project }) {
         </div>
 
         <div className="flex items-center gap-3 pt-2 border-t border-zinc-100 dark:border-zinc-700">
+          <Link
+            to={`/projects/${project.id}`}
+            className="
+              flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              rounded-xl
+              bg-[#fbbf24]
+              text-zinc-900
+              hover:bg-amber-400
+              transition
+            "
+          >
+            <BookOpen size={16} />
+            <span className="text-sm font-medium">
+              Docs
+            </span>
+          </Link>
+
           <a
             href={project.github}
             target="_blank"

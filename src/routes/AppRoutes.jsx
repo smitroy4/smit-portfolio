@@ -6,6 +6,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Projects from "../pages/Projects";
+import ProjectDetail from "../pages/ProjectDetail";
 import Blogs from "../pages/Blogs";
 import BlogPost from "../pages/BlogPost";
 import Resources from "../pages/Resources";
@@ -30,6 +31,8 @@ function AppRoutes() {
           <Route path="/about" element={<About />} />
 
           <Route path="/projects" element={<Projects />} />
+
+          <Route path="/projects/:id" element={<ProjectDetail />} />
 
           <Route path="/blogs" element={<Blogs />} />
 

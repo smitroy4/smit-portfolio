@@ -27,6 +27,46 @@ const projects = [
     "Vector database for semantic understanding of design patterns",
     "GCP integration for managed infrastructure and ML services",
     "MVP launch planned for Q1 2027",
+  ],
+  docs: [
+    {
+      title: "Getting Started",
+      content: `
+Clone the repository and install dependencies to get started.
+
+- Prerequisites: Java 17+, Node 20+, PostgreSQL, and a Gemini API key
+- Set the required environment variables for database and API credentials
+- Run the backend locally, then start the frontend dev server
+`,
+    },
+    {
+      title: "Architecture",
+      content: `
+Overview of how the system is structured.
+
+- Spring Boot services orchestrate the generation pipeline
+- RAG layer with Qdrant for semantic retrieval of design patterns
+- Kubernetes used for cloud-native deployment and scaling
+`,
+    },
+    {
+      title: "API Reference",
+      content: `
+Endpoints exposed by the backend.
+
+- POST /api/generate — generates a React frontend from a prompt
+- GET /api/templates — lists available design templates
+- POST /api/deploy — deploys a generated frontend to the cloud
+`,
+    },
+    {
+      title: "Roadmap",
+      content: `
+- Q1 2027: MVP launch
+- Q2 2027: Multi-user workspaces and shared projects
+- Q3 2027: Analytics and usage insights
+`,
+    },
   ]
 },
 
@@ -66,9 +106,53 @@ const projects = [
       "Stripe Checkout with webhook-driven payment confirmation",
       "Strategy Pattern dynamic pricing across 5 composable layers",
       "Scheduled hourly job for automated price optimization",
-      "Full booking lifecycle with auto-expiry on unpaid reservations"
-    ]
-  },
+"Full booking lifecycle with auto-expiry on unpaid reservations"
+  ],
+  docs: [
+    {
+      title: "Getting Started",
+      content: `
+Clone the repository and run the application locally.
+
+- Prerequisites: Java 17+, PostgreSQL, Redis, and a Stripe test key
+- Configure application properties for the database and Redis connection
+- Run migrations, then start the Spring Boot application
+`,
+    },
+    {
+      title: "Architecture",
+      content: `
+Overview of how the system is structured.
+
+- Monolithic Spring Boot application with clear layered modules
+- JWT authentication with refresh tokens in HttpOnly cookies
+- Redis caching for hot data and optimistic reads
+- Stripe Checkout drives payment flow via webhooks
+`,
+    },
+    {
+      title: "API Reference",
+      content: `
+Endpoints exposed by the backend.
+
+- POST /api/v1/auth/register — create a user account
+- GET /api/v1/hotels — list available hotels
+- POST /api/v1/bookings — create a booking
+- GET /api/v1/bookings — list the current user's bookings
+`,
+    },
+    {
+      title: "Deployment",
+      content: `
+How the service is deployed.
+
+- PostgreSQL and Redis provisioned as managed services
+- Deployed on Render with environment-based configuration
+- Scheduled job runs hourly for automated price optimization
+`,
+    },
+  ]
+},
   
   {
     id: "circuit-mart",
@@ -106,9 +190,52 @@ const projects = [
       "Sync (OpenFeign) + Async (Kafka) inter-service communication",
       "Resilience4J circuit breaker on Feign calls",
       "JWT validated at API Gateway — stateless downstream services",
-      "Distributed tracing via Micrometer + Zipkin across HTTP, Feign, Kafka",
-    ]
-  },
+"Distributed tracing via Micrometer + Zipkin across HTTP, Feign, Kafka",
+  ],
+  docs: [
+    {
+      title: "Getting Started",
+      content: `
+Clone the repository and start the infrastructure.
+
+- Prerequisites: Java 17+, Docker, and the required services in docker-compose
+- Start Eureka, Config Server, and the five core services
+- Reach the gateway and explore the microservices
+`,
+    },
+    {
+      title: "Architecture",
+      content: `
+Overview of the microservice topology.
+
+- 5-service architecture with Eureka discovery and centralized config
+- API Gateway validates JWTs, keeping downstream services stateless
+- Synchronous calls over OpenFeign, asynchronous events over Kafka
+- Resilience4J circuit breakers guard Feign-based communication
+`,
+    },
+    {
+      title: "Observability",
+      content: `
+How the system is monitored.
+
+- Micrometer + Zipkin for distributed tracing across HTTP, Feign, and Kafka
+- Centralized logging to correlate requests across services
+- Kafka topics for order and inventory event flows
+`,
+    },
+    {
+      title: "Run Locally",
+      content: `
+Steps to run all services together.
+
+- docker compose up for infrastructure dependencies
+- Start Config Server first, then Eureka, then gateway and services
+- Import the included Postman collection to exercise endpoints
+`,
+    },
+  ]
+},
 
 
   {
@@ -148,9 +275,52 @@ const projects = [
       "Plug-and-play architecture with zero manual bean config",
       "Fully extensible via @ConditionalOnMissingBean overrides",
       "Published to GitHub Packages",
-      "CI/CD via GitHub Actions"
-    ]
-  },
+"CI/CD via GitHub Actions"
+  ],
+  docs: [
+    {
+      title: "Getting Started",
+      content: `
+Add the starter as a dependency and configure it in minutes.
+
+- Add the starter to your Maven or Gradle build
+- Configure issuer, secrets, and token lifetimes in application.properties
+- Annotate endpoints to protect them with JWT authentication
+`,
+    },
+    {
+      title: "Configuration",
+      content: `
+Properties exposed by the starter.
+
+- jwt.secret — the signing secret
+- jwt.access-token-ttl — access token lifetime
+- jwt.refresh-token-ttl — refresh token lifetime
+- jwt.issuer — token issuer claim
+`,
+    },
+    {
+      title: "Extension Points",
+      content: `
+How to customize behaviour.
+
+- Override beans marked with @ConditionalOnMissingBean
+- Provide your own JwtService or filter implementation
+- Add claims and custom token generation logic
+`,
+    },
+    {
+      title: "Publishing",
+      content: `
+Distribution and release.
+
+- JAR published to GitHub Packages
+- CI/CD via GitHub Actions on every push and tag
+- Versioned releases with changelog
+`,
+    },
+  ]
+},
 
   {
     id: "clinixhub",
@@ -188,9 +358,51 @@ const projects = [
       "Method-level security via @PreAuthorize and @Secured",
       "Centralized exception handling with @RestControllerAdvice",
       "Custom JPQL queries for aggregation and bulk operations",
-      "Strict 1:1 entity mapping with @MapsId for Doctor and Patient"
-    ]
-  },
+"Strict 1:1 entity mapping with @MapsId for Doctor and Patient"
+  ],
+  docs: [
+    {
+      title: "Getting Started",
+      content: `
+Clone the repository and configure the hospital domain.
+
+- Prerequisites: Java 17+, PostgreSQL, and optional OAuth2 app credentials
+- Configure Google and GitHub OAuth2 client IDs and secrets
+- Run the application and access the public API endpoints
+`,
+    },
+    {
+      title: "Authentication",
+      content: `
+How identity and access control work.
+
+- JWT authentication with OAuth2 social login (Google, GitHub)
+- Hybrid role-based and permission-based access control
+- Method-level security via @PreAuthorize and @Secured
+`,
+    },
+    {
+      title: "Domain Model",
+      content: `
+The core entities and their relationships.
+
+- Hospital, Doctor, Patient, and Appointment entities
+- Strict 1:1 mapping with @MapsId for Doctor and Patient
+- Custom JPQL queries for aggregation and bulk operations
+`,
+    },
+    {
+      title: "Error Handling",
+      content: `
+How failures are surfaced to clients.
+
+- Centralized exception handling with @RestControllerAdvice
+- Consistent error response envelope across all endpoints
+- Input validation errors mapped to structured messages
+`,
+    },
+  ]
+},
 
   {
     id: "lms-portal",
@@ -228,9 +440,52 @@ const projects = [
       "Enrollment system with duplicate-enrollment prevention",
       "Input validation via Jakarta annotations",
       "Preloaded sample data for instant local testing",
-      "Containerized with Docker and deployed on Render with PostgreSQL"
-    ]
-  }
+"Containerized with Docker and deployed on Render with PostgreSQL"
+  ],
+  docs: [
+    {
+      title: "Getting Started",
+      content: `
+Clone the repository and run the LMS backend locally.
+
+- Prerequisites: Java 17+, PostgreSQL, and Docker
+- Preloaded sample data allows instant local testing
+- Start the container or run the Spring Boot app directly
+`,
+    },
+    {
+      title: "Architecture",
+      content: `
+Overview of the module structure.
+
+- Layered architecture with strict Controller-Service-Repository separation
+- Relational model with JPA mappings across four entities
+- Enrollment flow with duplicate-enrollment prevention
+`,
+    },
+    {
+      title: "API Reference",
+      content: `
+Endpoints exposed by the backend.
+
+- POST /api/students — create a student
+- POST /api/courses — create a course
+- POST /api/enrollments — enroll a student in a course
+- GET /api/courses — list available courses
+`,
+    },
+    {
+      title: "Deployment",
+      content: `
+How the service is shipped.
+
+- Containerized with Docker
+- Deployed on Render with a managed PostgreSQL instance
+- Environment variables control database connection settings
+`,
+    },
+  ]
+}
 ];
 
 export default projects;
