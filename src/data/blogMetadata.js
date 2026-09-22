@@ -314,7 +314,7 @@ const blogMetadata = [
   {
     slug: "complete-sql-handbook-zero-to-expert",
 
-    authorId: 1,
+    authorId: 2,
 
     title:
       "The Complete SQL Handbook — From Absolute Zero to SQL Expert",
