@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { getAuthor } from "../../data/authors";
+import { getAuthor, getAuthorShortName } from "../../data/authors";
 
 function BlogCard({ post }) {
   const author = getAuthor(post.authorId);
@@ -71,7 +71,7 @@ function BlogCard({ post }) {
                 "
               />
               <span className="font-medium text-zinc-700 dark:text-zinc-300">
-                {author.name}
+                {getAuthorShortName(author)}
               </span>
             </span>
           )}

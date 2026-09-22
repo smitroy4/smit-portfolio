@@ -68,7 +68,7 @@ This is a reference handbook, not a single sitting read. Bookmark it. Come back 
 **Choosing Your Database**
 
 31. [MySQL vs PostgreSQL vs NoSQL — Choosing the Right Database](#ch31)
-32. [PostgreSQL for Spring Boot Developers — The Complete Guide](#ch32)
+32. [PostgreSQL for Data Analysts & Backend Developers — The Complete Guide](#ch32)
 
 **Reference**
 
@@ -83,7 +83,7 @@ This is a reference handbook, not a single sitting read. Bookmark it. Come back 
 
 A **database** is an organized collection of data, stored so it can be efficiently accessed, managed, and updated. A **DBMS** (Database Management System) is the software that lets you interact with that data — MySQL, PostgreSQL, SQL Server, Oracle, and SQLite are all DBMS software.
 
-**SQL** (Structured Query Language) is the language you use to talk to a relational DBMS. It's not a programming language like Java or Python — it's a **declarative** language. You don't tell SQL *how* to get data step-by-step; you tell it *what* you want, and the database figures out how.
+**SQL** (Structured Query Language) is the language you use to talk to a relational DBMS. It's not a programming language like Python or R — it's a **declarative** language. You don't tell SQL *how* to get data step-by-step; you tell it *what* you want, and the database figures out how.
 
 ```sql
 -- You say WHAT you want:
@@ -114,9 +114,9 @@ Everything in a relational database lives inside **tables**. Think of a table ex
 
 | employee_id | first_name | last_name | department | salary |
 |---|---|---|---|---|
-| 1 | Smit | Roy | Engineering | 85000 |
-| 2 | Ananya | Sen | Marketing | 72000 |
-| 3 | Rohan | Das | Engineering | 91000 |
+| 1 | Debangshi | Dasgupta | Engineering | 85000 |
+| 2 | Smit | Roy | Marketing | 72000 |
+| 3 | Dibyani | Dasgupta | Engineering | 91000 |
 
 - A **row** (also called a *record* or *tuple*) is one entry — one employee.
 - A **column** (also called a *field* or *attribute*) is one property — `salary`, `department`, etc.
@@ -204,8 +204,8 @@ SELECT * FROM employees WHERE salary BETWEEN 70000 AND 90000;
 
 SELECT * FROM employees WHERE department IN ('Engineering', 'Marketing');
 
-SELECT * FROM employees WHERE first_name LIKE 'A%';   -- starts with 'A'
-SELECT * FROM employees WHERE first_name LIKE '%a';   -- ends with 'a'
+SELECT * FROM employees WHERE first_name LIKE 'D%';   -- starts with 'D'
+SELECT * FROM employees WHERE first_name LIKE '%i';   -- ends with 'i'
 SELECT * FROM employees WHERE first_name LIKE '%an%'; -- contains 'an'
 
 -- Combining conditions
@@ -404,15 +404,15 @@ This means: every value in `employees.department_id` must correspond to a real, 
 
 ```
 departments                       employees
-┌───────────────┬──────────────┐  ┌─────────────┬──────┬───────────────┐
-│ department_id │ department_  │  │ employee_id │ name │ department_id │
-│   (PK)        │ name         │  │   (PK)      │      │   (FK) ───────┼──┐
-├───────────────┼──────────────┤  ├─────────────┼──────┼───────────────┤  │
-│ 1             │ Engineering  │◄─┼─────────────┼──────┼── 1            │  │
-│ 2             │ Marketing    │  │ 1           │ Smit │ 1             │◄─┘
-└───────────────┴──────────────┘  │ 2           │ Rohan│ 1             │
-                                   │ 3           │ Ananya│ 2            │
-                                   └─────────────┴──────┴───────────────┘
+┌───────────────┬──────────────┐  ┌─────────────┬──────────┬───────────────┐
+│ department_id │ department_  │  │ employee_id │ name     │ department_id │
+│   (PK)        │ name         │  │   (PK)      │          │   (FK) ───────┼──┐
+├───────────────┼──────────────┤  ├─────────────┼──────────┼───────────────┤  │
+│ 1             │ Engineering  │◄─┼─────────────┼──────────┼── 1            │  │
+│ 2             │ Marketing    │  │ 1           │ Debangshi│ 1             │  │
+└───────────────┴──────────────┘  │ 2           │ Smit     │ 2             │◄─┘
+                                  │ 3           │ Dibyani  │ 1             │
+                                  └─────────────┴──────────┴───────────────┘
 ```
 
 This Foreign Key relationship is the foundation everything in Chapter 11 (JOINs) is built on.
@@ -433,15 +433,15 @@ INNER JOIN departments d ON e.department_id = d.department_id;
 ```
 
 ```
-employees                departments              RESULT (INNER JOIN)
-┌─────┬─────┐            ┌─────┬─────────┐         ┌──────┬─────────────┐
-│ id  │dept │            │ id  │ name    │         │ name │ department  │
-├─────┼─────┤            ├─────┼─────────┤         ├──────┼─────────────┤
-│ Smit│  1  │──────┐  ┌──│  1  │Eng      │         │ Smit │ Eng         │
-│ Raj │  2  │      │  │  │  2  │Marketing│         │ Raj  │ Marketing   │
-│ Ana │NULL │      └──┼──┤  3  │Sales    │         └──────┴─────────────┘
-└─────┴─────┘         └──┴─────┴─────────┘    (Ana excluded — NULL dept_id;
-                                                Sales excluded — no employee)
+employees                     departments              RESULT (INNER JOIN)
+┌────────────┬─────┐          ┌─────┬─────────┐         ┌────────────┬─────────────┐
+│ name       │dept │          │ id  │ name    │         │ name       │ department  │
+├────────────┼─────┤          ├─────┼─────────┤         ├────────────┼─────────────┤
+│ Debangshi  │  1  │───────┐  ┌──│  1  │Eng      │         │ Debangshi  │ Eng         │
+│ Smit       │  2  │       │  │  │  2  │Marketing│         │ Smit       │ Marketing   │
+│ Dibyani    │NULL │       └──┼──┤  3  │Sales    │         └────────────┴─────────────┘
+└────────────┴─────┘          └──┴─────┴─────────┘    (Dibyani excluded — NULL dept_id;
+                                                       Sales excluded — no employee)
 ```
 
 ### LEFT JOIN — All Rows From the Left Table, Matched or Not
@@ -645,9 +645,9 @@ FROM employees;
 
 | name | department_id | salary | dept_rank |
 |---|---|---|---|
-| Rohan | 1 | 91000 | 1 |
-| Smit | 1 | 85000 | 2 |
-| Ananya | 2 | 72000 | 1 |
+| Dibyani | 1 | 91000 | 1 |
+| Debangshi | 1 | 85000 | 2 |
+| Smit | 2 | 72000 | 1 |
 
 Notice: unlike `GROUP BY`, every original row is still present — we just added a calculated column alongside it.
 
@@ -794,13 +794,13 @@ GROUP BY department_id;
 ```sql
 -- INSERT: add new rows
 INSERT INTO employees (employee_id, name, department_id, salary)
-VALUES (4, 'Priya', 1, 78000);
+VALUES (4, 'Debangshi Dasgupta', 1, 78000);
 
 -- Insert multiple rows at once
 INSERT INTO employees (employee_id, name, department_id, salary)
 VALUES
-    (5, 'Karan', 2, 65000),
-    (6, 'Neha', 1, 95000);
+    (5, 'Smit Roy', 2, 65000),
+    (6, 'Dibyani Dasgupta', 1, 95000);
 
 -- UPDATE: modify existing rows
 UPDATE employees
@@ -884,10 +884,10 @@ Normalization is the process of organizing tables to **eliminate redundancy** an
 
 | order_id | customer_name | customer_email | product | price |
 |---|---|---|---|---|
-| 1 | Smit Roy | smit@mail.com | Laptop | 75000 |
-| 2 | Smit Roy | smit@mail.com | Mouse | 800 |
+| 1 | Debangshi Dasgupta | debangshi@mail.com | Laptop | 75000 |
+| 2 | Debangshi Dasgupta | debangshi@mail.com | Mouse | 800 |
 
-Smit's name and email are duplicated across every order. If his email changes, you must update it in **every single row** — miss one, and your data is now inconsistent (an "update anomaly").
+Debangshi's name and email are duplicated across every order. If his email changes, you must update it in **every single row** — miss one, and your data is now inconsistent (an "update anomaly").
 
 ### First Normal Form (1NF) — Atomic Values
 
@@ -936,7 +936,7 @@ CREATE TABLE order_items (
 );
 ```
 
-Now Smit's email exists in exactly **one place**. Update it once, and every order automatically reflects the correct value via the relationship.
+Now Debangshi's email exists in exactly **one place**. Update it once, and every order automatically reflects the correct value via the relationship.
 
 ### When to Deliberately Break the Rules: Denormalization
 
@@ -980,10 +980,10 @@ To find `salary = 60`, the database compares against the root, branches left or 
 
 ```sql
 -- A leading wildcard prevents the index from being used efficiently
-SELECT * FROM employees WHERE name LIKE '%Roy';   -- can't use a standard B-Tree index well
+SELECT * FROM employees WHERE name LIKE '%Dasgupta';   -- can't use a standard B-Tree index well
 
 -- Applying a function to an indexed column often defeats the index
-SELECT * FROM employees WHERE UPPER(name) = 'SMIT';  -- index on `name` won't be used
+SELECT * FROM employees WHERE UPPER(name) = 'DEBANGSHI';  -- index on `name` won't be used
 -- (unless you create a function-based/expression index specifically for this)
 ```
 
@@ -1378,7 +1378,7 @@ These are the two most popular open-source relational databases, and developers 
 - Strict data integrity and standards compliance matter more than raw simplicity
 - You want a single database that can comfortably grow from a simple app into a more sophisticated data platform without switching engines
 
-For a modern Java/Spring Boot backend specifically — almost always **PostgreSQL**. It pairs cleanly with Hibernate/JPA, has best-in-class support across every major managed cloud (Neon, Supabase, AWS RDS, Railway, Render), and its strictness tends to surface data-modeling mistakes early instead of letting them silently corrupt data in production.
+For a modern backend or data/analytics stack — almost always **PostgreSQL**. It pairs cleanly with Python data tooling, has best-in-class support across every major managed cloud (Neon, Supabase, AWS RDS, Railway, Render), and its strictness tends to surface data-modeling mistakes early instead of letting them silently corrupt data in production.
 
 ---
 
@@ -1413,7 +1413,7 @@ MongoDB is a **document database** — each record is a flexible JSON-like docum
 // A MongoDB document — note the nested structure and lack of a fixed schema
 {
   "_id": "u123",
-  "name": "Smit Roy",
+  "name": "Debangshi Dasgupta",
   "addresses": [
     { "type": "home", "city": "Kolkata" },
     { "type": "work", "city": "Bangalore" }
@@ -1449,7 +1449,7 @@ ZADD leaderboard 1500 "player1"   # sorted set — instant leaderboard queries
 - You need **rate limiting** (API throttling counters)
 - You need a **pub/sub message broker** for lightweight real-time features (chat presence, live notifications)
 - You need **leaderboards or counters** — Redis's sorted sets and atomic increments are purpose-built for this
-- You need a fast **job queue** (often paired with libraries like BullMQ, Sidekiq, or Spring's integration with Redis-backed queues)
+- You need a fast **job queue** (often paired with libraries like BullMQ, Sidekiq, or Celery backed by Redis)
 
 **Think twice about Redis when:**
 - You need Redis as your **primary, durable system of record** for critical business data — it's possible (Redis does support persistence via RDB snapshots and AOF logs), but it's not what it's optimized for, and most teams use it as a complement to a relational database, not a replacement
@@ -1460,8 +1460,8 @@ Most production systems aren't "SQL vs NoSQL" — they're **SQL AND NoSQL, used 
 
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
-│   Client     │────▶│  Spring Boot │────▶│   PostgreSQL     │
-└─────────────┘     │   Backend    │     │ (source of truth,│
+│   Client     │────▶│   Backend    │────▶│   PostgreSQL     │
+└─────────────┘     │     API      │     │ (source of truth,│
                      └──────┬───────┘     │  relational data)│
                             │              └─────────────────┘
                             │
@@ -1474,318 +1474,7 @@ Most production systems aren't "SQL vs NoSQL" — they're **SQL AND NoSQL, used 
                      └──────────────┘
 ```
 
-A typical Spring Boot system: PostgreSQL as the relational source of truth, Redis in front of it for caching and sessions, and perhaps Elasticsearch bolted on separately if full-text product search becomes a real requirement. This is a far more common real-world pattern than picking a single database engine to do everything.
-
----
-
-<a id="ch32"></a>
-## Chapter 32 — PostgreSQL for Spring Boot Developers: The Complete Guide
-
-Everything in this chapter assumes you're building a Spring Boot application backed by PostgreSQL — the most common pairing in modern Java backend development, and likely the exact stack you'll use professionally.
-
-### Setting Up the Connection
-
-```xml
-<!-- pom.xml -->
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <scope>runtime</scope>
-</dependency>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-```
-
-```yaml
-# application.yml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/mydb
-    username: postgres
-    password: secret
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: validate   # NEVER use 'update' or 'create' in production — see below
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: false          # true only for local debugging — never in prod logs
-```
-
-> ⚠️ **Golden Rule on `ddl-auto`:** `create`, `create-drop`, and `update` are convenient for local prototyping, but dangerous in any shared or production environment — Hibernate can silently alter or even drop columns based on entity changes. Use `validate` (Hibernate checks your entities match the schema but never modifies it) and manage actual schema changes through a migration tool instead.
-
-### Schema Migrations: Flyway or Liquibase, Not `ddl-auto`
-
-```xml
-<dependency>
-    <groupId>org.flywaydb</groupId>
-    <artifactId>flyway-core</artifactId>
-</dependency>
-<dependency>
-    <groupId>org.flywaydb</groupId>
-    <artifactId>flyway-database-postgresql</artifactId>
-</dependency>
-```
-
-```sql
--- src/main/resources/db/migration/V1__create_employees_table.sql
-CREATE TABLE employees (
-    id BIGSERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(150) UNIQUE NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT NOW()
-);
-```
-
-```sql
--- V2__add_department_to_employees.sql
-ALTER TABLE employees ADD COLUMN department VARCHAR(100);
-```
-
-Flyway runs these versioned scripts automatically on application startup, in order, tracking what's already been applied in a `flyway_schema_history` table. This gives you a reviewable, version-controlled history of every schema change — exactly what you want for a team working on a shared production database.
-
-### Entity Mapping: JPA/Hibernate Meets PostgreSQL Types
-
-```java
-@Entity
-@Table(name = "employees")
-public class Employee {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // maps to Postgres BIGSERIAL/SERIAL
-    private Long id;
-
-    @Column(nullable = false, length = 100)
-    private String name;
-
-    @Column(unique = true, nullable = false)
-    private String email;
-
-    @Enumerated(EnumType.STRING)
-    private Department department;          // Java enum → stored as readable text, not magic numbers
-
-    @CreationTimestamp
-    @Column(updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-}
-```
-
-> 💡 **`IDENTITY` vs `SEQUENCE`:** `GenerationType.IDENTITY` maps directly to PostgreSQL's auto-incrementing `BIGSERIAL`, but disables Hibernate's JDBC batch inserts (each insert must round-trip to get its generated ID). For high-throughput batch insert scenarios, `GenerationType.SEQUENCE` with an explicit `@SequenceGenerator` allows Hibernate to pre-allocate IDs and batch the actual inserts — a meaningful performance difference at scale.
-
-### Using PostgreSQL's `JSONB` From Spring Boot
-
-This is one of PostgreSQL's standout features over MySQL, and genuinely useful in real applications — storing flexible, semi-structured data inside an otherwise strict relational row.
-
-```java
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
-
-    @JdbcTypeCode(SqlTypes.JSON)         // Hibernate 6+ native JSON support
-    @Column(columnDefinition = "jsonb")
-    private Map<String, Object> attributes;  // e.g., {"color": "red", "size": "L"}
-}
-```
-
-```sql
--- And you can still query INTO the JSONB column with real SQL when needed
-SELECT name FROM product WHERE attributes->>'color' = 'red';
-CREATE INDEX idx_product_attrs ON product USING GIN (attributes);  -- index INTO the JSON itself
-```
-
-### Repository Layer: Spring Data JPA + Native Postgres Queries
-
-```java
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-
-    // Derived query — Spring Data generates the SQL automatically
-    List<Employee> findByDepartment(Department department);
-
-    // JPQL — database-agnostic query language
-    @Query("SELECT e FROM Employee e WHERE e.salary > :minSalary")
-    List<Employee> findHighEarners(@Param("minSalary") BigDecimal minSalary);
-
-    // Native query — when you need Postgres-specific syntax/functions
-    @Query(value = """
-        SELECT * FROM employees
-        WHERE department = :dept
-        ORDER BY salary DESC
-        LIMIT :limit
-        """, nativeQuery = true)
-    List<Employee> findTopEarnersByDept(@Param("dept") String dept, @Param("limit") int limit);
-}
-```
-
-### Connection Pooling: HikariCP Tuning
-
-Spring Boot ships with HikariCP by default — but the default pool size is rarely correct for production.
-
-```yaml
-spring:
-  datasource:
-    hikari:
-      maximum-pool-size: 10        # rule of thumb: (core_count * 2) + effective_spindle_count, tune via load testing
-      minimum-idle: 5
-      connection-timeout: 30000    # ms to wait for a connection before failing
-      idle-timeout: 600000         # ms before an idle connection is closed
-      max-lifetime: 1800000        # ms before a connection is recycled (should be less than Postgres's own timeout)
-```
-
-> ⚠️ **Common production mistake:** setting `maximum-pool-size` too high. PostgreSQL has a `max_connections` limit (default 100), and every Spring Boot instance you deploy competes for that same pool. A bloated per-instance pool size doesn't make your app faster — it just lets one instance exhaust connections meant for others, especially under horizontal scaling with multiple app replicas.
-
-### Transactions in Spring Boot — `@Transactional` Meets Postgres Isolation
-
-```java
-@Service
-public class TransferService {
-
-    @Transactional
-    public void transferFunds(Long fromId, Long toId, BigDecimal amount) {
-        Account from = accountRepository.findById(fromId).orElseThrow();
-        Account to = accountRepository.findById(toId).orElseThrow();
-
-        from.setBalance(from.getBalance().subtract(amount));
-        to.setBalance(to.getBalance().add(amount));
-
-        // Both saves commit together, or both roll back — Postgres's actual transaction
-        // is being driven underneath this Spring abstraction
-        accountRepository.save(from);
-        accountRepository.save(to);
-    }
-}
-```
-
-```java
-// Setting isolation level explicitly when the default isn't strict enough
-@Transactional(isolation = Isolation.SERIALIZABLE)
-public void criticalInventoryUpdate(Long productId, int quantity) {
-    // Prevents race conditions on concurrent stock updates
-}
-```
-
-> 💡 **Why `@Transactional` can silently fail to work:** Spring's transaction management is proxy-based — it only takes effect on calls made **through the Spring-managed bean from outside the class**. A method calling another `@Transactional` method on `this` (self-invocation) bypasses the proxy entirely, and the transaction boundary silently doesn't apply. This is one of the most common "why isn't my transaction rolling back" bugs in real Spring Boot codebases.
-
-### Optimistic Locking for Concurrent Updates
-
-```java
-@Entity
-public class Room {
-    @Id
-    private Long id;
-
-    private boolean booked;
-
-    @Version   // Hibernate auto-manages this — maps to an integer column in Postgres
-    private Long version;
-}
-```
-
-When two requests try to update the same row concurrently, Hibernate checks the `version` column on save — if it's changed since the row was read, an `OptimisticLockException` is thrown instead of silently overwriting someone else's concurrent change. This is the standard pattern for things like hotel room booking or ticket inventory, where a `SELECT` then `UPDATE` race condition would otherwise double-book a resource.
-
-### Pagination Done Right
-
-```java
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    Page<Employee> findByDepartment(Department department, Pageable pageable);
-}
-```
-
-```java
-Pageable pageable = PageRequest.of(0, 20, Sort.by("salary").descending());
-Page<Employee> result = employeeRepository.findByDepartment(Department.ENGINEERING, pageable);
-```
-
-Under the hood, Spring Data translates this into a Postgres `LIMIT`/`OFFSET` query. For very large tables, `OFFSET` becomes slow at high page numbers (the database still has to scan and discard all skipped rows) — for genuinely large datasets, consider **keyset pagination** instead (filtering `WHERE id > :lastSeenId ORDER BY id LIMIT 20`), which stays fast regardless of how deep you page.
-
-### Health Checks & Observability
-
-```yaml
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, metrics
-  health:
-    db:
-      enabled: true
-```
-
-Spring Boot Actuator automatically wires up a database health check against your PostgreSQL connection — useful for container orchestration (Kubernetes liveness/readiness probes) to know whether your app instance can actually reach its database.
-
-### A Production Checklist for Postgres + Spring Boot
-
-- Use Flyway or Liquibase for schema changes — never `ddl-auto: update` in production
-- Tune HikariCP pool size based on actual load testing, not defaults — and account for multiple app replicas sharing Postgres's `max_connections`
-- Index every foreign key column referenced in JOIN-heavy queries — Hibernate won't do this for you automatically
-- Use `@Version` optimistic locking for any resource with realistic concurrent-update risk (bookings, inventory, payments)
-- Be deliberate about isolation levels for financial or inventory-critical transactions — don't just accept the default everywhere
-- Watch for N+1 query problems — use `@EntityGraph` or explicit `JOIN FETCH` in JPQL to eager-load relationships you know you'll need, instead of letting Hibernate lazy-load them one row at a time
-- Use native queries or `JSONB` when JPQL/Hibernate abstractions get in the way of genuinely Postgres-specific features — don't fight the ORM when raw SQL is clearer and faster
-
-
-
-### Query Skeleton (Execution Order)
-
-```sql
-SELECT columns
-FROM table
-JOIN other_table ON condition
-WHERE row_filter
-GROUP BY columns
-HAVING group_filter
-ORDER BY columns
-LIMIT n;
-```
-
-### JOIN Quick Reference
-
-```
-INNER JOIN        → only matches
-LEFT JOIN          → all left + matches
-RIGHT JOIN         → all right + matches
-FULL OUTER JOIN    → everything, matched or not
-CROSS JOIN         → every combination
-```
-
-### Window Function Quick Reference
-
-```sql
-ROW_NUMBER() OVER (PARTITION BY x ORDER BY y)
-RANK()       OVER (PARTITION BY x ORDER BY y)
-DENSE_RANK() OVER (PARTITION BY x ORDER BY y)
-SUM()/AVG()  OVER (PARTITION BY x ORDER BY y ROWS BETWEEN ... AND ...)
-LAG(col, n)  OVER (ORDER BY y)
-LEAD(col, n) OVER (ORDER BY y)
-```
-
-### Data Definition Quick Reference
-
-```sql
-CREATE TABLE name (col TYPE constraints, ...);
-ALTER TABLE name ADD COLUMN col TYPE;
-ALTER TABLE name DROP COLUMN col;
-DROP TABLE name;
-CREATE INDEX idx_name ON table(column);
-```
-
-### Transaction Quick Reference
-
-```sql
-BEGIN;
-  -- statements
-COMMIT;   -- or ROLLBACK;
-```
+A typical backend or data platform: PostgreSQL as the relational source of truth, Redis in front of it for caching and sessions, and perhaps Elasticsearch bolted on separately if full-text product search becomes a real requirement. This is a far more common real-world pattern than picking a single database engine to do everything.
 
 ---
 

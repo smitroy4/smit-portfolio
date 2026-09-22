@@ -25,4 +25,11 @@ export function getAuthor(authorId) {
   return authorsById[authorId] || authorsById[1];
 }
 
+export function getAuthorShortName(author) {
+  if (!author) return "";
+  const parts = author.name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0];
+  return `${parts[0]} ${parts.at(-1).charAt(0)}.`;
+}
+
 export default authorsById;
