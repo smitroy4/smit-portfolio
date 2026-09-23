@@ -1,6 +1,25 @@
 const blogMetadata = [
 
   {
+  slug: "vector-databases-java-developers",
+  authorId: 1,
+  title: "Vector Databases for Java Developers: Pinecone, Weaviate, Qdrant",
+  description: "A practical guide to vector databases for semantic search and RAG — covering embeddings, Pinecone vs Weaviate vs Qdrant trade-offs, semantic search patterns, Spring AI integration, and Retrieval Augmented Generation.",
+  date: "23 September 2026",
+  readTime: "20 min read",
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1790140234/vector-databases-java-developers_gtfrug.png",
+  tags: [
+    "Vector Databases",
+    "Pinecone",
+    "Weaviate",
+    "Qdrant",
+    "RAG",
+    "Spring AI",
+    "Article"
+  ]
+},
+
+  {
   slug: "ai-backend-development-copilot",
 
   authorId: 1,
@@ -20,7 +39,7 @@ const blogMetadata = [
     "Backend Development",
     "Productivity",
     "Spring Boot",
-    "Career"
+    "Article"
   ]
 },
 
