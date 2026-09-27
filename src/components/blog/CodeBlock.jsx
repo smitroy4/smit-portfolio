@@ -16,6 +16,7 @@ import "prismjs/components/prism-markdown";
 import "prismjs/components/prism-css";
 import "prismjs/components/prism-scss";
 import "prismjs/components/prism-properties";
+import "prismjs/components/prism-python";
 
 function CodeBlock({
   children,

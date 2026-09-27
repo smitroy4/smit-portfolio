@@ -1,11 +1,28 @@
 const blogMetadata = [
 
   {
+  slug: "data-structures-python-deeptalks",
+  authorId: 2,
+  title: "Data Structures in Python: Deeptalks — From Surface-Level to Mastery",
+  description: "In Python, every problem you solve and every system you build is fundamentally a conversation between your code and data — and how you choose to structure that data determines whether your solution is elegant, fast, and maintainable, or whether it's brittle, slow, and becomes unrecognizable three months from now.",
+  date: "27 Sept 2026",
+  readTime: "45 min read",
+  coverImage: "https://res.cloudinary.com/gssuqmvo/image/upload/v1790403534/data-structures-python-deeptalks.png",
+  tags: 
+  [
+    "Python", 
+    "Data Structures", 
+    "Algorithms", 
+    "Article", 
+]
+},
+
+  {
   slug: "vector-databases-java-developers",
   authorId: 1,
   title: "Vector Databases for Java Developers: Pinecone, Weaviate, Qdrant",
   description: "A practical guide to vector databases for semantic search and RAG — covering embeddings, Pinecone vs Weaviate vs Qdrant trade-offs, semantic search patterns, Spring AI integration, and Retrieval Augmented Generation.",
-  date: "23 September 2026",
+  date: "23 Sept 2026",
   readTime: "20 min read",
   coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1790140234/vector-databases-java-developers_gtfrug.png",
   tags: [
@@ -28,7 +45,7 @@ const blogMetadata = [
 
   description: "Move beyond the AI hype and discover how AI is transforming real-world backend development. Explore where it accelerates coding, debugging, and documentation, and where it falls short. Learn to use AI strategically, strengthen your engineering judgment, and build better systems.",
 
-  date: "19 September 2026",
+  date: "19 Sept 2026",
 
   readTime: "150 min read",
 
