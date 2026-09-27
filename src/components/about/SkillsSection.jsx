@@ -10,9 +10,10 @@ FaLock,
 FaBolt,
 FaCode,
 FaBalanceScale,
-FaServer,
-FaCloud,
-FaExchangeAlt,
+  FaServer,
+  FaCloud,
+  FaAws,
+  FaExchangeAlt,
 FaCube,
 FaShieldAlt,
 FaGithub,
@@ -41,8 +42,12 @@ Redis:
 Docker:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
 
-Kubernetes:
+  Kubernetes:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+
+  "Oracle Cloud":
+"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
+
 
 Git:
 "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
@@ -107,11 +112,12 @@ Scalability: FaCloud,
 
 "Asynchronous Processing": FaBolt,
 
-"GitHub Actions": FaGithub,
-"CI/CD": FaExchangeAlt,
-Postman: FaExchangeAlt,
-Render: FaCloud,
-Railway: FaTrain,
+  "GitHub Actions": FaGithub,
+  "CI/CD": FaExchangeAlt,
+  Postman: FaExchangeAlt,
+  AWS: FaAws,
+  Render: FaCloud,
+  Railway: FaTrain,
 };
 
 const skillGroups = [
