@@ -10,7 +10,7 @@ Career Focus: Java Backend Developer — building production-grade Spring Boot s
 Technical Identity:
 - Core expertise: Java, Spring Boot, Spring Security, PostgreSQL, Hibernate/JPA, Spring Cloud
 - Proficient: JavaScript/TypeScript, React, SQL, Docker, Kafka, Redis
-- Systems background: PHP-based systems, legacy modernization
+- Systems background: Java-based systems, modern Spring Boot monoliths
 - Published a JWT Spring Boot starter library to GitHub Packages with CI/CD via GitHub Actions
 - Maintains a deep-dive technical blog on Spring Boot internals, Java concurrency, SQL optimization, DSA, and backend architecture
 
