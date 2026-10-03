@@ -1,4 +1,5 @@
 import projects from "./projects";
+import products from "./products";
 import blogMetadata from "./blogMetadata";
 import resources from "./resources";
 
@@ -36,9 +37,23 @@ const blogItems = blogMetadata.map(
   })
 );
 
+const productItems = products.map(
+  (product) => ({
+    type: "product",
+    title: product.name,
+    description: product.tagline,
+    keywords:
+      product.technologies.join(
+        " "
+      ),
+    url: "/products",
+  })
+);
+
 const searchIndex = [
   ...blogItems,
   ...projectItems,
+  ...productItems,
   ...resourceItems,
 ];
 

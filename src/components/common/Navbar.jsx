@@ -9,7 +9,7 @@ import {
   Menu,
   X,
   Search,
-  Coffee,
+  Boxes,
 } from "lucide-react";
 
 import Container from "./Container";
@@ -261,13 +261,13 @@ function Navbar() {
                 </span>
               </button>
 
-              {/* Meeting */}
+              {/* Products */}
 
               <div className="flex items-center gap-3">
   <ThemeToggle />
 
   <Link
-    to="/hack4j"
+    to="/products"
     className="
       inline-flex
       items-center
@@ -283,11 +283,11 @@ function Navbar() {
       duration-300
       hover:bg-zinc-800
       hover:-translate-y-0.5
-      hover:shadow-lgF
+      hover:shadow-lg
     "
   >
-    Hack4j
-    <Coffee size={18} className="text-amber-400" />
+    SaaS Products
+    <Boxes size={18} className="text-amber-400" />
   </Link>
 </div>
             </div>
@@ -322,7 +322,7 @@ function Navbar() {
               </button>
 
               <Link
-                to="/hack4j"
+                to="/products"
                 className="
                   rounded-lg
                   bg-zinc-900
@@ -336,8 +336,8 @@ function Navbar() {
                   gap-1.5
                 "
               >
-                Hack4j
-                <Coffee size={14} className="text-amber-400" />
+                SaaS Products
+                <Boxes size={14} className="text-amber-400" />
               </Link>
 
               <button
@@ -404,8 +404,8 @@ function Navbar() {
                   )
                 )}
 
-                <Link
-                  to="/hack4j"
+<Link
+                  to="/products"
                   onClick={() =>
                     setOpen(
                       false
@@ -426,8 +426,8 @@ function Navbar() {
                     gap-2
                   "
                 >
-                  Hack4j
-<Coffee size={18} className="text-amber-400" />
+                  SaaS Products
+<Boxes size={18} className="text-amber-400" />
                 </Link>
               </div>
             </div>
