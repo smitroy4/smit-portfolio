@@ -248,7 +248,7 @@ function Lab() {
               "
             >
               The{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-[#fbbf24] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent">
                 Lab
               </span>
             </motion.h1>

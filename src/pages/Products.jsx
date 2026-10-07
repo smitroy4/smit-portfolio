@@ -122,7 +122,7 @@ function Products() {
               SaaS
               <br />
 
-              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-[#fbbf24] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent">
                 Products
               </span>
             </motion.h1>

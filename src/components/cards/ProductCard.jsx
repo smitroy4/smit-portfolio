@@ -67,7 +67,7 @@ function ProductCover({ product }) {
         overflow-hidden
       "
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-[#fbbf24]/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-blue-400/10" />
 
       <Package
         size={40}

@@ -138,7 +138,7 @@ function Resources() {
               className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95] mb-8"
             >
               Learning
-              <span className="block bg-gradient-to-r from-blue-600 via-cyan-500 to-[#fbbf24] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400 bg-clip-text text-transparent">
                 Resources
               </span>
             </motion.h1>

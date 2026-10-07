@@ -233,7 +233,7 @@ function Blogs() {
                   bg-gradient-to-r
                   from-blue-600
                   via-cyan-500
-                  to-[#fbbf24]
+                  to-blue-400
                   bg-clip-text
                   text-transparent
                 "

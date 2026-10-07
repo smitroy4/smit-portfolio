@@ -150,12 +150,12 @@ function TimelineSection() {
                   w-12 h-1 rounded-full mb-4 transition-colors duration-300
                   ${isViewed || (isOpen && index <= activeIndex)
                     ? "bg-zinc-300 dark:bg-zinc-600"
-                    : "bg-gradient-to-r from-[#fbbf24] to-amber-500"
+                    : "bg-gradient-to-r from-blue-500 to-blue-400"
                   }
                 `}
               />
 
-              <span className="text-xs font-semibold text-[#fbbf24] uppercase tracking-wider">
+              <span className="text-xs font-semibold text-blue-500 uppercase tracking-wider">
                 {item.year}
               </span>
 
