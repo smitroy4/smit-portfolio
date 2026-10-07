@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import MainLayout from "../layouts/MainLayout";
@@ -8,6 +8,7 @@ import About from "../pages/About";
 import Projects from "../pages/Projects";
 import ProjectDetail from "../pages/ProjectDetail";
 import Products from "../pages/Products";
+import Lab from "../pages/Lab";
 import Blogs from "../pages/Blogs";
 import BlogPost from "../pages/BlogPost";
 import Resources from "../pages/Resources";
@@ -35,7 +36,15 @@ function AppRoutes() {
 
           <Route path="/projects/:id" element={<ProjectDetail />} />
 
-          <Route path="/products" element={<Products />} />
+          <Route path="/lab" element={<Lab />} />
+
+          <Route path="/lab/saas-products" element={<Products />} />
+
+          {/* Legacy URL — SaaS products now live under /lab */}
+          <Route
+            path="/products"
+            element={<Navigate to="/lab/saas-products" replace />}
+          />
 
           <Route path="/blogs" element={<Blogs />} />
 

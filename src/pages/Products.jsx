@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import {
+  ArrowLeft,
   Boxes,
   Filter,
   Package,
@@ -26,10 +28,29 @@ function Products() {
       <SEO
         title="SaaS Products"
         description="Production-ready SaaS products built by Smit Roy — plug-and-play platforms you can deploy on day one and customize to your business needs."
-        url="https://smitroy.com/products"
+        url="https://smitroy.com/lab/saas-products"
       />
 
       <PageWrapper>
+        <Link
+          to="/lab"
+          className="
+            inline-flex
+            items-center
+            gap-2
+            text-sm
+            text-zinc-500
+            dark:text-zinc-400
+            hover:text-zinc-900
+            dark:hover:text-zinc-100
+            transition-colors
+            mb-10
+          "
+        >
+          <ArrowLeft size={16} />
+          Back to Lab
+        </Link>
+
         <section className="relative mb-16 overflow-hidden">
           <div
             className="

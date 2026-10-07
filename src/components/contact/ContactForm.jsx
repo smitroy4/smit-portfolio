@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ContactForm({
   title = "Send a Message",
@@ -11,6 +11,14 @@ function ContactForm({
   const [status, setStatus] = useState("");
   const [message, setMessage] =
     useState(initialMessage);
+
+  // Sync when parent provides a new message (e.g. "Request Resume" autofill)
+  useEffect(() => {
+    if (initialMessage) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setMessage(initialMessage);
+    }
+  }, [initialMessage]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -150,7 +158,7 @@ function ContactForm({
   }
 
   return (
-    <div className="border rounded-2xl p-8 dark:border-zinc-700">
+    <div id="contact-form" className="border rounded-2xl p-8 dark:border-zinc-700 scroll-mt-24">
       <h2 className="text-2xl font-bold mb-6">
         {title}
       </h2>

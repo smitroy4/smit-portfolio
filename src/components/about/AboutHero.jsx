@@ -95,7 +95,6 @@ function AboutHero() {
           >
             Thinking in Systems.
             <br />
-
             <span
               className="
                 bg-gradient-to-r
@@ -108,9 +107,7 @@ function AboutHero() {
             >
               Building Software
             </span>
-
             <br />
-
             That Scales.
           </motion.h1>
 
@@ -129,28 +126,24 @@ function AboutHero() {
             "
           >
             <p>
-              I'm Smit Roy, an MCA student and Backend Developer with 2.5+
-              years of experience in software development, focused on Java,
-              Spring Boot, Microservices, System Design, and scalable software
-              engineering.
+              I'm Smit Roy, a Backend Developer with 2.5+ years of experience
+              building production software in Java and Spring Boot. I work
+              across microservices, databases, and cloud infrastructure, with a
+              focus on system design and maintainable architecture.
             </p>
 
             <p>
-              My journey into technology started from a finance background and
-              gradually evolved into software development through self-learning,
-              practical projects, and continuous improvement.
+              I came into software from a finance background and built my
+              foundation through self-study and hands-on projects. That path
+              shaped how I work: I learn by shipping, and I care about the
+              reasoning behind each design choice.
             </p>
 
             <p>
-              Today I spend most of my time building backend development and
-              distributed systems, working with databases, cloud-native
-              development, and modern software architecture.
-            </p>
-
-            <p>
-              My long-term goal is to become a highly skilled Java Backend
-              Developer capable of designing reliable, scalable, and
-              production-ready applications.
+              I've delivered 8+ client projects across healthcare, retail, and
+              manufacturing, and I'm currently deepening my expertise in
+              distributed systems and cloud-native development while pursuing my
+              MCA.
             </p>
           </motion.div>
         </div>

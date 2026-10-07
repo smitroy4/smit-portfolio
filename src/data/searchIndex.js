@@ -46,14 +46,42 @@ const productItems = products.map(
       product.technologies.join(
         " "
       ),
-    url: "/products",
+    url: "/lab/saas-products",
   })
 );
+
+const labItems = [
+  {
+    type: "lab",
+    title: "Lab",
+    description:
+      "Experiments — SaaS products, system design notes, and more.",
+    keywords: "lab experiments saas system whispering",
+    url: "/lab",
+  },
+  {
+    type: "lab",
+    title: "SaaS Products",
+    description:
+      "Production-ready SaaS products — plug-and-play platforms you can deploy on day one.",
+    keywords: "saas products plug play deploy",
+    url: "/lab/saas-products",
+  },
+  {
+    type: "lab",
+    title: "System Whispering",
+    description:
+      "Data Structures & Algorithms, System Design, The Backend Craft, AI & ML.",
+    keywords: "system whispering dsa algorithms system design backend ai ml",
+    url: "https://systemswhispering.smitroy.com/",
+  },
+];
 
 const searchIndex = [
   ...blogItems,
   ...projectItems,
   ...productItems,
+  ...labItems,
   ...resourceItems,
 ];
 

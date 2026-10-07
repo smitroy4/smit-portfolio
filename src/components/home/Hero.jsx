@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { Download, MapPin, GraduationCap, Coffee, Settings, Cloud } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  MapPin,
+  GraduationCap,
+  Coffee,
+  Settings,
+  Cloud,
+  Boxes,
+} from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -31,7 +39,8 @@ function Hero() {
     }
     if (techs < tTarget) {
       const timer = setTimeout(
-        () => setTechs((c) => Math.min(c + Math.ceil((tTarget - c) / 8), tTarget)),
+        () =>
+          setTechs((c) => Math.min(c + Math.ceil((tTarget - c) / 8), tTarget)),
         40,
       );
       return () => clearTimeout(timer);
@@ -179,9 +188,9 @@ function Hero() {
   max-w-2xl
 "
           >
-            Java Backend Developer focused on Spring Boot, Microservices,
-            PostgreSQL, Kafka, System Design, and production-ready
-            software.
+            Java Backend Developer building reliable, production-ready systems
+            with Spring Boot, Microservices, Kafka, and AWS. Focused
+            on cloud-native architecture and thoughtful system design.
           </motion.p>
 
           <motion.div
@@ -190,12 +199,7 @@ function Hero() {
             transition={{ delay: 0.3 }}
             className="flex flex-wrap gap-4 mb-14"
           >
-            <Button href={siteConfig.resume}>
-              <Download size={18} className="mr-2" />
-              Resume
-            </Button>
-
-            <Button href={siteConfig.github} variant="secondary">
+            <Button href={siteConfig.github}>
               <FaGithub className="mr-2" />
               GitHub
             </Button>
@@ -204,6 +208,14 @@ function Hero() {
               <FaLinkedin className="mr-2" />
               LinkedIn
             </Button>
+
+            <Link
+              to="/lab/saas-products"
+              className="inline-flex items-center px-5 py-3 rounded-lg font-medium transition bg-[#fbbf24] text-zinc-900 hover:bg-amber-400"
+            >
+              <Boxes size={18} className="mr-2" />
+              Products
+            </Link>
           </motion.div>
 
           <motion.div
@@ -218,25 +230,27 @@ function Hero() {
             "
           >
             <div>
-              <h3 className="text-4xl font-black tabular-nums">
-                {projects}+
-              </h3>
+              <h3 className="text-4xl font-black tabular-nums">{projects}+</h3>
 
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Projects</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">
+                Projects
+              </p>
             </div>
 
             <div>
-              <h3 className="text-4xl font-black tabular-nums">
-                {techs}+
-              </h3>
+              <h3 className="text-4xl font-black tabular-nums">{techs}+</h3>
 
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Technologies</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">
+                Technologies
+              </p>
             </div>
 
             <div>
               <h3 className="text-4xl font-black">MCA</h3>
 
-              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">Cloud Computing</p>
+              <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">
+                Cloud Computing
+              </p>
             </div>
           </motion.div>
         </div>
@@ -289,7 +303,9 @@ function Hero() {
 
                 <h3 className="text-2xl font-bold">Smit Roy</h3>
 
-                <p className="text-zinc-500 dark:text-zinc-400">Java Backend Developer</p>
+                <p className="text-zinc-500 dark:text-zinc-400">
+                  Java Backend Developer
+                </p>
               </div>
               <div className="space-y-4 text-zinc-600 dark:text-zinc-300">
                 <p className="flex items-center gap-2">

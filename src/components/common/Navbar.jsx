@@ -9,7 +9,7 @@ import {
   Menu,
   X,
   Search,
-  Boxes,
+  FlaskConical,
 } from "lucide-react";
 
 import Container from "./Container";
@@ -261,13 +261,13 @@ function Navbar() {
                 </span>
               </button>
 
-              {/* Products */}
+              {/* Lab */}
 
               <div className="flex items-center gap-3">
   <ThemeToggle />
 
   <Link
-    to="/products"
+    to="/lab"
     className="
       inline-flex
       items-center
@@ -286,8 +286,8 @@ function Navbar() {
       hover:shadow-lg
     "
   >
-    SaaS Products
-    <Boxes size={18} className="text-amber-400" />
+    Lab
+    <FlaskConical size={18} className="text-amber-400" />
   </Link>
 </div>
             </div>
@@ -322,7 +322,7 @@ function Navbar() {
               </button>
 
               <Link
-                to="/products"
+                to="/lab"
                 className="
                   rounded-lg
                   bg-zinc-900
@@ -336,8 +336,8 @@ function Navbar() {
                   gap-1.5
                 "
               >
-                SaaS Products
-                <Boxes size={14} className="text-amber-400" />
+                Lab
+                <FlaskConical size={14} className="text-amber-400" />
               </Link>
 
               <button
@@ -405,7 +405,7 @@ function Navbar() {
                 )}
 
 <Link
-                  to="/products"
+                  to="/lab"
                   onClick={() =>
                     setOpen(
                       false
@@ -426,8 +426,8 @@ function Navbar() {
                     gap-2
                   "
                 >
-                  SaaS Products
-<Boxes size={18} className="text-amber-400" />
+                  Lab
+<FlaskConical size={18} className="text-amber-400" />
                 </Link>
               </div>
             </div>

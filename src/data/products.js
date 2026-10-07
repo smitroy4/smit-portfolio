@@ -2,7 +2,7 @@
  * Products shipped as plug-and-play SaaS.
  *
  * Add new products to the TOP of this array — the first entry is treated as
- * the flagship product and is highlighted on the /products page.
+ * the flagship product and is highlighted on the /lab/saas-products page.
  *
  * Each product accepts:
  *   id           unique slug, also used as the React key

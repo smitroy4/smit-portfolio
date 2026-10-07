@@ -269,7 +269,7 @@ function Blogs() {
               learnings on Java, Spring Boot,
               Microservices, Security,
               Databases, System Design,
-              and modern backend engineering.
+              modern backend engineering, Python and Data Science.
             </motion.p>
                         <motion.div
               initial={{ opacity: 0 }}

@@ -1,20 +1,37 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin,
   GraduationCap,
   Coffee,
   Rocket,
-  Download,
+  FileText,
 } from "lucide-react";
 
 import PageWrapper from "../components/common/PageWrapper";
 import ContactForm from "../components/contact/ContactForm";
 
-import siteConfig from "../data/siteConfig";
-
 import SEO from "../components/common/SEO";
 
+const RESUME_REQUEST_MESSAGE = `Hi Smit,
+
+I came across your portfolio and found your experience interesting.
+
+Could you please share your latest resume with me? I would love to learn more about your background and discuss potential opportunities.
+
+Looking forward to hearing from you.
+
+Thanks & Regards`;
+
 function Contact() {
+  const [resumeRequestMessage, setResumeRequestMessage] = useState("");
+
+  function handleRequestResume() {
+    setResumeRequestMessage(RESUME_REQUEST_MESSAGE);
+    document
+      .getElementById("contact-form")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   return (
     <>
       <SEO
@@ -296,8 +313,9 @@ function Contact() {
               </p>
             </div>
 
-            <a
-              href={siteConfig.resume}
+            <button
+              type="button"
+              onClick={handleRequestResume}
               className="
                 inline-flex
                 items-center
@@ -316,13 +334,13 @@ function Contact() {
                 hover:shadow-lg
               "
             >
-              <Download size={18} />
-              Download Resume
-            </a>
+              <FileText size={18} />
+              Request Resume
+            </button>
           </motion.div>
 
           {/* Contact Form */}
-          <ContactForm />
+          <ContactForm initialMessage={resumeRequestMessage} />
 
         </div>
 

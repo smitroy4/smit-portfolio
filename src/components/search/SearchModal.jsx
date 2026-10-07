@@ -1,4 +1,5 @@
 import {
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -11,6 +12,8 @@ import {
   FolderGit2,
   BookOpen,
   CornerDownLeft,
+  FlaskConical,
+  Package,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
@@ -61,6 +64,21 @@ function SearchModal({
         handleEsc
       );
   }, [onClose]);
+
+  const openResult = useCallback(
+    (url) => {
+      if (url.startsWith("http")) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      } else {
+        navigate(url);
+      }
+
+      onClose();
+
+      setQuery("");
+    },
+    [navigate, onClose]
+  );
 
   const fuse = useMemo(
     () =>
@@ -133,14 +151,10 @@ function SearchModal({
         e.key === "Enter" &&
         results[selectedIndex]
       ) {
-        navigate(
+        openResult(
           results[selectedIndex]
             .url
         );
-
-        onClose();
-
-        setQuery("");
       }
     };
 
@@ -158,8 +172,7 @@ function SearchModal({
     open,
     results,
     selectedIndex,
-    navigate,
-    onClose,
+    openResult,
   ]);
 
   if (!open) return null;
@@ -180,6 +193,20 @@ function SearchModal({
           />
         );
 
+      case "product":
+        return (
+          <Package
+            size={18}
+          />
+        );
+
+      case "lab":
+        return (
+          <FlaskConical
+            size={18}
+          />
+        );
+
       default:
         return (
           <BookOpen
@@ -196,6 +223,12 @@ function SearchModal({
 
       case "project":
         return "bg-emerald-50 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300";
+
+      case "product":
+        return "bg-amber-50 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300";
+
+      case "lab":
+        return "bg-cyan-50 text-cyan-700 dark:bg-cyan-900/50 dark:text-cyan-300";
 
       default:
         return "bg-purple-50 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300";
@@ -292,13 +325,9 @@ function SearchModal({
                   index
                 }
                 onClick={() => {
-                  navigate(
+                  openResult(
                     result.url
                   );
-
-                  onClose();
-
-                  setQuery("");
                 }}
                 className={`
                   w-full
