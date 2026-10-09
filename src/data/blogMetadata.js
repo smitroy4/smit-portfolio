@@ -1,6 +1,29 @@
 const blogMetadata = [
 
   {
+  slug: "kafka-with-spring-boot-for-beginners",
+
+  authorId: 1,
+
+  title: "Kafka Without the Fear — Your First Event Stream With Spring Boot",
+
+  description: "A beginner-friendly, analogy-first guide to Apache Kafka with Spring Boot — topics, partitions, offsets, keys, consumer groups, and how KafkaTemplate and @KafkaListener turn it all into just a few lines of code. Along the way, you'll run Kafka locally with Docker, build your first producer and consumer, and learn the common beginner mistakes to avoid.",
+
+  date: "09 October 2026",
+
+  readTime: "25 min read",
+
+  coverImage: "https://res.cloudinary.com/dv5g9pqe4/image/upload/v1791517253/Kafka_Without_the_Fear_krlpw4.png",
+
+  tags: [
+    "Kafka",
+    "Spring Boot",
+    "Messaging",
+    "Article"
+  ]
+},
+
+  {
   slug: "data-structures-python-deeptalks",
   authorId: 2,
   title: "Data Structures in Python: Deeptalks — From Surface-Level to Mastery",

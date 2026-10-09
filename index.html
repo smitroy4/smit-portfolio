@@ -26,6 +26,11 @@
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#111827" />
 
+    <!-- PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <!-- Canonical -->
     <link rel="canonical" href="https://www.smitroy.com/" />
 
@@ -49,7 +54,8 @@
 
     <meta name="apple-mobile-web-app-title" content="Smit Roy" />
 
-    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Manifest is auto-injected by vite-plugin-pwa (manifest.webmanifest).
+      site.webmanifest is kept as a fallback for older browsers. -->
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
